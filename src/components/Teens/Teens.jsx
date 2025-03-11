@@ -1,8 +1,9 @@
 import React from 'react'
 
-export default function Home() {
+export default function Teens() {
   return (
     <div>
+      
     </div>
   )
 }
