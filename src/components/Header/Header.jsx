@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { IoHeartOutline } from "react-icons/io5";
 import { GoPerson } from "react-icons/go";
 import { BsBasket } from "react-icons/bs";
-import photo from '../../assets/logo.webp'
+import photo from '../../assets/aiba/logo.webp'
 
 
 export default function Header() {

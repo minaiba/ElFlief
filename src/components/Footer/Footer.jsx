@@ -1,30 +1,31 @@
 import React from 'react'
-import golden from '../../assets/lotos.png'
+import golden from '../../assets/aiba/ipp.webp'
 import { RiTelegramLine } from 'react-icons/ri'
 import { BiLogoWhatsapp } from 'react-icons/bi'
-import tg from '../../assets/tg.png'
-import vk from '../../assets/vk.png'
-import uteb from '../../assets/tube.png'
-import app from '../../assets/appgallery.png'
-import apps from '../../assets/appstore_white.png'
-import google from '../../assets/googleplay.png'
-import rus from '../../assets/rustore.png'
-import visa from '../../assets/visav2.png'
-import visma from '../../assets/mastercardv2.png'
-import mir from '../../assets/mirv2.png'
+import tg from '../../assets/aiba/tg.png'
+import vk from '../../assets/aiba/vk.png'
+import uteb from '../../assets/aiba/tube.png'
+import app from '../../assets/aiba/appgallery.png'
+import apps from '../../assets/aiba/appstore_white.png'
+import google from '../../assets/aiba/googleplay.png'
+import rus from '../../assets/aiba/rustore.png'
+import visa from '../../assets/aiba/visav2.png'
+import visma from '../../assets/aiba/mastercardv2.png'
+import mir from '../../assets/aiba/mirv2.png'
 
 
 export default function Footer() {
   return (
-    <div className="w-[1400px] m-auto bg-black text-white py-8 px-8 mt-[30px]">
-      <div className="ml-[40px] mb-8">
-        <img src={golden} className="w-[193px]" alt="Golden Logo" />
+    <div className="w-[1400px] m-auto bg-black text-white px-8 mt-[30px]">
+      <div className=' flex justify-center items-center'>
+        <img src={golden} className="w-[240px]" alt="Golden Logo" />        
       </div>
-      <div className="flex justify-between gap-x-16 gap-y-8">
+
+      <div className="flex justify-between gap-x-7 gap-y-8">
         <div className="space-y-4">
-          <h1 className="text-xl font-semibold">8 800 770 70 21</h1>
-          <p className="text-sm opacity-75">круглосуточный телефон call-центра</p>
-          <div className="flex gap-4 items-center">
+          <h1 className="text-xl font-semibold ml-[15px]">8 800 770 70 21</h1>
+          <p className="text-sm opacity-75 mt-[14px]">круглосуточный телефон call-центра</p>
+          <div className="flex gap-4 items-center mt-[14px]">
             <div className="flex items-center gap-2">
               <BiLogoWhatsapp size={24} />
               <h3 className="text-sm">WhatsApp</h3>
@@ -37,7 +38,7 @@ export default function Footer() {
         </div>
         <div className="space-y-4">
           <h1 className="text-xl font-semibold">о нас</h1>
-          <h3 className="text-sm opacity-75">политика обработки персональных данных</h3>
+          <h3 className="text-sm opacity-75">политика обработки персональных <br />данных</h3>
           <h3 className="text-sm opacity-75">документы сайта</h3>
           <h3 className="text-sm opacity-75">наши магазины</h3>
         </div>
