@@ -16,7 +16,7 @@ import mir from '../../assets/aiba/mirv2.png'
 
 export default function Footer() {
   return (
-    <div className="w-[1400px] m-auto bg-black text-white px-8 mt-[30px]">
+    <div className="max-w-[1400px] m-auto bg-black text-white px-8">
       <div className=' flex justify-center items-center'>
         <img src={golden} className="w-[240px]" alt="Golden Logo" />        
       </div>

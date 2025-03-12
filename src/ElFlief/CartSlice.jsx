@@ -2,20 +2,37 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const CosmoSlice = createSlice({
-  name: 'Cosmo',
+  name: "Cosmo",
   initialState: {
-    cartItem: []
+    isOpen: false,
+    categories: [
+      {
+        name: "волосы",
+        subcategories: [
+          "уход для волос",
+          "профессиональный уход",
+          "стайлинг",
+          "окрашивание",
+          "аксессуары",
+          "техника для укладки",
+          "наборы",
+        ],
+      },
+      { name: "уход", subcategories: ["бальзамы и кондиционеры"] },
+      { name: "парфюмерия", subcategories: ["сухие шампуни"] },
+      { name: "макияж", subcategories: ["шампуни"] },
+      { name: "новые бренды", subcategories: ["новинки"] },
+    ],
   },
   reducers: {
-    addCart: (state, action) => {
-      const FindCosmo= state.cartItem.find((el) => el.id === action.payload.id);
-      if (!FindCosmo) {
-        state.cartItem.push({ ...action.payload, quantity: 1 });
-      } 
+    openMenu: (state) => {
+      state.isOpen = true;
     },
-    
-  }
+    closeMenu: (state) => {
+      state.isOpen = false;
+    },
+  },
 });
 
-export const { addCart } = CosmoSlice.actions;
+export const { openMenu, closeMenu } = CosmoSlice.actions;
 export default CosmoSlice.reducer;
