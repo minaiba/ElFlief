@@ -11,7 +11,7 @@ export default function Products() {
     <section>
       <div className='w-[1200px] m-auto '>
         <div className=''>
-          <img src={img1} className='relative' />
+          <img src={img1} className='relative max-w-full' />
           <h1 className='text-5xl absolute font-bold text-[#423e3e] mt-[-400px] ml-[500px]'>новинки</h1></div>
         <h2 className='ml-[540px]'>10 221 продукт</h2>
         <div className='flex'>
