@@ -14,6 +14,12 @@ import img14 from '../../assets/gulasyl/vanna.webp';
 import img15 from '../../assets/gulasyl/night.webp';
 import img16 from '../../assets/gulasyl/bros.webp';
 import img17 from '../../assets/gulasyl/sumka.webp';
+import img18 from '../../assets/gulasyl/bee.webp';
+import img19 from '../../assets/gulasyl/termo.webp';
+import img20 from '../../assets/gulasyl/kor.webp';
+import img21 from '../../assets/gulasyl/aip.webp';
+import img22 from '../../assets/gulasyl/piala.webp';
+import img23 from '../../assets/gulasyl/fen.webp';
 import img7Alt from '../../assets/gulasyl/румян.webp';
 import img8Alt from '../../assets/gulasyl/toothpas.webp';
 import img9Alt from '../../assets/gulasyl/шампунь.webp';
@@ -22,6 +28,11 @@ import img11Alt from '../../assets/gulasyl/набор2.webp';
 import img12Alt from '../../assets/gulasyl/парфюм2.webp';
 import img15Alt from '../../assets/gulasyl/night2.webp';
 import img17Alt from '../../assets/gulasyl/sumka2.webp';
+import img18Alt from '../../assets/gulasyl/bee2.webp';
+import img19Alt from '../../assets/gulasyl/termo2.webp';
+import img20Alt from '../../assets/gulasyl/kor2.webp';
+import img22Alt from '../../assets/gulasyl/piala2.webp';
+import img23Alt from '../../assets/gulasyl/fen2.webp';
 import { BsBasket } from "react-icons/bs";
 import { IoHeartOutline } from "react-icons/io5";
 
@@ -141,18 +152,18 @@ export default function Products() {
             </div>
           </div>
 
-         {/* 3 блок */}
+          {/* 3 блок */}
           <div className='flex mt-[100px]'>
 
 
-             {/* справа-налево румяна */}
+            {/* справа-налево румяна */}
             <div className=''>
               <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[200px] mt-[10px]' />
               <BsBasket className='absolute w-[30px] h-[25px] mt-[270px] ml-[200px]' />
               <button className='bg-[#0ee44e] text-[black] font-bold w-[40px] absolute h-[40px]'>new!</button>
               <img src={img13} className='w-[240px] h-[300px]' />
               <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'rtl', textAlign: 'right' }}>
-Жидкие румяна для лица</h3>
+                Жидкие румяна для лица</h3>
               <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>L'Oreal Paris LUMI</h1>
               <div className='flex hover:text-[#9ca887] text-2xl gap-3 ml-[60px]'>
                 <h1 className='font-bold hover:text-[#9ca887] text-[grey] mt-[10px]'><del>1 056 ₽</del></h1>
@@ -160,7 +171,7 @@ export default function Products() {
               </div>
             </div>
 
-            
+
 
             {/* справа-налево парфюм */}
             <div className='mt-[10px]'>
@@ -199,16 +210,16 @@ export default function Products() {
           {/* 4 блок */}
 
           <div className='flex mt-[100px] gap-[78px]'>
-          <div className='mt-[10px]'>
+            <div className='mt-[10px]'>
               <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[200px] mt-[10px]' />
               <BsBasket className='absolute w-[30px] h-[25px] mt-[250px] ml-[200px]' />
               <button className='bg-[#49f20b] text-[black] font-bold w-[40px] absolute h-[40px]'>new</button>
               <img src={img14} className='w-[240px] h-[280px]' />
               <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'rtl', textAlign: 'right' }}>
-              Набор для ванной</h3>
+                Набор для ванной</h3>
               <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>DENEZO Alys</h1>
-             
-                <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[152px] mt-[10px]'>3 989 ₽</h1>
+
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[152px] mt-[10px]'>3 989 ₽</h1>
             </div>
 
 
@@ -219,9 +230,9 @@ export default function Products() {
               <img src={imageHovered === 'night' ? img15Alt : img15} className='w-[240px] h-[280px]' onMouseEnter={() => handleMouseEnter('night')}
                 onMouseLeave={handleMouseLeave} />
               <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'rtl', textAlign: 'right' }}>
-              Ночной крем для восстановления сияния</h3>
+                Ночной крем для восстановления сияния</h3>
               <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>Go Tapa Radiant night cream</h1>
-                <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[170px]'>790 ₽</h1>
+              <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[170px]'>790 ₽</h1>
             </div>
 
 
@@ -236,7 +247,7 @@ export default function Products() {
               <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'ltr', textAlign: 'left' }}>брошь
               </h3>
               <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-              Stone Philosophy Autumn leaves
+                Stone Philosophy Autumn leaves
               </h1>
               <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>4 500 ₽</h1>
             </div>
@@ -251,17 +262,119 @@ export default function Products() {
                 className='w-[240px] h-[280px]'
               />
               <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'ltr', textAlign: 'left' }}>
-                
-Сумка кросс-боди
+
+                Сумка кросс-боди
               </h3>
               <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-              DKNY BRYANT AVE TZ DEMI C
+                DKNY BRYANT AVE TZ DEMI C
               </h1>
               <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>21 000 ₽</h1>
             </div>
+          </div>
+
+
+
+          {/* 5 блок */}
+          <div className='flex gap-[70px] mt-[100px]'>
+
+            <div className='mt-[10px]'>
+              <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[200px] mt-[10px]' />
+              <BsBasket className='absolute w-[30px] h-[25px] mt-[250px] ml-[200px]' />
+              <button className='bg-[#49f20b] text-[black] font-bold w-[40px] absolute h-[40px]'>new</button>
+              <img src={imageHovered === 'bee' ? img18Alt : img18} className='w-[240px] h-[280px]' onMouseEnter={() => handleMouseEnter('bee')}
+                onMouseLeave={handleMouseLeave} />
+              <h3 className='hover:text-[#9ca887] font-mono w-[240px]' style={{ direction: 'rtl', textAlign: 'right' }}>
+                Подарочный набор для ухода за кожей</h3>
+              <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>True Island Honey bee total care set</h1>
+              <button className=' bg-lime-300 w-[120px] hover:text-[#9ca887]  ml-[120px] mt-[10px]'>новое | -20%</button>
+
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[152px] mt-[10px]'>4 490 ₽</h1>
             </div>
 
 
+            <div className='mt-[10px]'>
+              <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[200px] mt-[10px]' />
+              <BsBasket className='absolute w-[30px] h-[25px] mt-[250px] ml-[200px]' />
+              <button className='bg-[#b60ca7] text-[white] font-bold w-[40px] absolute h-[40px]'>new</button>
+              <img src={imageHovered === 'termo' ? img19Alt : img19} className='w-[240px] h-[280px]' onMouseEnter={() => handleMouseEnter('termo')}
+                onMouseLeave={handleMouseLeave} />
+              <h3 className='hover:text-[#9ca887] font-mono w-[240px]' style={{ direction: 'rtl', textAlign: 'right' }}>
+
+                Термопот</h3>
+              <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>Pioneer tp718</h1>
+
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[152px] mt-[10px]'>5 192 ₽</h1>
+            </div>
+
+
+            <div>
+              <p className='hover:text-[#9ca887] absolute font-mono mt-[40px] ml-[370px]'>Набор открыток</p>
+              <h1 className='hover:text-[#9ca887] absolute text-4xl mt-[70px]  w-[240px] font-medium ml-[370px]' >aespa Armageddon: The Mystery Circle POSTCARD SET GISELLE Ver.</h1>
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl absolute mt-[370px] ml-[375px]'>2 130 ₽</h1>
+
+              <img
+                src={imageHovered === 'kor' ? img20Alt : img20}
+                className='h-[350px] mt-[15px] w-[500px]'
+                onMouseEnter={() => handleMouseEnter('kor')}
+                onMouseLeave={handleMouseLeave}
+              />
+
+
+            </div>
+          </div>
+
+
+          {/* 6 блок */}
+
+        <div className='flex mt-[100px] gap-[70px]'>
+
+        <div className='mt-[120px]'>
+              <button className='bg-[#5cd908] text-[black] font-bold w-[55px] absolute mt-[-120px] h-[55px]'>new!</button>
+              <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px] ml-[20px]'>
+              Наушники</p>
+               <h1 className='hover:text-[#9ca887] absolute text-4xl w-[100px] ml-[10px] font-medium ' >Apple AirPods 3 with MagSafe Charging Case</h1>
+              <h1 className='font-bold hover:text-[#9ca887] absolute text-2xl ml-[10px] mt-[300px] '>19 410 ₽</h1>
+              <img src={img21} className='h-[450px] mt-[-120px] w-[550px]' />
+              
+             
+            </div>
+
+            <div className='' onMouseEnter={() => handleMouseEnter('fen')} onMouseLeave={handleMouseLeave}>
+              <IoHeartOutline className='absolute w-[30px] h-[25px] mt-[10px]  ml-[200px] ' />
+              <BsBasket className='absolute w-[30px] h-[25px] mt-[210px] ml-[200px]' />
+              <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>new!</button>
+              <img
+                src={imageHovered === 'fen' ? img23Alt : img23}
+                className='w-[240px] h-[250px]'
+              />
+              <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'ltr', textAlign: 'left' }}>
+                
+Фен-стайлер
+              </h3>
+              <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
+              REMEZ Model S RMB-707Bx
+              </h1>
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>29 890 ₽</h1>
+            </div>
+
+
+            <div className='' onMouseEnter={() => handleMouseEnter('piala')} onMouseLeave={handleMouseLeave}>
+              <IoHeartOutline className='absolute w-[30px] h-[25px] mt-[10px]  ml-[200px] ' />
+              <BsBasket className='absolute w-[30px] h-[25px] mt-[210px] ml-[200px]' />
+              <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>new!</button>
+              <img
+                src={imageHovered === 'piala' ? img22Alt : img22}
+                className='w-[240px] h-[250px]'
+              />
+              <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'ltr', textAlign: 'left' }}>
+                пиала
+              </h3>
+              <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
+              Odaryadarya Король, алкоголь и самоконтроль
+              </h1>
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>2 650 ₽</h1>
+            </div>
+        </div>
         </div>
       </section>
     </div>
