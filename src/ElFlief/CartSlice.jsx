@@ -1,38 +1,17 @@
 
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = { activeSlide: 0 };
+
 const CosmoSlice = createSlice({
-  name: "Cosmo",
-  initialState: {
-    isOpen: false,
-    categories: [
-      {
-        name: "волосы",
-        subcategories: [
-          "уход для волос",
-          "профессиональный уход",
-          "стайлинг",
-          "окрашивание",
-          "аксессуары",
-          "техника для укладки",
-          "наборы",
-        ],
-      },
-      { name: "уход", subcategories: ["бальзамы и кондиционеры"] },
-      { name: "парфюмерия", subcategories: ["сухие шампуни"] },
-      { name: "макияж", subcategories: ["шампуни"] },
-      { name: "новые бренды", subcategories: ["новинки"] },
-    ],
-  },
+  name: 'Cosmo',
+  initialState,
   reducers: {
-    openMenu: (state) => {
-      state.isOpen = true;
-    },
-    closeMenu: (state) => {
-      state.isOpen = false;
-    },
+      setActiveSlide: (state, action) => {
+          state.activeSlide = action.payload;
+      },
   },
 });
 
-export const { openMenu, closeMenu } = CosmoSlice.actions;
+export const { setActiveSlide } = CosmoSlice.actions;
 export default CosmoSlice.reducer;

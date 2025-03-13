@@ -1,9 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export default function Heart() {
-  return (
-    <div>
-      
-    </div>
-  )
+ return (
+  <div></div>
+ )
 }

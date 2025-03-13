@@ -27,10 +27,8 @@ export default function Products() {
           <div className='flex gap-3 ml-[180px]'>
           <h1 className='font-bold text-[grey]'><del>4 545 ₽</del></h1>
           <h1 className='font-bold'>1 818 ₽</h1></div>
-
         </div>
         <div className='mt-[14px] '>
-          
           <img src={img3} className='w-[300px] h-[250px] relative' />
           <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[255px] mt-[-240px]' />
           <BsBasket className='ml-[255px] mt-[-34px] absolute w-[30px] h-[25px] ' />
