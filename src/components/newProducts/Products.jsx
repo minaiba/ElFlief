@@ -14,6 +14,12 @@ import img14 from '../../assets/gulasyl/vanna.webp';
 import img15 from '../../assets/gulasyl/night.webp';
 import img16 from '../../assets/gulasyl/bros.webp';
 import img17 from '../../assets/gulasyl/sumka.webp';
+import img18 from '../../assets/gulasyl/bee.webp';
+import img19 from '../../assets/gulasyl/termo.webp';
+import img20 from '../../assets/gulasyl/kor.webp';
+import img21 from '../../assets/gulasyl/aip.webp';
+import img22 from '../../assets/gulasyl/piala.webp';
+import img23 from '../../assets/gulasyl/fen.webp';
 import img7Alt from '../../assets/gulasyl/румян.webp';
 import img8Alt from '../../assets/gulasyl/toothpas.webp';
 import img9Alt from '../../assets/gulasyl/шампунь.webp';
@@ -22,24 +28,99 @@ import img11Alt from '../../assets/gulasyl/набор2.webp';
 import img12Alt from '../../assets/gulasyl/парфюм2.webp';
 import img15Alt from '../../assets/gulasyl/night2.webp';
 import img17Alt from '../../assets/gulasyl/sumka2.webp';
+import img18Alt from '../../assets/gulasyl/bee2.webp';
+import img19Alt from '../../assets/gulasyl/termo2.webp';
+import img20Alt from '../../assets/gulasyl/kor2.webp';
+import img22Alt from '../../assets/gulasyl/piala2.webp';
+import img23Alt from '../../assets/gulasyl/fen2.webp';
 import { BsBasket } from "react-icons/bs";
 import { IoHeartOutline } from "react-icons/io5";
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const denzo = [
+  {
+    title: 'набор для ванной',
+    text: 'DENEZO Alys',
+    price: '3 989 ₽',
+    img: img14
+  },
+  {
+    title: 'Ночной крем для восстановления сияния',
+    text: 'Go Tapa Radiant night',
+    price: '790 ₽',
+    img: img15
+  },
+  {
+    title: 'брошь',
+    text: 'Stone Philosophy Autumn leaves',
+    price: '4 500 ₽',
+    img: img16
+  },
+  {
+    title: 'сумка кросс-боди',
+    text: 'DKNY BRYANT AVE TZ DEMI C',
+    price: '21 000 ₽',
+    img: img17
+  },
+]
+
+const categories = [
+  { id: 1, name: "Азия", image: img14 },
+  { id: 2, name: "Макияж", image: img15 },
+  { id: 3, name: "Уход", image: img16 },
+  { id: 4, name: "Волосы", image: img22 },
+  { id: 5, name: "Парфюмерия", image: img21 },
+  { id: 6, name: "Натуральная косметика", image: img17 },
+  { id: 7, name: "Техника", image: img20 },
+  { id: 8, name: "Одежда и аксессуары", image: img19 },
+  { id: 9, name: "Для дома", image: img18 },
+];
 
 export default function Products() {
   const [imageHovered, setImageHovered] = useState(null);
   const handleMouseEnter = (img) => setImageHovered(img);
   const handleMouseLeave = () => setImageHovered(null);
 
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 4, slidesToScroll: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+      { breakpoint: 480, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+    ],
+  };
+
   return (
     <div>
       <section>
-        <div className='w-[1200px] m-auto'>
+        <div className='w-[1400px] m-auto'>
           <div>
             <img src={img1} className='relative' />
             <h1 className='text-6xl absolute font-bold text-[#646464] mt-[-110px] ml-[630px]'>новинки</h1>
           </div>
-          <h2 className='ml-[540px]'>10 221 продукт</h2>
+          <h2 className='justify-center items-center flex my-[40px] text-2xl'><span className='mr-[5px] font-bold'>10 221</span> продукт</h2>
 
+          <div className="w-full px-6 mt-10">
+      <Slider {...settings}>
+        {categories.map((cat) => (
+          <div key={cat.id} className="flex flex-col items-center cursor-pointer">
+            <div className="w-[100px] h-[100px] border border-gray-300 rounded-full overflow-hidden flex items-center justify-center">
+              <img src={cat.image} alt={cat.name} className="w-full h-full object-cover" />
+            </div>
+            <h2 className="text-center mt-2 font-medium">{cat.name}</h2>
+          </div>
+        ))}
+      </Slider>
+    </div>
 
           {/* 1 блок */}
           <div className='flex'>
@@ -141,18 +222,18 @@ export default function Products() {
             </div>
           </div>
 
-         {/* 3 блок */}
+          {/* 3 блок */}
           <div className='flex mt-[100px]'>
 
 
-             {/* справа-налево румяна */}
+            {/* справа-налево румяна */}
             <div className=''>
               <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[200px] mt-[10px]' />
               <BsBasket className='absolute w-[30px] h-[25px] mt-[270px] ml-[200px]' />
               <button className='bg-[#0ee44e] text-[black] font-bold w-[40px] absolute h-[40px]'>new!</button>
               <img src={img13} className='w-[240px] h-[300px]' />
               <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'rtl', textAlign: 'right' }}>
-Жидкие румяна для лица</h3>
+                Жидкие румяна для лица</h3>
               <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>L'Oreal Paris LUMI</h1>
               <div className='flex hover:text-[#9ca887] text-2xl gap-3 ml-[60px]'>
                 <h1 className='font-bold hover:text-[#9ca887] text-[grey] mt-[10px]'><del>1 056 ₽</del></h1>
@@ -160,7 +241,7 @@ export default function Products() {
               </div>
             </div>
 
-            
+
 
             {/* справа-налево парфюм */}
             <div className='mt-[10px]'>
@@ -197,71 +278,125 @@ export default function Products() {
 
 
           {/* 4 блок */}
+            <div className="grid grid-cols-4 gap-8 mt-10">
+          {denzo.map((item, index) => (
+        <div key={index} className=" p-4 rounded-lg hover:scale-105 transition-transform duration-300">
+        <div className="relative">
+          <IoHeartOutline className="absolute top-2 right-2 w-6 h-6 text-gray-600 hover:text-red-500" />
+          <BsBasket className="absolute bottom-2 right-2 w-6 h-6 text-gray-600 hover:text-green-500" />
+          <button className="absolute top-2 left-2 bg-[#10ee48] text-white font-bold px-2 py-1 rounded">
+            new!
+          </button>
+          <img src={item.img} className="w-full h-[280px] object-cover rounded-md" />
+        </div>
 
-          <div className='flex mt-[100px] gap-[78px]'>
-          <div className='mt-[10px]'>
+        <h3 className="text-gray-600 font-mono mt-4">{item.title}</h3>
+        <h1 className="text-xl font-medium mt-1">{item.text}</h1>
+        <h2 className="text-2xl font-bold mt-4">{item.price}</h2>
+      </div>
+      ))}
+          </div>
+
+
+
+          {/* 5 блок */}
+          <div className='flex gap-[70px] mt-[100px]'>
+
+            <div className='mt-[10px]'>
               <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[200px] mt-[10px]' />
               <BsBasket className='absolute w-[30px] h-[25px] mt-[250px] ml-[200px]' />
               <button className='bg-[#49f20b] text-[black] font-bold w-[40px] absolute h-[40px]'>new</button>
-              <img src={img14} className='w-[240px] h-[280px]' />
-              <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'rtl', textAlign: 'right' }}>
-              Набор для ванной</h3>
-              <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>DENEZO Alys</h1>
-             
-                <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[152px] mt-[10px]'>3 989 ₽</h1>
-            </div>
-
-
-            <div className='mt-[10px]'>
-              <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[200px] mt-[10px]' />
-              <BsBasket className='absolute w-[30px] h-[25px] mt-[250px] ml-[200px]' />
-              <button className='bg-[#5deb0a] text-[black] font-bold w-[40px] absolute h-[40px]'>new!</button>
-              <img src={imageHovered === 'night' ? img15Alt : img15} className='w-[240px] h-[280px]' onMouseEnter={() => handleMouseEnter('night')}
+              <img src={imageHovered === 'bee' ? img18Alt : img18} className='w-[240px] h-[280px]' onMouseEnter={() => handleMouseEnter('bee')}
                 onMouseLeave={handleMouseLeave} />
-              <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'rtl', textAlign: 'right' }}>
-              Ночной крем для восстановления сияния</h3>
-              <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>Go Tapa Radiant night cream</h1>
-                <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[170px]'>790 ₽</h1>
-            </div>
+              <h3 className='hover:text-[#9ca887] font-mono w-[240px]' style={{ direction: 'rtl', textAlign: 'right' }}>
+                Подарочный набор для ухода за кожей</h3>
+              <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>True Island Honey bee total care set</h1>
+              <button className=' bg-lime-300 w-[120px] hover:text-[#9ca887]  ml-[120px] mt-[10px]'>новое | -20%</button>
 
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[152px] mt-[10px]'>4 490 ₽</h1>
+            </div>
 
 
             <div className='mt-[10px]'>
               <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[200px] mt-[10px]' />
               <BsBasket className='absolute w-[30px] h-[25px] mt-[250px] ml-[200px]' />
-              <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>10%</button>
-              <img src={img16}
-                className='w-[240px] h-[280px]'
-              />
-              <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'ltr', textAlign: 'left' }}>брошь
-              </h3>
-              <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-              Stone Philosophy Autumn leaves
-              </h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>4 500 ₽</h1>
+              <button className='bg-[#b60ca7] text-[white] font-bold w-[40px] absolute h-[40px]'>new</button>
+              <img src={imageHovered === 'termo' ? img19Alt : img19} className='w-[240px] h-[280px]' onMouseEnter={() => handleMouseEnter('termo')}
+                onMouseLeave={handleMouseLeave} />
+              <h3 className='hover:text-[#9ca887] font-mono w-[240px]' style={{ direction: 'rtl', textAlign: 'right' }}>
+
+                Термопот</h3>
+              <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>Pioneer tp718</h1>
+
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[152px] mt-[10px]'>5 192 ₽</h1>
             </div>
 
 
-            <div className='mt-[10px] ' onMouseEnter={() => handleMouseEnter('sumka')} onMouseLeave={handleMouseLeave}>
-              <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[200px] mt-[10px]' />
-              <BsBasket className='absolute w-[30px] h-[25px] mt-[250px] ml-[200px]' />
+            <div className='w-[640px]'>
+              <p className='hover:text-[#9ca887] absolute font-mono mt-[30px] ml-[20px]'>Набор открыток</p>
+              <h1 className='hover:text-[#9ca887] absolute mt-[70px] text-xl w-[140px] font-medium ml-[350px]' >aespa Armageddon: The Mystery Circle POSTCARD SET GISELLE Ver.</h1>
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl absolute mt-[370px] ml-[375px]'>2 130 ₽</h1>
+              <img
+                src={imageHovered === 'kor' ? img20Alt : img20}
+                className='h-[350px] mt-[15px] w-[500px]'
+                onMouseEnter={() => handleMouseEnter('kor')}
+                onMouseLeave={handleMouseLeave}
+              />
+            </div>
+          </div>
+
+
+          {/* 6 блок */}
+
+        <div className='flex mt-[100px] gap-[70px]'>
+
+        <div className='mt-[120px]'>
+              <button className='bg-[#5cd908] text-[black] font-bold w-[55px] absolute mt-[-120px] h-[55px]'>new!</button>
+              <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px] ml-[20px]'>
+              Наушники</p>
+               <h1 className='hover:text-[#9ca887] absolute text-4xl w-[100px] ml-[10px] font-medium ' >Apple AirPods 3 with MagSafe Charging Case</h1>
+              <h1 className='font-bold hover:text-[#9ca887] absolute text-2xl ml-[10px] mt-[300px] '>19 410 ₽</h1>
+              <img src={img21} className='h-[450px] mt-[-120px] w-[550px]' />
+              
+             
+            </div>
+
+            <div className='' onMouseEnter={() => handleMouseEnter('fen')} onMouseLeave={handleMouseLeave}>
+              <IoHeartOutline className='absolute w-[30px] h-[25px] mt-[10px]  ml-[200px] ' />
+              <BsBasket className='absolute w-[30px] h-[25px] mt-[210px] ml-[200px]' />
               <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>new!</button>
               <img
-                src={imageHovered === 'sumka' ? img17Alt : img17}
-                className='w-[240px] h-[280px]'
+                src={imageHovered === 'fen' ? img23Alt : img23}
+                className='w-[240px] h-[250px]'
               />
               <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'ltr', textAlign: 'left' }}>
                 
-Сумка кросс-боди
+Фен-стайлер
               </h3>
               <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-              DKNY BRYANT AVE TZ DEMI C
+              REMEZ Model S RMB-707Bx
               </h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>21 000 ₽</h1>
-            </div>
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>29 890 ₽</h1>
             </div>
 
 
+            <div className='' onMouseEnter={() => handleMouseEnter('piala')} onMouseLeave={handleMouseLeave}>
+              <IoHeartOutline className='absolute w-[30px] h-[25px] mt-[10px]  ml-[200px] ' />
+              <BsBasket className='absolute w-[30px] h-[25px] mt-[210px] ml-[200px]' />
+              <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>new!</button>
+              <img
+                src={imageHovered === 'piala' ? img22Alt : img22}
+                className='w-[240px] h-[250px]'
+              />
+              <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'ltr', textAlign: 'left' }}>
+                пиала
+              </h3>
+              <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
+              Odaryadarya Король, алкоголь и самоконтроль
+              </h1>
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>2 650 ₽</h1>
+            </div>
+        </div>
         </div>
       </section>
     </div>
