@@ -87,7 +87,7 @@ export default function Dalba() {
         ],
       };
   return (
-    <div className="w-[1400px] m-auto mb-[1200px] relative">
+    <div className="w-[1400px] m-auto relative">
     <img src={shick} className="w-[1400px] h-[700px] absolute" alt="background" />
       <div className="absolute mt-[580px] ml-[70px] w-[1240px]">
         <Slider {...settings} className="flex gap-12">

@@ -15,7 +15,7 @@ export default function Home() {
     <Carousel/>
     {/* <Stories/> */}
     <Shik/>
-    {/* <Dalba/> */}
+    <Dalba/>
 </div>
   )
 }
