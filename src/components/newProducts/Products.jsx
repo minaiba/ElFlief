@@ -107,20 +107,29 @@ export default function Products() {
             <img src={img1} className='relative' />
             <h1 className='text-6xl absolute font-bold text-[#646464] mt-[-110px] ml-[630px]'>новинки</h1>
           </div>
+
+   
+        {/* catalog */}
+        <div className='my-[60px]'> 
+        <Slider {...settings}>
+  {categories.map((cat) => (
+    <div key={cat.id} className="!flex !flex-row items-center gap-5 cursor-pointer border border-gray-300 rounded-full">
+      {/* Фото */}
+      <div className="w-[90px] h-[100px] rounded-full overflow-hidden flex items-center justify-center">
+        <img src={cat.image} alt={cat.name} className="w-full h-full object-cover" />
+      </div>
+      {/* Текст */}
+      <h2 className="font-medium text-lg">{cat.name}</h2>
+    </div>
+  ))}
+</Slider>          
+        </div>
+
+
           <h2 className='justify-center items-center flex my-[40px] text-2xl'><span className='mr-[5px] font-bold'>10 221</span> продукт</h2>
 
-          <div className="w-full px-6 mt-10">
-      <Slider {...settings}>
-        {categories.map((cat) => (
-          <div key={cat.id} className="flex flex-col items-center cursor-pointer">
-            <div className="w-[100px] h-[100px] border border-gray-300 rounded-full overflow-hidden flex items-center justify-center">
-              <img src={cat.image} alt={cat.name} className="w-full h-full object-cover" />
-            </div>
-            <h2 className="text-center mt-2 font-medium">{cat.name}</h2>
-          </div>
-        ))}
-      </Slider>
-    </div>
+
+
 
           {/* 1 блок */}
           <div className='flex'>
