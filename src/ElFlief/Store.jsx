@@ -5,6 +5,7 @@ import CosmoReducer from './CartSlice'
 const MyStore = configureStore ({
     reducer: {
         cart: CosmoReducer,
+
     }
 })
 

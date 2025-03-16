@@ -14,4 +14,5 @@ const CosmoSlice = createSlice({
 });
 
 export const { setActiveSlide } = CosmoSlice.actions;
+
 export default CosmoSlice.reducer;

@@ -409,6 +409,4 @@ export default function Products() {
         </div>
       </section>
     </div>
-
-  );
-}
+  );}
