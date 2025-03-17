@@ -70,6 +70,7 @@ export default function Shik() {
         infinite: true,
         speed: 500,
         slidesToShow: 3,
+        centerPadding: "70px",
         slidesToScroll: 2,
         responsive: [
           {

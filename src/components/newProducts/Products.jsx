@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import img1 from '../../assets/gulasyl/ovinka.png';
 import img2 from '../../assets/gulasyl/dah.webp';
@@ -32,12 +31,21 @@ import img18Alt from '../../assets/gulasyl/bee2.webp';
 import img19Alt from '../../assets/gulasyl/termo2.webp';
 import img20Alt from '../../assets/gulasyl/kor2.webp';
 import img22Alt from '../../assets/gulasyl/piala2.webp';
+import img24Alt from '../../assets/aiba/asia.webp';
 import img23Alt from '../../assets/gulasyl/fen2.webp';
+import img25Alt from '../../assets/aiba/makeup.webp';
+import img26Alt from '../../assets/aiba/parfume.webp';
+import img27Alt from '../../assets/aiba/clothes.webp';
+import img28Alt from '../../assets/aiba/technic.webp';
+import img29Alt from '../../assets/aiba/decoration.webp';
+import img30Alt from '../../assets/aiba/hair.webp';
+import img31Alt from '../../assets/aiba/home.webp';
 import { BsBasket } from "react-icons/bs";
 import { IoHeartOutline } from "react-icons/io5";
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 
 const denzo = [
   {
@@ -67,15 +75,14 @@ const denzo = [
 ]
 
 const categories = [
-  { id: 1, name: "Азия", image: img14 },
-  { id: 2, name: "Макияж", image: img15 },
-  { id: 3, name: "Уход", image: img16 },
-  { id: 4, name: "Волосы", image: img22 },
-  { id: 5, name: "Парфюмерия", image: img21 },
-  { id: 6, name: "Натуральная косметика", image: img17 },
-  { id: 7, name: "Техника", image: img20 },
-  { id: 8, name: "Одежда и аксессуары", image: img19 },
-  { id: 9, name: "Для дома", image: img18 },
+  { id: 1, name: "Азия", image: img24Alt },
+  { id: 2, name: "Макияж", image: img25Alt },
+  { id: 3, name: "Волосы", image: img30Alt },
+  { id: 4, name: "Парфюмерия", image: img26Alt },
+  { id: 5, name: "Декорации", image: img29Alt },
+  { id: 6, name: "Техника", image: img28Alt },
+  { id: 7, name: "Одежда и аксессуары", image: img27Alt },
+  { id: 8, name: "Для дома", image: img31Alt },
 ];
 
 export default function Products() {
@@ -88,7 +95,7 @@ export default function Products() {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 2,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -110,20 +117,18 @@ export default function Products() {
 
    
         {/* catalog */}
-        <div className='my-[60px]'> 
+   <div className='my-[60px]'> 
         <Slider {...settings}>
   {categories.map((cat) => (
-    <div key={cat.id} className="!flex !flex-row items-center gap-5 cursor-pointer border border-gray-300 rounded-full">
-      {/* Фото */}
-      <div className="w-[90px] h-[100px] rounded-full overflow-hidden flex items-center justify-center">
+    <div key={cat.id} className="!flex flex-row items-center gap-4 cursor-pointer border border-gray-300 rounded-full">
+      <div className="w-[90px] h-[90px] rounded-full overflow-hidden flex items-center justify-center">
         <img src={cat.image} alt={cat.name} className="w-full h-full object-cover" />
       </div>
-      {/* Текст */}
       <h2 className="font-medium text-lg">{cat.name}</h2>
     </div>
   ))}
 </Slider>          
-        </div>
+   </div>
 
 
           <h2 className='justify-center items-center flex my-[40px] text-2xl'><span className='mr-[5px] font-bold'>10 221</span> продукт</h2>

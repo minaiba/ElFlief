@@ -65,53 +65,52 @@ const products = [
   ];
 
 export default function Dalba() {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 2,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 2,
-            },
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1,
-            },
-          },
-        ],
-      };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: "70px",
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="w-[1400px] m-auto relative">
-    <img src={shick} className="w-[1400px] h-[700px] absolute" alt="background" />
-      <div className="absolute mt-[580px] ml-[70px] w-[1240px]">
-        <Slider {...settings} className="flex gap-12">
+    <div className=" w-[1400px] m-auto">
+      <img src={shick} className="w-full max-w-[1400px]" alt="background" />
+      <div className="mt-6">
+        <Slider {...settings} className='flex gap-12'>
           {products.map((product) => (
-            <div key={product.id} className="w-[340px] bg-white p-4 rounded-lg shadow-md">
-              <div className="relative">
-                <img src={product.image} className="w-full h-[250px]" alt={product.name} />
-                <Link to="/favorites" className="absolute top-2 left-2">
-                  <IoHeartOutline className="text-4xl text-gray-600 hover:text-red-500" />
+            <div key={product.id} className="px-2">
+              <div className="bg-white p-4 rounded-lg shadow-lg relative">
+                <img src={product.image} className="w-full h-[250px] object-cover rounded-lg" alt={product.name} />
+                <Link to="/favorites" className="absolute top-3 left-3">
+                  <IoHeartOutline className="text-2xl text-gray-600 hover:text-red-500" />
                 </Link>
-                <Link to="/cart" className="absolute bottom-2 right-2 p-2">
-                  <BsBasket className="text-4xl text-gray-600 hover:text-green-500" />
+                <Link to="/cart" className="absolute bottom-3 right-3">
+                  <BsBasket className="text-2xl text-gray-600 hover:text-green-500" />
                 </Link>
-              </div>
-              <p className="mt-4 text-sm text-gray-600">{product.description}</p>
-              <h2 className="font-semibold text-lg mt-4">{product.name}</h2>
-              <div className="flex gap-2 mt-3">
-                <h2 className="text-xl font-bold">{product.price}</h2>
-                <h2 className="text-gray-500 ml-[10px] mt-1 line-through">{product.oldPrice}</h2>
+                <p className="mt-4 text-sm text-gray-600">{product.description}</p>
+                <h2 className="font-semibold text-lg mt-2">{product.name}</h2>
+                <div className="flex items-center gap-2 mt-2">
+                  <h2 className="text-xl font-bold">{product.price}</h2>
+                  <h2 className="text-gray-500 line-through">{product.oldPrice}</h2>
+                </div>
               </div>
             </div>
           ))}
         </Slider>
       </div>
-  </div>
+    </div>
   )
 }
