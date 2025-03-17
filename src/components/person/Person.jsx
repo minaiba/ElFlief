@@ -49,7 +49,7 @@ function Person() {
   }
 
   return (
-    <div className="w-[400px] m-auto mt-[50px] justify-center items-center h-[150vh]">
+    <div className="w-[400px] m-auto mt-[50px] justify-center items-center">
       <h1 className='text-center text-2xl font-semibold'>Войти или зарегистрироваться</h1>
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <div className="mb-4">
