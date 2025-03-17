@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import img1 from '../../assets/gulasyl/ovinka.png';
-import img2 from '../../assets/gulasyl/dah.webp';
+import img2 from '../../assets/gulasyl/прайм.webp';
 import img3 from '../../assets/gulasyl/immg3.webp';
 import img4 from '../../assets/gulasyl/img44.webp';
 import img5 from '../../assets/gulasyl/creme.webp';
@@ -22,7 +22,7 @@ import img23 from '../../assets/gulasyl/fen.webp';
 import img7Alt from '../../assets/gulasyl/румян.webp';
 import img8Alt from '../../assets/gulasyl/toothpas.webp';
 import img9Alt from '../../assets/gulasyl/шампунь.webp';
-import img10Alt from '../../assets/gulasyl/праймер.webp';
+import img10Alt from '../../assets/gulasyl/прайм2.webp';
 import img11Alt from '../../assets/gulasyl/набор2.webp';
 import img12Alt from '../../assets/gulasyl/парфюм2.webp';
 import img15Alt from '../../assets/gulasyl/night2.webp';
@@ -111,8 +111,9 @@ export default function Products() {
       <section>
         <div className='w-[1400px] m-auto'>
           <div>
-            <img src={img1} className='relative' />
-            <h1 className='text-6xl absolute font-bold text-[#646464] mt-[-110px] ml-[630px]'>новинки</h1>
+             <h1 className='text-6xl absolute font-bold text-[#646464] mt-[410px]  ml-[730px]'>новинки</h1>
+            <img src={img1}/>
+           
           </div>
 
    
@@ -137,18 +138,18 @@ export default function Products() {
 
 
           {/* 1 блок */}
-          <div className='flex'>
+          <div className='flex bg-amber-200 mt-[20px]'>
 
             {/* справа-налево праймер */}
             <div className=''>
-              <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[200px] mt-[20px]' />
-              <BsBasket className='absolute w-[30px] h-[25px] mt-[270px] ml-[200px]' />
-              <button className='bg-[#d5187a] text-[white] font-bold w-[40px] absolute mt-[11px] h-[40px]'>60%</button>
-              <img src={imageHovered === 'праймер' ? img10Alt : img2} className='w-[240px] h-[320px]' onMouseEnter={() => handleMouseEnter('праймер')}
+              <IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' />
+              <BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' />
+              <button className='bg-[#c2387f] text-[white] font-bold w-[40px] absolute h-[40px]'>60%</button>
+              <img src={imageHovered === 'праймер' ? img10Alt : img2} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('праймер')}
                 onMouseLeave={handleMouseLeave} />
               <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'rtl', textAlign: 'right' }}>Праймер для лица</h3>
-              <h1 className='hover:text-[#9ca887] w-[240px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>DEAR DAHLIA Prime layer skin prep</h1>
-              <div className='flex hover:text-[#9ca887] text-2xl gap-3 ml-[60px]'>
+              <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>DEAR DAHLIA Prime layer skin prep</h1>
+              <div className='flex hover:text-[#9ca887] text-2xl gap-3 ml-[120px]'>
                 <h1 className='font-bold hover:text-[#9ca887] text-[grey] mt-[10px]'><del>4 545 ₽</del></h1>
                 <h1 className='font-bold hover:text-[#9ca887] mt-[10px]'>1 818 ₽</h1>
               </div>
@@ -157,51 +158,59 @@ export default function Products() {
 
 
             {/* справа-налево шампунь */}
-            <div className='mt-[10px]'>
-              <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[270px] mt-[10px]' />
-              <BsBasket className='absolute w-[30px] h-[25px] mt-[260px] ml-[270px]' />
-              <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute ml-[70px] h-[40px]'>new!</button>
-              <img src={imageHovered === 'шампунь' ? img9Alt : img3} className='w-[240px] h-[300px] ml-[70px]' onMouseEnter={() => handleMouseEnter('шампунь')}
+            <div className='ml-[60px] w-[300px]'>
+              <IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' />
+              <BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' />
+              <button className='bg-[#10ee48] w-[40px] h-[40px] text-[white] font-bold absolute'>new!</button>
+              <img src={imageHovered === 'шампунь' ? img9Alt : img3} className='w-[300px] h-[300px] ' onMouseEnter={() => handleMouseEnter('шампунь')}
                 onMouseLeave={handleMouseLeave} />
-              <h3 className='hover:text-[#9ca887] font-mono w-[240px] ml-[70px] mt-[10px]' style={{ direction: 'rtl', textAlign: 'right' }}>Шампунь для восстановления и питания волос</h3>
-              <h1 className='hover:text-[#9ca887] w-[240px] ml-[70px] text-2xl font-medium' style={{ direction: 'rtl', textAlign: 'right' }}>ROSSANO FERRETTI Dolce 05 repair & nourish shampoo</h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[211px] mt-[10px]'>от 960 ₽</h1>
+              <h3 className='hover:text-[#9ca887] font-mono' style={{ direction: 'rtl', textAlign: 'right' }}>Шампунь для восстановления и питания волос</h3>
+              <h1 className='hover:text-[#9ca887] text-2xl font-medium ' style={{ direction: 'rtl', textAlign: 'right' }}>ROSSANO FERRETTI Dolce 05 repair & nourish shampoo</h1>
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[204px] mt-[10px]'>от 960 ₽</h1>
             </div>
 
 
 
             {/* зубная паста */}
-            <div>
+            <div className='ml-[90px]'>
               <img
                 src={imageHovered === 'toothpaste' ? img8Alt : img4}
-                className='h-[550px] mt-[15px] w-[550px] ml-[95px]'
+                className='h-[600px] w-[650px] '
                 onMouseEnter={() => handleMouseEnter('toothpaste')}
                 onMouseLeave={handleMouseLeave}
               />
               <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px] ml-[150px]'>Зубная паста укрепляющая для чувствительных зубов</p>
               <h1 className='hover:text-[#9ca887] text-4xl font-medium ml-[150px]' >oss to oss Ultra-gentle</h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] ml-[150px]'>от 810 ₽</h1>
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] ml-[150px]'>от 810 ₽</h1> 
             </div>
           </div>
 
 
-
           {/* 2 блок */}
-          <div className='flex'>
+          <div className='flex bg-blue-300 '>
 
 
             {/* крем для рук */}
-            <div>
-              <button className='bg-[#dadd0e] text-[black] font-bold w-[55px] absolute mt-[-120px] h-[55px]'>+gift!</button>
-              <img src={img5} className='h-[550px] mt-[-120px] w-[550px]' />
-              <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px] ml-[50px]'>Крем для рук и ног</p>
-              <h1 className='hover:text-[#9ca887] text-4xl font-medium ml-[50px] w-[500px]' >Ligne St. Barth Banana hand and foot cream</h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[50px] mt-[10px] '>9 300 ₽</h1>
-            </div>
+
+            <div className='mt-[-130px] w-[650px]' >
+  <button className='bg-[#dadd0e] text-[black] font-bold w-[45px] h-[40px] absolute'>+gift!</button>
+  <img src={img5} className='h-[600px] w-[650px]' />
+  <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px]  ml-[150px]'>Крем для рук и ног</p>
+  <h1 className='hover:text-[#9ca887] text-4xl font-medium  ml-[150px]'>Ligne St. Barth Banana hand and foot cream</h1>
+  <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[150px] mt-[10px]'>9 300 ₽</h1>
+</div>
+
+            {/* <div className='mt-[-130px] w-[650px]'>
+              <button className='bg-[#dadd0e] text-[black] font-bold w-[45px] h-[40px] absolute'>+gift!</button>
+              <img src={img5} className='h-[600px] w-[650px]' />
+              <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px] ml-[400px]' >Крем для рук и ног</p>
+              <h1 className='hover:text-[#9ca887] text-4xl font-medium ' >Ligne St. Barth Banana hand and foot cream</h1>
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl '>9 300 ₽</h1>
+            </div> */}
 
 
             {/* слева-направо румяна */}
-            <div className='ml-[100px] mt-[70px]' onMouseEnter={() => handleMouseEnter('blush')} onMouseLeave={handleMouseLeave}>
+            {/* <div className='ml-[100px] mt-[70px]' onMouseEnter={() => handleMouseEnter('blush')} onMouseLeave={handleMouseLeave}>
               <IoHeartOutline className='absolute w-[30px] h-[25px] mt-[10px]  ml-[200px] ' />
               <BsBasket className='absolute w-[30px] h-[25px] mt-[270px] ml-[200px]' />
               <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>new!</button>
@@ -216,12 +225,12 @@ export default function Products() {
                 Anastasia Beverly Hills Blurring serum blush
               </h1>
               <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>4 219 ₽</h1>
-            </div>
+            </div> */}
 
 
 
             {/* слева-направо сумка */}
-            <div className='mt-[70px]'>
+            {/* <div className='mt-[70px]'>
               <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[270px] mt-[10px]' />
               <BsBasket className='absolute w-[30px] h-[25px] mt-[270px] ml-[270px]' />
               <button className=' bg-[#10ee48] text-[white] font-bold w-[40px] absolute ml-[70px] h-[40px]'>new!</button>
@@ -233,7 +242,7 @@ export default function Products() {
                 Coccinelle TEBE
               </h1>
               <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[70px]'>от 960 ₽</h1>
-            </div>
+            </div> */}
           </div>
 
           {/* 3 блок */}
@@ -260,7 +269,7 @@ export default function Products() {
             {/* справа-налево парфюм */}
             <div className='mt-[10px]'>
               <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[270px] mt-[10px]' />
-              <BsBasket className='absolute w-[30px] h-[25px] mt-[260px] ml-[270px]' />
+              <BsBasket className='absolute w-[30px] h-[25px] mt-[20px] ml-[270px]' />
               <button className='bg-[#cee313] text-[black] font-bold w-[40px] absolute ml-[70px] h-[40px]'>+gift</button>
               <img src={imageHovered === 'парфюм' ? img12Alt : img12} className='w-[240px] h-[300px] ml-[70px]' onMouseEnter={() => handleMouseEnter('парфюм')}
                 onMouseLeave={handleMouseLeave} />
