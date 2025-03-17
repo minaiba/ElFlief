@@ -1,4 +1,4 @@
-import React from 'react'
+
 import golden from '../../assets/aiba/ipp.webp'
 import { RiTelegramLine } from 'react-icons/ri'
 import { BiLogoWhatsapp } from 'react-icons/bi'
