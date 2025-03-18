@@ -14,7 +14,7 @@ import s5 from '../../assets/aiba/5swiper.png'
 import s6 from '../../assets/aiba/6swiper.png'
 import s7 from '../../assets/aiba/7swiper.png'
 import s8 from '../../assets/aiba/8swiper.png'
-
+import video1 from '../../assets/aiba/video.mp4' 
 
 
 const slides = [
@@ -62,6 +62,12 @@ const slides = [
     },
     { 
         id: 8, img: s8, 
+        title: "Специальные предложения недели", 
+        btn1Text: "Посмотреть", link1: "#promo8",
+        btn2Text: "Акции и карты", link2: "#cards8"
+    },
+    { 
+        id: 9, img: video1, 
         title: "Специальные предложения недели", 
         btn1Text: "Посмотреть", link1: "#promo8",
         btn2Text: "Акции и карты", link2: "#cards8"
