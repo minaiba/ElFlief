@@ -14,11 +14,11 @@ import Our from "../card/Our";
 export default function Home() {
   
   return (
-    <div className="mt-[30px] items-center justify-center w-[1400px] m-auto">
+    <div className="mt-[30px] items-center justify-center">
     <Carousel/>      
-    {/* <Stories/> */}
-    {/* <Shik/>
-    <Dalba/> */}
+    <Stories/>
+    <Shik/>
+    <Dalba/>
     <Our/>
 </div>
   )

@@ -1,94 +1,17 @@
-import React from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import shick from '../../assets/aiba/shik.webp'
-import shick1 from '../../assets/aiba/shik2.webp'
-import shick2 from '../../assets/aiba/shik3.webp'
-import shick3 from '../../assets/aiba/shik4.webp'
-import shick4 from '../../assets/aiba/shik5.webp'
-import shick5 from '../../assets/aiba/shik6.webp'
-import shick6 from '../../assets/aiba/shik7.webp'
 import { IoHeartOutline } from 'react-icons/io5'
 import { BsBasket } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick';
-
-const products = [
-    {
-      id: 1,
-      image: shick1,
-      name: "D'ALBA white truffle first spray serum",
-      description: "мультифункциональная спрей-сыворотка для лица",
-      price: "1850 P",
-      oldPrice: "3700 P",
-    },
-    {
-      id: 2,
-      image: shick2,
-      name: "D'ALBA white truffle moisturizing serum toner",
-      description: "увлажняющий тонер для сияния кожи",
-      price: "1850 P",
-      oldPrice: "3700 P",
-    },
-    {
-      id: 3,
-      image: shick3,
-      name: "D'ALBA truffle double layer revitalizing serum",
-      description: "премиум сыворотка для придания энергии и тонуса",
-      price: "3050 P",
-      oldPrice: "6100 P",
-    },
-    {
-      id: 4,
-      image: shick4,
-      name: "D'ALBA white truffle oil capsule cream",
-      description: "питательный крем для сияния кожи лица",
-      price: "3850 P",
-      oldPrice: "7700 P",
-    },
-    {
-      id: 5,
-      image: shick5,
-      name: "D'ALBA white truffle return oil cream cleanser",
-      description: "масло-пенка для глубоко очищения 2 в 1",
-      price: "2650 P",
-      oldPrice: "5300 P",
-    },
-    {
-      id: 6,
-      image: shick6,
-      name: "D'ALBA extra intensive",
-      description: "крем для области вокруг глаз",
-      price: "1850 P",
-      oldPrice: "3700 P",
-    },
-  ];
+import { products, settings } from './data';
 
 export default function Dalba() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: "70px",
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
   return (
-    <div className=" w-[1400px] m-auto">
-      <img src={shick} className="w-full max-w-[1400px]" alt="background" />
-      <div className="mt-6">
+    <div className=" w-[1400px] h-[700px] mb-[65px]  m-auto relative" >
+      <img src={shick} className="w-full max-w-[1400px] " alt="background" />
+      <div className="mt-6 w-[80%] absolute bottom-[0px] left-[10%]" >
         <Slider {...settings} className='flex gap-12'>
           {products.map((product) => (
             <div key={product.id} className="px-2">

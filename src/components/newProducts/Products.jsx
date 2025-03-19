@@ -51,7 +51,7 @@ import { IoHeartOutline } from "react-icons/io5";
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { Link } from 'react-router-dom';
 
 const denzo = [
   {
@@ -81,21 +81,52 @@ const denzo = [
 ]
 
 const categories = [
-  { id: 1, name: "Азия", image: img24Alt },
-  { id: 2, name: "Макияж", image: img88Alt },
-  { id: 3, name: "Волосы", image: img30Alt },
-  { id: 4, name: "Парфюмерия", image: img26Alt },
-  { id: 5, name: "Декорации", image: img29Alt },
-  { id: 6, name: "Техника", image: img28Alt },
-  { id: 7, name: "Одежда и аксессуары", image: img89Alt },
-  { id: 8, name: "Для дома", image: img31Alt },
+  {
+    id: 1,
+    name: "Азия",
+    image: img24Alt
+  },
+  {
+    id: 2,
+    name: "Макияж",
+    image: img88Alt
+  },
+  {
+    id: 3,
+    name: "Волосы",
+    image: img30Alt
+  },
+  {
+    id: 4,
+    name: "Парфюмерия",
+    image: img26Alt
+  },
+  {
+    id: 5,
+    name: "Декорации",
+    image: img29Alt
+  },
+  {
+    id: 6,
+    name: "Техника",
+    image: img28Alt
+  },
+  {
+    id: 7,
+    name: "Одежда и аксессуары",
+    image: img89Alt
+  },
+  {
+    id: 8,
+    name: "Для дома",
+    image: img31Alt
+  },
 ];
 
 export default function Products() {
   const [imageHovered, setImageHovered] = useState(null);
   const handleMouseEnter = (img) => setImageHovered(img);
   const handleMouseLeave = () => setImageHovered(null);
-
 
   const settings = {
     dots: false,
@@ -107,8 +138,6 @@ export default function Products() {
     autoplaySpeed: 3000,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 4, slidesToScroll: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 3, slidesToScroll: 1 } },
-      { breakpoint: 480, settings: { slidesToShow: 2, slidesToScroll: 1 } },
     ],
   };
 
@@ -122,20 +151,23 @@ export default function Products() {
 
           </div>
 
-   
-        {/* catalog */}
-   <div className='my-[60px]'> 
-        <Slider {...settings}>
-  {categories.map((cat) => (
-    <div key={cat.id} className="!flex flex-row items-center gap-4 cursor-pointer border border-gray-300 rounded-full">
-      <div className="w-[90px] h-[90px] rounded-full overflow-hidden flex items-center justify-center">
-        <img src={cat.image} alt={cat.name} className="w-full h-full object-cover" />
-      </div>
-      <h2 className="font-medium text-lg">{cat.name}</h2>
-    </div>
-  ))}
-</Slider>          
-   </div>
+
+          {/* catalog */}
+          <Link to='/catalog'>
+            <div className='my-[60px]'>
+              <Slider {...settings}>
+                {categories.map((cat) => (
+                  <div key={cat.id} className="!flex flex-row items-center gap-4 cursor-pointer border border-gray-300 rounded-full">
+                    <div className="w-[90px] h-[90px] rounded-full overflow-hidden flex items-center justify-center">
+                      <img src={cat.image} alt={cat.name} className="w-full h-full object-cover" />
+                    </div>
+                    <h2 className="font-medium text-lg">{cat.name}</h2>
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          </Link>
+
 
 
           <h2 className='justify-center items-center flex my-[40px] text-2xl'><span className='mr-[5px] font-bold'>10 221</span> продукт</h2>
@@ -421,7 +453,7 @@ export default function Products() {
               <button className='bg-[#0ee44e] text-[#bbbbbb] font-bold w-[40px] absolute h-[40px]'>new</button>
               <img src={img24} className='w-[300px] h-[300px]' />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
-              Ароматическая свеча</h3>
+                Ароматическая свеча</h3>
               <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>MAEMI ROUGE</h1>
 
               <h1 className='font-bold hover:text-[#9ca887] mt-[10px] ml-[240px]'>3 100 ₽</h1>
@@ -435,7 +467,7 @@ export default function Products() {
               <img src={imageHovered === 'b' ? img25Alt : img25} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('b')}
                 onMouseLeave={handleMouseLeave} />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
-              Косметологический аппарат</h3>
+                Косметологический аппарат</h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>GESS The One</h1>
               <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[230px]'>36 966 ₽</h1>
             </div>
@@ -446,16 +478,16 @@ export default function Products() {
               <IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' />
               <BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' />
               <div className='flex'>
-              <button className='bg-[#10ee48] text-[#141212] font-bold w-[40px] absolute h-[40px]'>new!</button>
-              <button className='bg-[#7f0aa9] text-[#e3e1e1] font-bold w-[40px] absolute h-[40px]'>only GA</button></div>
+                <button className='bg-[#10ee48] text-[#141212] font-bold w-[40px] absolute h-[40px]'>new!</button>
+                <button className='bg-[#7f0aa9] text-[#e3e1e1] font-bold w-[40px] absolute h-[40px]'>only GA</button></div>
               <img src={img26}
                 className='w-[300px] h-[300px]'
               />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>
-              Футболка
+                Футболка
               </h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-              MY BREAKFAST
+                MY BREAKFAST
               </h1>
               <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>от 3 825 ₽</h1>
             </div>
@@ -472,7 +504,7 @@ export default function Products() {
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>Машинка для стрижки
               </h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-              Panasonic ER-GB60-K520
+                Panasonic ER-GB60-K520
               </h1>
 
               {/* март -20% */}
@@ -535,4 +567,5 @@ export default function Products() {
         </div>
       </section>
     </div>
-  );}
+  );
+}
