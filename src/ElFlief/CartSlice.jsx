@@ -1,21 +1,18 @@
 
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = { activeSlide: 0 };
+
 const CosmoSlice = createSlice({
   name: 'Cosmo',
-  initialState: {
-    cartItem: []
-  },
+  initialState,
   reducers: {
-    addCart: (state, action) => {
-      const FindCosmo= state.cartItem.find((el) => el.id === action.payload.id);
-      if (!FindCosmo) {
-        state.cartItem.push({ ...action.payload, quantity: 1 });
-      } 
-    },
-    
-  }
+      setActiveSlide: (state, action) => {
+          state.activeSlide = action.payload;
+      },
+  },
 });
 
-export const { addCart } = CosmoSlice.actions;
+export const { setActiveSlide } = CosmoSlice.actions;
+
 export default CosmoSlice.reducer;

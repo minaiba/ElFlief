@@ -1,9 +1,8 @@
-import React from 'react'
+
 
 export default function Heart() {
-  return (
-    <div>
-      
-    </div>
-  )
+ return (
+  <div>
+  </div>
+ )
 }
