@@ -180,8 +180,8 @@ export default function Products() {
 
             {/* справа-налево праймер */}
             <div className=''>
-              <IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' />
-              <BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <button className='bg-[#c2387f] text-[white] font-bold w-[40px] absolute h-[40px]'>60%</button>
               <img src={imageHovered === 'праймер' ? img10Alt : img2} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('праймер')}
                 onMouseLeave={handleMouseLeave} />
@@ -197,8 +197,8 @@ export default function Products() {
 
             {/* справа-налево шампунь */}
             <div className='ml-[60px] w-[300px]'>
-              <IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' />
-              <BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <button className='bg-[#10ee48] w-[40px] h-[40px] text-[white] font-bold absolute'>new!</button>
               <img src={imageHovered === 'шампунь' ? img9Alt : img3} className='w-[300px] h-[300px] ' onMouseEnter={() => handleMouseEnter('шампунь')}
                 onMouseLeave={handleMouseLeave} />
@@ -211,6 +211,8 @@ export default function Products() {
 
             {/* зубная паста */}
             <div className='ml-[90px]'>
+            <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[605px] mt-[20px]' /></Link>
+            <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] ml-[605px] mt-[560px]' /></Link>
               <img
                 src={imageHovered === 'toothpaste' ? img8Alt : img4}
                 className='h-[600px] w-[650px] '
@@ -230,6 +232,8 @@ export default function Products() {
             {/* крем для рук */}
 
             <div className='mt-[-130px] w-[650px]' >
+            <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[605px] mt-[20px]' /></Link>
+            <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] ml-[605px] mt-[560px]' /></Link>
               <button className='bg-[#dadd0e] text-[black] font-bold w-[45px] h-[40px] absolute'>+gift!</button>
               <img src={img5} className='h-[600px] w-[650px]' />
               <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px]  ml-[150px]'>Крем для рук и ног</p>
@@ -240,8 +244,8 @@ export default function Products() {
 
             {/* слева-направо румяна */}
             <div className='ml-[90px] mt-[90px]' onMouseEnter={() => handleMouseEnter('blush')} onMouseLeave={handleMouseLeave}>
-              <IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' />
-              <BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>new!</button>
               <img
                 src={imageHovered === 'blush' ? img7Alt : img6}
@@ -260,8 +264,8 @@ export default function Products() {
 
             {/* слева-направо сумка */}
             <div className='ml-[60px] mt-[90px]'>
-              <IoHeartOutline className='absolute  ml-[265px] mt-[90px] w-[20px] h-[20px]' />
-              <BsBasket className='absolute ml-[265px] mt-[347px] w-[20px] h-[20px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute  ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <button className='absolute mt-[80px] bg-[#10ee48] w-[40px] h-[40px] text-[white] font-bold'>new!</button>
               <img src={img7} className='w-[300px] h-[300px] ' />
               <h3 className=' hover:text-[#9ca887] font-mono mt-[16px]' style={{ direction: 'ltr', textAlign: 'left' }}>
@@ -280,8 +284,8 @@ export default function Products() {
 
             {/* справа-налево румяна */}
             <div className=''>
-              <IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' />
-              <BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <button className='bg-[#0ee44e] text-[black] font-bold w-[40px] absolute h-[40px]'>new!</button>
               <img src={img13} className='w-[300px] h-[300px]' />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
@@ -297,8 +301,8 @@ export default function Products() {
 
             {/* справа-налево парфюм */}
             <div className='ml-[60px] w-[300px]'>
-              <IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' />
-              <BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <button className='bg-[#cee313] text-[black] w-[40px] h-[40px]  font-bold absolute'>gift</button>
               <img src={imageHovered === 'парфюм' ? img12Alt : img12} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('парфюм')}
                 onMouseLeave={handleMouseLeave} />
@@ -311,7 +315,9 @@ export default function Products() {
 
             {/* набор */}
             <div className='ml-[90px]'>
-              <button className='bg-[#0ee44e] text-[black] font-bold w-[40px] absolute ml-[94px] mt-[15px] h-[40px]'>new!</button>
+              <button className='bg-[#0ee44e] text-[black] font-bold w-[40px] absolute h-[40px]'>new!</button>
+              <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[605px] mt-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] ml-[605px] mt-[560px]' /></Link>
               <img
                 src={imageHovered === 'набор' ? img11Alt : img11}
                 className=' h-[600px] w-[650px]'
@@ -329,12 +335,12 @@ export default function Products() {
 
 
 
-          {/* 4 блок */}
+          {/* 4 блок  finish*/}  
 
           <div className='flex mt-[100px]'>
             <div className=''>
-              <IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' />
-              <BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <button className='bg-[#0ee44e] text-[black] font-bold w-[40px] absolute h-[40px]'>new</button>
               <img src={img14} className='w-[300px] h-[300px]' />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
@@ -346,8 +352,8 @@ export default function Products() {
 
 
             <div className='ml-[60px] w-[300px]'>
-              <IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' />
-              <BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <button className='bg-[#5deb0a] text-[black] font-bold w-[40px] absolute h-[40px]'>new!</button>
               <img src={imageHovered === 'night' ? img15Alt : img15} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('night')}
                 onMouseLeave={handleMouseLeave} />
@@ -360,8 +366,8 @@ export default function Products() {
 
 
             <div className='ml-[90px] w-[300px]'>
-              <IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' />
-              <BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>10%</button>
               <img src={img16}
                 className='w-[300px] h-[300px]'
@@ -376,8 +382,8 @@ export default function Products() {
 
 
             <div className='w-[300px] ml-[60px]' onMouseEnter={() => handleMouseEnter('sumka')} onMouseLeave={handleMouseLeave}>
-              <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[200px] mt-[10px]' />
-              <BsBasket className='absolute w-[30px] h-[25px] mt-[250px] ml-[200px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
               <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>new!</button>
               <img
                 src={imageHovered === 'sumka' ? img17Alt : img17}
@@ -400,8 +406,8 @@ export default function Products() {
           <div className='flex mt-[100px] '>
 
             <div className='w-[300px]'>
-              <IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' />
-              <BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
               <button className='bg-[#49f20b] text-[black] font-bold w-[40px] absolute h-[40px]'>new</button>
               <img src={imageHovered === 'bee' ? img18Alt : img18} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('bee')}
                 onMouseLeave={handleMouseLeave} />
@@ -415,8 +421,8 @@ export default function Products() {
 
 
             <div className='w-[300px] ml-[60px]'>
-              <IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' />
-              <BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
               <button className='bg-[#b60ca7] text-[white] font-bold w-[40px] absolute h-[40px]'>new</button>
               <img src={imageHovered === 'termo' ? img19Alt : img19} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('termo')}
                 onMouseLeave={handleMouseLeave} />
@@ -433,6 +439,8 @@ export default function Products() {
               <p className='hover:text-[#9ca887] absolute font-mono mt-[40px] ml-[400px]'>Набор открыток</p>
               <h1 className='hover:text-[#9ca887] absolute text-4xl mt-[70px]  w-[250px] font-medium ml-[400px]' >aespa Armageddon: The Mystery Circle POSTCARD SET GISELLE Ver.</h1>
               <h1 className='font-bold hover:text-[#9ca887] text-2xl absolute mt-[330px] ml-[400px]'>2 130 ₽</h1>
+              <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[460px] mt-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] ml-[460px] mt-[380px]' /></Link>
               <img
                 src={imageHovered === 'kor' ? img20Alt : img20}
                 className='h-[420px] w-[500px]'
@@ -448,8 +456,8 @@ export default function Products() {
 
           <div className='flex mt-[100px]'>
             <div className=''>
-              <IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' />
-              <BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <button className='bg-[#0ee44e] text-[#bbbbbb] font-bold w-[40px] absolute h-[40px]'>new</button>
               <img src={img24} className='w-[300px] h-[300px]' />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
@@ -461,8 +469,8 @@ export default function Products() {
 
 
             <div className='ml-[60px] w-[300px]'>
-              <IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' />
-              <BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <button className='bg-[#a503a3] text-[#bababa] font-bold w-[40px] absolute h-[40px]'>15%</button>
               <img src={imageHovered === 'b' ? img25Alt : img25} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('b')}
                 onMouseLeave={handleMouseLeave} />
@@ -475,8 +483,8 @@ export default function Products() {
 
 
             <div className='ml-[90px] w-[300px]'>
-              <IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' />
-              <BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <div className='flex'>
                 <button className='bg-[#10ee48] text-[#141212] font-bold w-[40px] absolute h-[40px]'>new!</button>
                 <button className='bg-[#7f0aa9] text-[#e3e1e1] font-bold w-[40px] absolute h-[40px]'>only GA</button></div>
@@ -494,8 +502,8 @@ export default function Products() {
 
 
             <div className='w-[300px] ml-[60px]' onMouseEnter={() => handleMouseEnter('d')} onMouseLeave={handleMouseLeave}>
-              <IoHeartOutline className='absolute w-[30px] h-[25px] ml-[200px] mt-[10px]' />
-              <BsBasket className='absolute w-[30px] h-[25px] mt-[250px] ml-[200px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
               <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>new!</button>
               <img
                 src={imageHovered === 'd' ? img27Alt : img27}
@@ -518,19 +526,21 @@ export default function Products() {
           <div className='flex mt-[100px] '>
 
             <div className=''>
-              <button className='bg-[#5cd908] text-[black] font-bold w-[55px] absolute mt-[-120px] h-[55px]'>new!</button>
+              
               <p className='hover:text-[#9ca887] absolute font-mono mt-[80px] ml-[100px]'>
                 Наушники</p>
               <h1 className='hover:text-[#9ca887] absolute text-4xl w-[250px] mt-[130px]  font-medium ' >Apple AirPods 3 with MagSafe Charging Case</h1>
               <h1 className='font-bold hover:text-[#9ca887] absolute text-2xl mt-[310px] '>19 410 ₽</h1>
+              <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[605px] mt-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] ml-[605px] mt-[380px]' /></Link>
               <img src={img21} className='h-[420px] w-[500px] ml-[150px]' />
 
 
             </div>
 
             <div className='w-[300px] ml-[90px]' onMouseEnter={() => handleMouseEnter('fen')} onMouseLeave={handleMouseLeave}>
-              <IoHeartOutline className='absolute w-[20px] h-[20px] mt-[10px]  ml-[265px] ' />
-              <BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] mt-[10px]  ml-[265px] ' /></Link>
+              <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
               <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>new!</button>
               <img
                 src={imageHovered === 'fen' ? img23Alt : img23}
@@ -548,8 +558,8 @@ export default function Products() {
 
 
             <div className='w-[300px] ml-[60px]' onMouseEnter={() => handleMouseEnter('piala')} onMouseLeave={handleMouseLeave}>
-              <IoHeartOutline className='absolute w-[20px] h-[20px] mt-[10px]  ml-[265px] ' />
-              <BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' />
+              <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] mt-[10px]  ml-[265px] ' /></Link>
+              <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
               <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>new!</button>
               <img
                 src={imageHovered === 'piala' ? img22Alt : img22}
