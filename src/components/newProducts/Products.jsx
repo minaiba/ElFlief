@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import img1 from '../../assets/gulasyl/ovinka.png';
 import img2 from '../../assets/gulasyl/прайм.webp';
@@ -36,17 +35,112 @@ import img18Alt from '../../assets/gulasyl/bee2.webp';
 import img19Alt from '../../assets/gulasyl/termo2.webp';
 import img20Alt from '../../assets/gulasyl/kor2.webp';
 import img22Alt from '../../assets/gulasyl/piala2.webp';
+import img24Alt from '../../assets/aiba/asia.webp';
 import img23Alt from '../../assets/gulasyl/fen2.webp';
+import img88Alt from '../../assets/aiba/makeup.webp';
+import img26Alt from '../../assets/aiba/parfume.webp';
+import img89Alt from '../../assets/aiba/clothes.webp';
+import img28Alt from '../../assets/aiba/technic.webp';
+import img29Alt from '../../assets/aiba/decoration.webp';
+import img30Alt from '../../assets/aiba/hair.webp';
+import img31Alt from '../../assets/aiba/home.webp';
 import img25Alt from '../../assets/gulasyl/аппарат2.webp';
 import img27Alt from '../../assets/gulasyl/машинка2.webp';
 import { BsBasket } from "react-icons/bs";
 import { IoHeartOutline } from "react-icons/io5";
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
+
+const denzo = [
+  {
+    title: 'набор для ванной',
+    text: 'DENEZO Alys',
+    price: '3 989 ₽',
+    img: img14
+  },
+  {
+    title: 'Ночной крем для восстановления сияния',
+    text: 'Go Tapa Radiant night',
+    price: '790 ₽',
+    img: img15
+  },
+  {
+    title: 'брошь',
+    text: 'Stone Philosophy Autumn leaves',
+    price: '4 500 ₽',
+    img: img16
+  },
+  {
+    title: 'сумка кросс-боди',
+    text: 'DKNY BRYANT AVE TZ DEMI C',
+    price: '21 000 ₽',
+    img: img17
+  },
+]
+
+const categories = [
+  {
+    id: 1,
+    name: "Азия",
+    image: img24Alt
+  },
+  {
+    id: 2,
+    name: "Макияж",
+    image: img88Alt
+  },
+  {
+    id: 3,
+    name: "Волосы",
+    image: img30Alt
+  },
+  {
+    id: 4,
+    name: "Парфюмерия",
+    image: img26Alt
+  },
+  {
+    id: 5,
+    name: "Декорации",
+    image: img29Alt
+  },
+  {
+    id: 6,
+    name: "Техника",
+    image: img28Alt
+  },
+  {
+    id: 7,
+    name: "Одежда и аксессуары",
+    image: img89Alt
+  },
+  {
+    id: 8,
+    name: "Для дома",
+    image: img31Alt
+  },
+];
+
 
 export default function Products() {
   const [imageHovered, setImageHovered] = useState(null);
   const handleMouseEnter = (img) => setImageHovered(img);
   const handleMouseLeave = () => setImageHovered(null);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 4, slidesToScroll: 2 } },
+    ],
+  };
 
   return (
     <div>
@@ -57,7 +151,29 @@ export default function Products() {
             <img src={img1} className='' />
 
           </div>
-          <h2 className='text-center'>10 221 продукт</h2>
+
+
+          {/* catalog */}
+          <Link to='/catalog'>
+            <div className='my-[60px]'>
+              <Slider {...settings}>
+                {categories.map((cat) => (
+                  <div key={cat.id} className="!flex flex-row items-center gap-4 cursor-pointer border border-gray-300 rounded-full">
+                    <div className="w-[90px] h-[90px] rounded-full overflow-hidden flex items-center justify-center">
+                      <img src={cat.image} alt={cat.name} className="w-full h-full object-cover" />
+                    </div>
+                    <h2 className="font-medium text-lg">{cat.name}</h2>
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          </Link>
+
+
+
+          <h2 className='justify-center items-center flex my-[40px] text-2xl'><span className='mr-[5px] font-bold'>10 221</span> продукт</h2>
+
+
 
 
           {/* 1 блок */}
@@ -332,8 +448,6 @@ export default function Products() {
                 onMouseEnter={() => handleMouseEnter('kor')}
                 onMouseLeave={handleMouseLeave}
               />
-
-
             </div>
           </div>
 
@@ -348,7 +462,7 @@ export default function Products() {
               <button className='bg-[#0ee44e] text-[#bbbbbb] font-bold w-[40px] absolute h-[40px]'>new</button>
               <img src={img24} className='w-[300px] h-[300px]' />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
-              Ароматическая свеча</h3>
+                Ароматическая свеча</h3>
               <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>MAEMI ROUGE</h1>
 
               <h1 className='font-bold hover:text-[#9ca887] mt-[10px] ml-[240px]'>3 100 ₽</h1>
@@ -362,7 +476,7 @@ export default function Products() {
               <img src={imageHovered === 'b' ? img25Alt : img25} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('b')}
                 onMouseLeave={handleMouseLeave} />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
-              Косметологический аппарат</h3>
+                Косметологический аппарат</h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>GESS The One</h1>
               <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[230px]'>36 966 ₽</h1>
             </div>
@@ -373,16 +487,16 @@ export default function Products() {
               <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
               <Link to="/cart"><BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <div className='flex'>
-              <button className='bg-[#10ee48] text-[#141212] font-bold w-[40px] absolute h-[40px]'>new!</button>
-              <button className='bg-[#7f0aa9] text-[#e3e1e1] font-bold w-[40px] absolute h-[40px]'>only GA</button></div>
+                <button className='bg-[#10ee48] text-[#141212] font-bold w-[40px] absolute h-[40px]'>new!</button>
+                <button className='bg-[#7f0aa9] text-[#e3e1e1] font-bold w-[40px] absolute h-[40px]'>only GA</button></div>
               <img src={img26}
                 className='w-[300px] h-[300px]'
               />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>
-              Футболка
+                Футболка
               </h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-              MY BREAKFAST
+                MY BREAKFAST
               </h1>
               <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>от 3 825 ₽</h1>
             </div>
@@ -399,7 +513,7 @@ export default function Products() {
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>Машинка для стрижки
               </h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-              Panasonic ER-GB60-K520
+                Panasonic ER-GB60-K520
               </h1>
 
               {/* март -20% */}

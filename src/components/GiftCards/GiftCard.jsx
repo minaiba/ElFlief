@@ -173,16 +173,23 @@ import bg from '../../assets/gulasyl/carto.webp'
 
 function GiftCard() {
   return (
-    <div>
-      <div className='w-[1400px] m-auto flex'  style={{
+    <div className='w-[1400px] m-auto flex'>
+      <div className='w-[1400px] m-auto flex gap-[250px] '  style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center', 
         height: '600px',}}>
           <div>
-            <h1>Электронная карта</h1>
+            {/* <h1 className='text-right rtl  w-[100px] ml-[350px] mt-[50px] hover:text-5xl transition-all font-bold text-5xl duration-300'>Электронная карта</h1> */}
+            <h1 className="w-[100px] ml-[470px] mt-[50px] hover:text-7xl transition-all font-bold text-5xl duration-300" style={{ direction: 'rtl', textAlign: 'right' }}>
+  Электронная карта
+</h1>
+
+            <img src="" alt="" />
           </div>
-          <div></div>
+          <div>
+            <h1 className=' hover:text-7xl  text-5xl mt-[50px] transition-all font-bold duration-300 w-[100px]'>Пластиковая карта</h1>
+          </div>
 
       </div>
     </div>
