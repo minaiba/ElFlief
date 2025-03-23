@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { IoHeartOutline } from "react-icons/io5";
 import { GoPerson } from "react-icons/go";
 import { BsBasket } from "react-icons/bs";
 import photo from '../../assets/aiba/logo.webp'
+
+
 
 
 export default function Header() {
@@ -25,7 +27,7 @@ export default function Header() {
               <li><Link to="/discounts">Скидки до -50%</Link></li>
               <div className='flex ml-[80px] gap-[25px]'>
               <Link to="/favorites"><IoHeartOutline /></Link>
-              <Link to="/profile"><GoPerson /></Link>
+              <Link to="/profile"><GoPerson /></Link>    
               <Link to="/cart"><BsBasket /></Link>                
               </div>
 

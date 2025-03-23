@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import togo from "../../assets/syrgak/teens.logo.png";
+import Carusel from "./Carusel";
 
 export default function Teens({className}) {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +11,7 @@ export default function Teens({className}) {
 
   return (
     <div className="relative w-[1400px] m-auto">
+      <Carusel/>
       {/* Нижняя панель с кнопкой и логотипом */}
       <div className="w-full bg-black py-3 px-4 flex items-center justify-between sticky bottom-0 z-50">
         <button onClick={toggleMenu} className="text-white text-2xl">☰</button>

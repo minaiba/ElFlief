@@ -142,14 +142,15 @@ export default function Products() {
   };
 
   return (
-    <div>
-      <section>
+    <div className='mt-[10px]'>
         <div className='w-[1400px] m-auto'>
-          <div>
-            <h1 className='text-6xl absolute font-bold text-[#646464] mt-[410px]  ml-[730px]'>новинки</h1>
-            <img src={img1} className='' />
 
-          </div>
+        <div className="relative">
+      <img src={img1} className="w-full h-full object-cover rounded-lg" alt="" />
+      <h1 className="text-6xl font-bold text-[#646464] absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
+        новинки
+      </h1>
+    </div>
 
 
           {/* catalog */}
@@ -575,7 +576,6 @@ export default function Products() {
             </div>
           </div>
         </div>
-      </section>
     </div>
   );
 }

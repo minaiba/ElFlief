@@ -3,8 +3,9 @@ import elf from '../../assets/aiba/elf.png'
 
 export default function Tamagochi() {
   return (
-    <div className='bg-[#C6E400] flex items-center justify-center m-auto pb-[60px] w-[1400px] mt-[30px]'>
-        <div className="text-center">
+    <div className='bg-[#C6E400] pb-[60px] flex items-center mt-[30px] justify-center '>
+        <div className='m-auto w-[1400px] '>
+    <div className="text-center">
             <img src={elf} alt="Эльф" className="mx-auto w-[400px]" />
             <div className="bg-white p-6 rounded-[20px] w-[500px] shadow-lg mt-6">
                 <p className="text-gray-700 mb-4">
@@ -14,7 +15,9 @@ export default function Tamagochi() {
                     ЗАРЕГИСТРИРОВАТЬСЯ
                 </button>
             </div>
+        </div>            
         </div>
+    
     </div>
   );
 }
