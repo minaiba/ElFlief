@@ -38,9 +38,9 @@ import ka18 from '../../assets/gulasyl/wor2.webp'
 // import { useState } from "react";
 export default function GiftCard() {
 
-   const [imageHovered, setImageHovered] = useState(null);
-    const handleMouseEnter = (img) => setImageHovered(img);
-    const handleMouseLeave = () => setImageHovered(null);
+  const [imageHovered, setImageHovered] = useState(null);
+  const handleMouseEnter = (img) => setImageHovered(img);
+  const handleMouseLeave = () => setImageHovered(null);
   const [isModalOpen, setModalOpen] = useState(false);
   const [formData, setFormData] = useState({ phone: '', message: '', time: '', payment: '', address: '', language: 'ru' });
 
@@ -54,30 +54,33 @@ export default function GiftCard() {
   return (
     <div className=''>
 
-      <div className='flex w-[1400px] m-auto ' style={{
+      <div className='' style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '600px',
       }}>
-        <div>
-          <h1 className="w-[100px] absolute ml-[470px] mt-[50px] hover:text-7xl transition-all font-extrabold text-5xl duration-300" style={{ direction: 'rtl', textAlign: 'right' }}>
-            Электронная карта
-          </h1>
-          <img src={main} className='w-[400px] h-[250px] rounded-2xl mt-[200px] ml-[200px] bg-pink-200 transition-transform duration-400 hover:translate-y-[-20px]' />
-        </div>
-        <div className='ml-[250px]'>
-          <h1 className='absolute hover:text-7xl  text-5xl mt-[50px] transition-all font-extrabold duration-300 w-[100px]'>Пластиковая карта</h1>
-          <div className="flex gap-4 mt-[200px]">
-            <img src={mnogo} className="w-[250px] h-[180px] bg-pink-200 rounded-2xl transform  rotate-[-5deg] mt-[70px] transition-transform duration-300 hover:translate-y-[-10px]" />
-            <img src={mnogo2} className="w-[250px] h-[180px] bg-pink-200 rounded-2xl transform rotate-[35deg] ml-[-80px] mt-[-50px] transition-transform duration-300 hover:translate-y-[-10px]" />
+        <div className='w-[1400px] m-auto flex'>
+          <div>
+            <h1 className="w-[100px] absolute ml-[470px] mt-[50px] hover:text-7xl transition-all font-extrabold text-5xl duration-300" style={{ direction: 'rtl', textAlign: 'right' }}>
+              Электронная карта
+            </h1>
+            <img src={main} className='w-[400px] h-[250px] rounded-2xl mt-[200px] ml-[200px] bg-pink-200 transition-transform duration-400 hover:translate-y-[-20px]' />
+          </div>
+          <div className='ml-[250px]'>
+            <h1 className='absolute hover:text-7xl  text-5xl mt-[50px] transition-all font-extrabold duration-300 w-[100px]'>Пластиковая карта</h1>
+            <div className="flex gap-4 mt-[200px]">
+              <img src={mnogo} className="w-[250px] h-[180px] bg-pink-200 rounded-2xl transform  rotate-[-5deg] mt-[70px] transition-transform duration-300 hover:translate-y-[-10px]" />
+              <img src={mnogo2} className="w-[250px] h-[180px] bg-pink-200 rounded-2xl transform rotate-[35deg] ml-[-80px] mt-[-50px] transition-transform duration-300 hover:translate-y-[-10px]" />
+            </div>
           </div>
         </div>
       </div>
+
       <section>
-        <div className='w-[1400px] m-auto'>
+        <div className=''>
           <h1 className="text-4xl font-bold uppercase mt-[30px] text-gray-800 text-center mb-12">Выбери дизайн карты</h1>
-          <div className="flex w-full h-[700px]">
+          <div className="flex w-full h-[700px] w-[1400px] m-auto">
             <div className="flex-1 bg-center bg-cover transition-all duration-500  bg-amber-700 hover:flex-[7]" style={{ backgroundImage: `url(${с1})` }}></div>
             <div className="flex-1 bg-center bg-cover transition-all duration-500 hover:flex-[7] bg-fuchsia-300" style={{ backgroundImage: `url(${с2})` }}></div>
             <div className="flex-1 bg-center bg-cover transition-all duration-500 hover:flex-[7] bg-purple-400" style={{ backgroundImage: `url(${с3})` }}></div>
@@ -128,7 +131,7 @@ export default function GiftCard() {
               <img src={imageHovered === 'night' ? ca4 : ka10} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('night')}
                 onMouseLeave={handleMouseLeave} />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
-пластиковая подарочная карта</h3>
+                пластиковая подарочная карта</h3>
               <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>GOLD APPLE gift card</h1>
 
               <h1 className='font-bold hover:text-[#9ca887] mt-[10px] ml-[230px]'>10 000 ₽</h1>
@@ -141,7 +144,7 @@ export default function GiftCard() {
               <img src={imageHovered === 'nigt' ? ka1 : ka2} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nigt')}
                 onMouseLeave={handleMouseLeave} />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
-пластиковая подарочная карта</h3>
+                пластиковая подарочная карта</h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>GOLD APPLE gift card</h1>
               <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[230px]'>3 000 ₽</h1>
             </div>
@@ -152,12 +155,12 @@ export default function GiftCard() {
               <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
               <Link to="/cart"><BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <img src={imageHovered === 'nigh' ? ca6 : ca5} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nigh')}
-                onMouseLeave={handleMouseLeave} 
+                onMouseLeave={handleMouseLeave}
               />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>пластиковая подарочная карта
               </h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-              GOLD APPLE gift card
+                GOLD APPLE gift card
               </h1>
               <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>5 000 ₽</h1>
             </div>
@@ -172,10 +175,10 @@ export default function GiftCard() {
               />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>
 
-              пластиковая подарочная карта
+                пластиковая подарочная карта
               </h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-              GOLD APPLE gift card
+                GOLD APPLE gift card
               </h1>
               <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>2 000 ₽</h1>
             </div>
@@ -187,7 +190,7 @@ export default function GiftCard() {
               <img src={imageHovered === 'nig' ? ka12 : ka11} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nig')}
                 onMouseLeave={handleMouseLeave} />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
-пластиковая подарочная карта</h3>
+                пластиковая подарочная карта</h3>
               <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>GOLD APPLE gift card</h1>
 
               <h1 className='font-bold hover:text-[#9ca887] mt-[10px] ml-[240px]'>4 000 ₽</h1>
@@ -200,7 +203,7 @@ export default function GiftCard() {
               <img src={imageHovered === 'ni' ? ka13 : ka14} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('ni')}
                 onMouseLeave={handleMouseLeave} />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
-пластиковая подарочная карта</h3>
+                пластиковая подарочная карта</h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>GOLD APPLE gift card</h1>
               <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[200px]'>10 000 ₽</h1>
             </div>
@@ -211,12 +214,12 @@ export default function GiftCard() {
               <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
               <Link to="/cart"><BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
               <img src={imageHovered === 'n' ? ka16 : ka15} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('n')}
-                onMouseLeave={handleMouseLeave} 
+                onMouseLeave={handleMouseLeave}
               />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>пластиковая подарочная карта
               </h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-              GOLD APPLE gift card
+                GOLD APPLE gift card
               </h1>
               <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px]'>5 000 ₽</h1>
             </div>
@@ -231,10 +234,10 @@ export default function GiftCard() {
               />
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>
 
-              пластиковая подарочная карта
+                пластиковая подарочная карта
               </h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-              GOLD APPLE gift card
+                GOLD APPLE gift card
               </h1>
               <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>1 000 ₽</h1>
             </div>
