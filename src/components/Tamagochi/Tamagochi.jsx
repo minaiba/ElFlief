@@ -3,19 +3,22 @@ import elf from '../../assets/aiba/elf.png'
 
 export default function Tamagochi() {
   return (
-    <div className='bg-[#C6E400] flex items-center justify-center m-auto pb-[60px] w-[1400px] mt-[30px]'>
+<div className="bg-[#C6E400] pb-[60px] flex items-center mt-[30px] justify-center">
+    <div className="m-auto w-full max-w-[1400px] px-4">
         <div className="text-center">
-            <img src={elf} alt="Эльф" className="mx-auto w-[400px]" />
-            <div className="bg-white p-6 rounded-[20px] w-[500px] shadow-lg mt-6">
-                <p className="text-gray-700 mb-4">
+            <img src={elf} alt="Эльф" className="m-auto w-[300px] sm:w-[400px]" />
+            <div className="bg-white m-auto p-6 rounded-[20px] w-full sm:w-[500px] shadow-lg mt-6">
+                <p className="text-gray-700 mb-4 text-sm sm:text-base">
                     Теперь у тебя есть свой Эльф, о котором нужно заботиться! Ухаживай за ним, делай бьюти-рутины, украшай его комнату и покупай стильную одежду. Чем больше ты ухаживаешь за Эльфом, тем быстрее он станет самым крутым в рейтинге среди других игроков!
                 </p>
                 <button className="bg-[#C6E400] text-white font-bold py-2 px-6 rounded-lg hover:bg-lime-600">
                     ЗАРЕГИСТРИРОВАТЬСЯ
                 </button>
             </div>
-        </div>
+        </div>            
     </div>
+</div>
+
   );
 }
 

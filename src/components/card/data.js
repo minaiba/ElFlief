@@ -1,4 +1,16 @@
 import afina from '../../assets/aiba/afina.webp'
+import banana1 from '../../assets/aiba/banana1.webp'
+import banana2 from '../../assets/aiba/bananaT.webp'
+import banana3 from '../../assets/aiba/banana3.webp'
+import banana4 from '../../assets/aiba/bananaM.webp'
+import banana5 from '../../assets/aiba/banana5.webp'
+import banana6 from '../../assets/aiba/banana6.webp'
+import pikky1 from '../../assets/aiba/pikky1.webp'
+import pikky2 from '../../assets/aiba/pikky2.webp'
+import pikky3 from '../../assets/aiba/pikky3.webp'
+import pikky4 from '../../assets/aiba/pikky4.webp'
+import pikky5 from '../../assets/aiba/pikky5.webp'
+import pikky6 from '../../assets/aiba/pikky6.webp'
 import image1 from '../../assets/aiba/fullhd.webp'
 import image2 from '../../assets/aiba/fullhd2.webp'
 import image3 from '../../assets/aiba/fullhd3.webp'
@@ -33,6 +45,12 @@ import shick3 from '../../assets/aiba/shik4.webp'
 import shick4 from '../../assets/aiba/shik5.webp'
 import shick5 from '../../assets/aiba/shik6.webp'
 import shick6 from '../../assets/aiba/shik7.webp'
+import dalba1 from '../../assets/aiba/dalba1.webp'
+import dalba2 from '../../assets/aiba/dalba2.webp'
+import dalba3 from '../../assets/aiba/dalba3.webp'
+import dalba4 from '../../assets/aiba/dalba4.webp'
+import dalba5 from '../../assets/aiba/dalba5.webp'
+import dalba6 from '../../assets/aiba/dalba6.webp'
 
 export const news = [
     {
@@ -515,18 +533,117 @@ export const news = [
     },
 ]
 
+export const pro = [
+        {
+            id: 1,
+            image: shick1,
+            name: "SHIK Total repair balm",
+            description: "SHIK Восстанавливающий бальзам для губ SPF 15",
+            price: "549 P",
+            oldPrice: "888 P",
+        },
+        {
+            id: 2,
+            image: shick3,
+            name: "SHIK Eyebrow & lashes",
+            description: "Сыворотка для бровей и ресниц",
+            price: "565 ₽",
+            oldPrice: "912 ₽",
+        },
+        {
+            id: 3,
+            image: shick2,
+            name: "SHIK Total repair balm",
+            description: "Восстанавливающий бальзам для губ SPF 15",
+            price: "622 ₽",
+            oldPrice: "889 ₽",
+        },
+        {
+            id: 4,
+            image: shick4,
+            name: "SHIK PRO HAND CREAM HYDRATING",
+            description: "Крем для рук увлажняющий",
+            price: "171 P",
+            oldPrice: "212 P",
+        },
+        {
+            id: 5,
+            image: shick6,
+            name: "SHIK Cellular complex repair eye cream",
+            description: "Крем для кожи вокруг глаз",
+            price: "806 ₽",
+            oldPrice: "1 344 ₽",
+        },
+        {
+            id: 6,
+            image: shick5,
+            name: "SHIK Hydrating moisturizing emulsion",
+            description: "Увлажняющая эмульсия",
+            price: "883 ₽",
+            oldPrice: "1 767 ₽",
+        },
+    ];
+    
+export const banan = [
+    {
+        id: 1,
+        image: banana1,
+        name: "BANANA REPUBLIC Dark Cherry & Amber",
+        description: "парфюмерная вода",
+        price: "6228 P",
+        oldPrice: "8628 P",
+    },
+    {
+        id: 2,
+        image: banana2,
+        name: "BANANA REPUBLIC Metal Rain. Gino Percontino.",
+        description: "парфюмерная вода",
+        price: "4582 P",
+    },
+    {
+        id: 3,
+        image: banana3,
+        name: "BANANA REPUBLIC Gardenia & Cardamom",
+        description: "парфюмерная вода",
+        price: "4152 P",
+        oldPrice: "8305 P",
+    },
+    {
+        id: 4,
+        image: banana4,
+        name: "BANANA REPUBLIC Tobacco & Tonka Bean",
+        description: "парфюмерная вода",
+        price: "4582 P",
+    },
+    {
+        id: 5,
+        image: banana5,
+        name: "BANANA REPUBLIC Peony & Peppercorn",
+        description: "парфюмерная вода",
+        price: "4152 P",
+        oldPrice: "8305 P",
+    },
+    {
+        id: 6,
+        image: banana6,
+        name: "BANANA REPUBLIC TUBEROSE OVERDOSE",
+        description: "парфюмерная вода",
+        price: "7248 P",
+    },
+];
+
 export const products = [
     {
         id: 1,
-        image: shick1,
-        name: "D'ALBA white truffle first spray serum",
-        description: "мультифункциональная спрей-сыворотка для лица",
+        image: dalba1,
+        name: "D'ALBA white truffle first spray serum face",
+        description: "спрей-сыворотка для лица",
         price: "1850 P",
         oldPrice: "3700 P",
     },
     {
         id: 2,
-        image: shick2,
+        image: dalba2,
         name: "D'ALBA white truffle moisturizing serum toner",
         description: "увлажняющий тонер для сияния кожи",
         price: "1850 P",
@@ -534,54 +651,79 @@ export const products = [
     },
     {
         id: 3,
-        image: shick3,
+        image: dalba3,
         name: "D'ALBA truffle double layer revitalizing serum",
-        description: "премиум сыворотка для придания энергии и тонуса",
+        description: "сыворотка для придания энергии и тонуса",
         price: "3050 P",
         oldPrice: "6100 P",
     },
     {
         id: 4,
-        image: shick4,
-        name: "D'ALBA white truffle oil capsule cream",
+        image: dalba4,
+        name: "D'ALBA white truffle oil capsule cream face",
         description: "питательный крем для сияния кожи лица",
         price: "3850 P",
         oldPrice: "7700 P",
     },
     {
         id: 5,
-        image: shick5,
-        name: "D'ALBA white truffle return oil cream cleanser",
+        image: dalba5,
+        name: "D'ALBA truffle return oil cream cleanser 2/1",
         description: "масло-пенка для глубоко очищения 2 в 1",
         price: "2650 P",
         oldPrice: "5300 P",
     },
     {
         id: 6,
-        image: shick6,
-        name: "D'ALBA extra intensive",
+        image: dalba6,
+        name: "D'ALBA white eye cream 2/1 extra intensive",
         description: "крем для области вокруг глаз",
         price: "1850 P",
         oldPrice: "3700 P",
     },
 ];
 
-export const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: "70px",
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 1,
-            },
-        },
-    ],
-};
+export const pikky = [
+    {
+        id: 1,
+        image: pikky1,
+        name: "Nudibranches JELLY FISH! ice cream flavor jelly soap",
+        description: "Мыло-желе",
+        price: "720 P",
+    },
+    {
+        id: 2,
+        image: pikky2,
+        name: "Nudibranches Wow cloud! Ice cream flavor",
+        description: "Пенка для веселого купания",
+        price: "396 P",
+    },
+    {
+        id: 3,
+        image: pikky3,
+        name: "Nudibranches FIERY TAIL ice cream",
+        description: "Игровой набор для создания мерцающей соли для ванны",
+        price: "990 P",
+    },
+    {
+        id: 4,
+        image: pikky4,
+        name: "Nudibranches Shower super power! ice cream",
+        description: "Гель-шампунь для волос и тела",
+        price: "899 P",
+    },
+    {
+        id: 5,
+        image: pikky5,
+        name: "Nudibranches Си Банни для детей плюшевая",
+        description: "Плюшевая игрушка",
+        price: "1990 P",
+    },
+    {
+        id: 6,
+        image: pikky6,
+        name: "Nudibranches Вот ты где!",
+        description: "Настольная игра",
+        price: "621 P",
+    },
+]

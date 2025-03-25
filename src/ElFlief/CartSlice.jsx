@@ -10,9 +10,10 @@ const CosmoSlice = createSlice({
       setActiveSlide: (state, action) => {
           state.activeSlide = action.payload;
       },
+
   },
 });
 
-export const { setActiveSlide } = CosmoSlice.actions;
+export const { setActiveSlide} = CosmoSlice.actions;
 
 export default CosmoSlice.reducer;

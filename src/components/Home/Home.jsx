@@ -8,6 +8,9 @@ import Stories from "../stories/Stories";
 import Shik from "../card/Shik";
 import Dalba from "../card/Dalba";
 import Our from "../card/Our";
+import Banana from "../card/Banana";
+import Pikky from "../card/Pikky";
+
 
 
 
@@ -19,6 +22,8 @@ export default function Home() {
     <Stories/>
     <Shik/>
     <Dalba/>
+    <Banana/>
+    <Pikky/>
     <Our/>
 </div>
   )
