@@ -143,7 +143,7 @@ export default function GiftCard() {
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
 пластиковая подарочная карта</h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>GOLD APPLE gift card</h1>
-              <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[230px]'>3 000 ₽</h1>
+              <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[200px]'>3 000 ₽</h1>
             </div>
 
 
@@ -242,8 +242,6 @@ export default function GiftCard() {
 
         </div>
       </section>
-
-
     </div>
   );
 };

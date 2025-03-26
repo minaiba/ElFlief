@@ -52,6 +52,8 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
+// import { motion } from "framer-motion";
+// import Modal from './Modal'
 
 const denzo = [
   {
@@ -124,10 +126,55 @@ const categories = [
 ];
 
 
+
+
+const praimer = [
+  {
+    id: '1',
+    title: 'DEAR DAHLIA Prime layer skin prep',
+    category: 'Праймер для лица',
+    price: '1 818 ₽',
+    oldPrice: '4 545 ₽',
+    img: img2,
+    imgAlt: img10Alt,
+    discount: '60%'
+  },
+
+];
+const praim = [
+  {
+    id: '2',
+    title: 'ROSSANO FERRETTI Dolce 05 repair & nourish shampoo',
+    category: 'Шампунь для восстановления и питания волос',
+    price: 'от 960 ₽',
+    img: img3,
+    imgAlt: img9Alt,
+    discount: 'new!'
+  }
+];
+const prai = [
+  {
+    id: '3',
+    title: 'oss to oss Ultra-gentle',
+    titl: 'Тип продукта: Праймер с блюр-эффектом SPF30 PA+++',
+    category: 'Зубная паста укрепляющая для чувствительных зубов',
+    price: 'от 810 ₽',
+    img: img4,
+    imgAlt: img8Alt
+  }
+];
+
+
 export default function Products() {
   const [imageHovered, setImageHovered] = useState(null);
+  // const [modalIsOpen, setModalIsOpen] = useState(false);
+  // const [modalIsOpen, setModalIsOpen] = useState(false);
   const handleMouseEnter = (img) => setImageHovered(img);
   const handleMouseLeave = () => setImageHovered(null);
+  // const openModal = () => setModalIsOpen(true);
+  // const closeModal = () => setModalIsOpen(false);
+  // const openModal = () => setModalIsOpen(true);
+  // const closeModal = () => setModalIsOpen(false);
 
   const settings = {
     dots: false,
@@ -151,9 +198,6 @@ export default function Products() {
             <img src={img1} className='' />
 
           </div>
-
-
-          {/* catalog */}
           <Link to='/catalog'>
             <div className='my-[60px]'>
               <Slider {...settings}>
@@ -168,73 +212,77 @@ export default function Products() {
               </Slider>
             </div>
           </Link>
-
-
-
           <h2 className='justify-center items-center flex my-[40px] text-2xl'><span className='mr-[5px] font-bold'>10 221</span> продукт</h2>
-
-
-
-
           {/* 1 блок */}
           <div className='flex mt-[20px]'>
 
-            {/* справа-налево праймер */}
-            <div className=''>
-              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
-              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
-              <button className='bg-[#c2387f] text-[white] font-bold w-[40px] absolute h-[40px]'>60%</button>
-              <img src={imageHovered === 'праймер' ? img10Alt : img2} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('праймер')}
-                onMouseLeave={handleMouseLeave} />
-              <h3 className='hover:text-[#9ca887] font-mono mt-[16px]' style={{ direction: 'rtl', textAlign: 'right' }}>Праймер для лица</h3>
-              <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>DEAR DAHLIA Prime layer skin prep</h1>
-              <div className='flex hover:text-[#9ca887] text-2xl gap-3 ml-[120px]'>
-                <h1 className='font-bold hover:text-[#9ca887] text-[grey] mt-[10px]'><del>4 545 ₽</del></h1>
-                <h1 className='font-bold hover:text-[#9ca887] mt-[10px]'>1 818 ₽</h1>
+        
+           {praimer.map((dog) => (
+  <div key={dog.id} className=''>
+    <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+    <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
+    <button className='bg-[#c2387f] text-[white] font-bold w-[40px] absolute h-[40px]'>60%</button>
+    <img 
+      src={imageHovered === dog.id ? dog.imgAlt : dog.img} 
+      onMouseEnter={() => handleMouseEnter(dog.id)} 
+      onMouseLeave={handleMouseLeave} 
+      className='w-[300px] h-[300px]' />
+    <h3 className='hover:text-[#9ca887] font-mono mt-[16px]' style={{ direction: 'rtl', textAlign: 'right' }}>{dog.category}</h3>
+    <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>{dog.title}</h1>
+    <div className='flex hover:text-[#9ca887] text-2xl gap-3 ml-[120px]'>
+      <h1 className='font-bold hover:text-[#9ca887] text-[grey] mt-[10px]'><del>{dog.oldPrice}</del></h1>
+      <h1 className='font-bold hover:text-[#9ca887] mt-[10px]'>{dog.price}</h1>
+    </div>
+  </div>
+))} 
+            {praim.map((og) => (
+              <div key={og.id} className='ml-[60px] w-[300px]'>
+                <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+                <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
+                <button className='bg-[#10ee48] w-[40px] h-[40px] text-[white] font-bold absolute'>{og.discount}</button>
+                <img src={imageHovered === og.id ? og.imgAlt : og.img} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter(og.id)} onMouseLeave={handleMouseLeave} />
+                <h3 className='hover:text-[#9ca887] font-mono mt-[16px]' style={{ direction: 'rtl', textAlign: 'right' }}>{og.category}</h3>
+                <h1 className='hover:text-[#9ca887] text-2xl font-medium ' style={{ direction: 'rtl', textAlign: 'right' }}>{og.title}</h1>
+                <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[204px] mt-[10px]'>{og.price}</h1>
               </div>
-            </div>
+            ))}
+            {prai.map((g) => (
+              <div key={g.id} className='ml-[90px]'>
+                <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[605px] mt-[20px]' /></Link>
+                <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] ml-[605px] mt-[560px]' /></Link>
+                <img src={imageHovered === g.id ? g.imgAlt : g.img} className='h-[600px] w-[650px] ' onMouseEnter={() => handleMouseEnter(g.id)} onMouseLeave={handleMouseLeave} />
+                <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px] ml-[150px]'>{g.category}</p>
+                <h1 className='hover:text-[#9ca887] text-4xl font-medium ml-[150px]' >{g.title}</h1>
+                <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] ml-[150px]'>{g.price}</h1>
+              </div>
+            ))}
+{/* <Modal
+  isOpen={modalIsOpen}
+  onRequestClose={closeModal}
+  className="fixed inset-0 flex items-center justify-center "
+  // style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
+>
+  <div className="p-6 rounded-lg m-auto w-[700px] h-[1000px]">
+    
+    <img src={praimer[0].img} className="w-full mb-4" />
+    <h1 className="text-2xl font-bold mb-4">{praimer[0].title}</h1>
+    <p className="text-lg">Тип продукта: {praimer[0].category}</p>
+    <h3 className="text-xl font-semibold mt-2">{praimer[0].price}</h3>
+    <button onClick={closeModal} className="mt-4 bg-red-500 text-white py-2 px-4 rounded">
+      Закрыть
+    </button>
+  </div>
+</Modal> */}
 
-
-
-            {/* справа-налево шампунь */}
-            <div className='ml-[60px] w-[300px]'>
-              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
-              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
-              <button className='bg-[#10ee48] w-[40px] h-[40px] text-[white] font-bold absolute'>new!</button>
-              <img src={imageHovered === 'шампунь' ? img9Alt : img3} className='w-[300px] h-[300px] ' onMouseEnter={() => handleMouseEnter('шампунь')}
-                onMouseLeave={handleMouseLeave} />
-              <h3 className='hover:text-[#9ca887] font-mono mt-[16px]' style={{ direction: 'rtl', textAlign: 'right' }}>Шампунь для восстановления и питания волос</h3>
-              <h1 className='hover:text-[#9ca887] text-2xl font-medium ' style={{ direction: 'rtl', textAlign: 'right' }}>ROSSANO FERRETTI Dolce 05 repair & nourish shampoo</h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[204px] mt-[10px]'>от 960 ₽</h1>
-            </div>
-
-
-
-            {/* зубная паста */}
-            <div className='ml-[90px]'>
-            <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[605px] mt-[20px]' /></Link>
-            <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] ml-[605px] mt-[560px]' /></Link>
-              <img
-                src={imageHovered === 'toothpaste' ? img8Alt : img4}
-                className='h-[600px] w-[650px] '
-                onMouseEnter={() => handleMouseEnter('toothpaste')}
-                onMouseLeave={handleMouseLeave}
-              />
-              <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px] ml-[150px]'>Зубная паста укрепляющая для чувствительных зубов</p>
-              <h1 className='hover:text-[#9ca887] text-4xl font-medium ml-[150px]' >oss to oss Ultra-gentle</h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] ml-[150px]'>от 810 ₽</h1>
-            </div>
           </div>
-
-
           {/* 2 блок */}
           <div className='flex'>
 
             {/* крем для рук */}
 
             <div className='mt-[-130px] w-[650px]' >
-            <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[605px] mt-[20px]' /></Link>
-            <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] ml-[605px] mt-[560px]' /></Link>
+              <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[605px] mt-[20px]' /></Link>
+              <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] ml-[605px] mt-[560px]' /></Link>
               <button className='bg-[#dadd0e] text-[black] font-bold w-[45px] h-[40px] absolute'>+gift!</button>
               <img src={img5} className='h-[600px] w-[650px]' />
               <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px]  ml-[150px]'>Крем для рук и ног</p>
@@ -336,7 +384,7 @@ export default function Products() {
 
 
 
-          {/* 4 блок  finish*/}  
+          {/* 4 блок  finish*/}
 
           <div className='flex mt-[100px]'>
             <div className=''>
@@ -527,7 +575,7 @@ export default function Products() {
           <div className='flex mt-[100px] '>
 
             <div className=''>
-              
+
               <p className='hover:text-[#9ca887] absolute font-mono mt-[80px] ml-[100px]'>
                 Наушники</p>
               <h1 className='hover:text-[#9ca887] absolute text-4xl w-[250px] mt-[130px]  font-medium ' >Apple AirPods 3 with MagSafe Charging Case</h1>
@@ -575,6 +623,7 @@ export default function Products() {
               <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>2 650 ₽</h1>
             </div>
           </div>
+
         </div>
       </section>
     </div>
