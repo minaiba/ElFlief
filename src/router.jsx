@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Home from "./components/Home/Home";
-
+import PromoPage from './components/Teens/PromoPage'
 import Catalog from "./components/Catalog/Catalog";
 import Products from "./components/newProducts/Products";
 import Stocks from "./components/Stocks/Stocks";
@@ -13,6 +13,8 @@ import Discount from "./components/discounts/Discount";
 import Heart from "./components/heart/Heart";
 import Person from "./components/person/Person";
 import Basket from "./components/basket/Basket";
+import ContestApp from "./components/Stocks/ContestApp";
+import StokssA from "./components/Stocks/StokssA";
 
 
 
@@ -68,6 +70,18 @@ export const myRouter = createBrowserRouter ([
             {
                 path: 'cart',
                 element: <Basket/>
+            },
+            {
+                path: '/ContestApp',
+                element: <ContestApp/>
+            },
+            {
+                path: '/PromoPage',
+                element: <PromoPage/>
+            },
+            {
+                path: '/stocks2',
+                element: <StokssA/>
             },
         ]
     }

@@ -1,15 +1,24 @@
-
+import video1 from '../../assets/aiba/video.mp4'
 import { useState, useEffect } from "react";
+import qr from '../../assets/aiba/qr-kod.jpg'
+import video2 from '../../assets/aiba/beaty.mp4'
+import video3 from '../../assets/aiba/konkyrs.mp4'
+import tama from '../../assets/aiba/tama.jpg'
+import shrek from '../../assets/aiba/video2.png'
+import love from '../../assets/aiba/loveS.jpg'
 
 export default function Stories() {
   const [activeStory, setActiveStory] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const stories = [
-    { id: 1, type: "image", src: "https://picsum.photos/1080/1920?random=1", title: "Сторис 1" },
-    { id: 2, type: "video", src: "https://www.w3schools.com/html/mov_bbb.mp4", title: "Видео 1" },
-    { id: 3, type: "image", src: "https://picsum.photos/1080/1920?random=2", title: "Сторис 2" },
-    { id: 4, type: "image", src: "https://picsum.photos/1080/1920?random=3", title: "Сторис 3" },
+    { id: 1, type: "image", src: qr, title: "Сторис 1" },
+    { id: 2, type: "video", src: video1, title: "Видео 1" },
+    { id: 3, type: "video", src: video2, title: "видео 2" },
+    { id: 4, type: "image", src: tama, title: "Сторис 3" },
+    { id: 5, type: "video", src: video3, title: "видео 3" },
+    { id: 6, type: "image", src: shrek, title: "сторис 4 " },
+    { id: 7, type: "image", src: love, title: "сторис 5" },
   ];
 
   useEffect(() => {

@@ -17,7 +17,7 @@ const Carousel = () => {
             <Swiper
                 modules={[Navigation, Autoplay, EffectFade]}
                 navigation
-                autoplay={{ delay: 7000 }}
+                autoplay={{ delay: 3000 }}
                 effect="fade"
                 onSlideChange={(swiper) => dispatch(setActiveSlide(swiper.activeIndex))}
                 className="rounded-lg shadow-lg"

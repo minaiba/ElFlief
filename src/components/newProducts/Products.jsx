@@ -144,7 +144,7 @@ export default function Products() {
   return (
     <div className='mt-[10px]'>
       <div className="relative">
-        <img src={img1} className="w-full h-full object-cover rounded-lg" alt="" />
+        <img src={img1} className="w-full h-full object-cover "/>
         <h1 className="text-8xl font-bold text-[white] absolute top-[72.4%] left-[70%] transform -translate-x-1/2 -translate-y-1/2">
           новинки
         </h1>
