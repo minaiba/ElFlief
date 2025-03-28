@@ -52,6 +52,8 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
+import Modal from './Modal';
+// import Mmodal from './Mmodal'
 const denzo = [
   { title: 'набор для ванной', text: 'DENEZO Alys', price: '3 989 ₽', img: img14 },
   { title: 'Ночной крем для восстановления сияния', text: 'Go Tapa Radiant night', price: '790 ₽', img: img15 },
@@ -140,6 +142,18 @@ const prai = [
   {
     id: '3',
     title: 'oss to oss Ultra-gentle',
+    title2: `тип продукта
+зубная паста
+для кого
+унисекс
+назначение
+антибактериальное, от кариеса, свежее дыхание, очищение
+вес
+100 г В составе:
+- витамин Е для ухода за полостью рта и антибактериальной защиты;
+- пищевая сера и минералы, обеспечивающие комплексный уход;
+- зеленый чай, который реминерализует, оказывает антиоксидантную, антибактериальную защиту и противовоспалительное действие;
+- ромашка, чтобы успокаивать раздражение.`,
     category: 'Зубная паста укрепляющая для чувствительных зубов',
     price: 'от 810 ₽',
     img: img4,
@@ -243,6 +257,7 @@ export default function Products() {
   const [imageHovered, setImageHovered] = useState(null);
   const handleMouseEnter = (img) => setImageHovered(img);
   const handleMouseLeave = () => setImageHovered(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const settings = {
     dots: false,
     infinite: true,
@@ -283,16 +298,22 @@ export default function Products() {
           <div className='mt-[20px]'>
             <div className='flex mt-[20px]'>
               {praimer.map((dog) => (
-                <div key={dog.id} className=''>
-                  <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
-                  <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
-                  <button className='bg-[#c2387f] text-[white] font-bold w-[40px] absolute h-[40px]'>60%</button>
-                  <img src={imageHovered === dog.id ? dog.imgAlt : dog.img} onMouseEnter={() => handleMouseEnter(dog.id)} onMouseLeave={handleMouseLeave} className='w-[300px] h-[300px]' />
-                  <h3 className='hover:text-[#9ca887] font-mono mt-[16px]' style={{ direction: 'rtl', textAlign: 'right' }}>{dog.category}</h3>
-                  <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>{dog.title}</h1>
-                  <div className='flex hover:text-[#9ca887] text-2xl gap-3 ml-[120px]'>
-                    <h1 className='font-bold hover:text-[#9ca887] text-[grey] mt-[10px]'><del>{dog.oldPrice}</del></h1>
-                    <h1 className='font-bold hover:text-[#9ca887] mt-[10px]'>{dog.price}</h1>
+                <div
+                  key={dog.id}
+                  className="relative w-[320px] bg-white p-4 rounded-lg cursor-pointer"
+                  onClick={() => setSelectedProduct(dog)}
+                >
+                  <div className=''>
+                    <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+                    <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
+                    <button className='bg-[#c2387f] text-[white] font-bold w-[40px] absolute h-[40px]'>60%</button>
+                    <img src={imageHovered === dog.id ? dog.imgAlt : dog.img} onMouseEnter={() => handleMouseEnter(dog.id)} onMouseLeave={handleMouseLeave} className='w-[300px] h-[300px]' />
+                    <h3 className='hover:text-[#9ca887] font-mono mt-[16px]' style={{ direction: 'rtl', textAlign: 'right' }}>{dog.category}</h3>
+                    <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>{dog.title}</h1>
+                    <div className='flex hover:text-[#9ca887] text-2xl gap-3 ml-[120px]'>
+                      <h1 className='font-bold hover:text-[#9ca887] text-[grey] mt-[10px]'><del>{dog.oldPrice}</del></h1>
+                      <h1 className='font-bold hover:text-[#9ca887] mt-[10px]'>{dog.price}</h1>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -309,7 +330,7 @@ export default function Products() {
                 </div>
               ))}
               {prai.map((g) => (
-                <div key={g.id} className='ml-[90px]'>
+                <div key={g.id} className='ml-[90px]' onClick={() => setSelectedProduct(g)}>
                   <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[605px] mt-[20px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] ml-[605px] mt-[560px]' /></Link>
                   <img src={imageHovered === g.id ? g.imgAlt : g.img} className='h-[600px] w-[650px] ' onMouseEnter={() => handleMouseEnter(g.id)} onMouseLeave={handleMouseLeave} />
@@ -563,6 +584,8 @@ export default function Products() {
             </div>
           </div>
         </div>
+        {selectedProduct && <Modal dog={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal g={selectedProduct} onClose={() => setSelectedProduct(null)} />}
       </section >
     </div >
   );
