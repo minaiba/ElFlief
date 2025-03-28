@@ -80,7 +80,7 @@ export default function GiftCard() {
       <section>
         <div className=''>
           <h1 className="text-4xl font-bold uppercase mt-[30px] text-gray-800 text-center mb-12">Выбери дизайн карты</h1>
-          <div className="flex w-full h-[700px] w-[1400px] m-auto">
+          <div className="flex w-full h-[1300px] m-auto">
             <div className="flex-1 bg-center bg-cover transition-all duration-500  bg-amber-700 hover:flex-[7]" style={{ backgroundImage: `url(${с1})` }}></div>
             <div className="flex-1 bg-center bg-cover transition-all duration-500 hover:flex-[7] bg-fuchsia-300" style={{ backgroundImage: `url(${с2})` }}></div>
             <div className="flex-1 bg-center bg-cover transition-all duration-500 hover:flex-[7] bg-purple-400" style={{ backgroundImage: `url(${с3})` }}></div>
@@ -146,7 +146,7 @@ export default function GiftCard() {
               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
                 пластиковая подарочная карта</h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>GOLD APPLE gift card</h1>
-              <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[230px]'>3 000 ₽</h1>
+              <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[200px]'>3 000 ₽</h1>
             </div>
 
 
@@ -245,8 +245,6 @@ export default function GiftCard() {
 
         </div>
       </section>
-
-
     </div>
   );
 };

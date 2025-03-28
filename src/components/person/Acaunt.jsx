@@ -42,3 +42,12 @@
 //       );
 //     }
     
+import React from 'react'
+
+export default function Acaunt() {
+  return (
+    <div>
+      
+    </div>
+  )
+}
