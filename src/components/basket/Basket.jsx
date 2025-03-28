@@ -1,71 +1,70 @@
-// import React from 'react'
-// import { BsBasket } from 'react-icons/bs';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment, removeFromCart } from '../../ElFlief/CartSlice'; 
+import { useEffect } from 'react';
 
-// export default function Basket() {
-//   const cartItems = useSelector((state) => state.Cosmo?.cartItem ?? []); 
-//   const dispatch = useDispatch();
+const Basket = () => {
+  const cartItem = useSelector((state) => state.cart.cartItems || []);
+  const dispatch = useDispatch();
+  const saveCartToLocalStorage = (cart) => {
+    localStorage.setItem('cartItem', JSON.stringify(cart));
+  };
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem('cartItem'));
+    if (storedCart) {
+      storedCart.forEach(item => {
+        dispatch(increment({ id: item.id, quantity: item.quantity }));
+      });
+    }
+  }, [dispatch]);
 
+  useEffect(() => {
+    saveCartToLocalStorage(cartItem);
+  }, [cartItem]);
 
-//   if (cartItems.length === 0) {
-//     return <p className="text-center text-lg font-semibold mt-10">Корзина пуста</p>;
-//   }
+  const handleIncrement = (id) => {
+    dispatch(increment({ id }));
+  };
 
-//   return (
-//     <div className="w-[1400px] m-auto flex flex-wrap gap-10">
-//       {cartItems.map((product) => {
-//         const price = product.price * product.quantity;
-//         const viewsCount = product.viewsCount * product.quantity;
+  const handleDecrement = (id) => {
+    dispatch(decrement({ id }));
+  };
 
-//         return (
-//           <div key={product.id} className="relative w-[320px] bg-white p-4 rounded-lg shadow-md">
-//             <Link to='/favorites'>
-//               <IoHeartOutline className="absolute top-6 left-6 w-[20px] h-[20px] cursor-pointer hover:text-red-500" />
-//             </Link>
-//             <BsBasket
-//               onClick={() => dispatch(addCart(product))}
-//               className="absolute right-6 top-6 w-[20px] h-[20px] cursor-pointer hover:text-green-500"
-//             />
-//             <img src={product.imageUrl} alt={product.title} className="w-full h-[200px] rounded-lg" />
-//             <h3 className="hover:text-[#9ca887] font-mono mt-4 text-right">{product.title}</h3>
-//             <h1 className="hover:text-[#9ca887] font-medium text-2xl text-right">{product.name}</h1>
-//             <div className="flex justify-end text-2xl mt-2">
-//               <h1 className="font-bold hover:text-[#9ca887]">от {price} ₽</h1>
-//             </div>
-//             <div className="flex items-center justify-between mt-4">
-//               <button
-//                 onClick={() => dispatch(decrement({ id: product.id }))}
-//                 className="px-3 py-1 bg-gray-300 rounded-lg hover:bg-gray-400"
-//               >
-//                 -
-//               </button>
-//               <input
-//                 type="text"
-//                 className="w-10 text-center border border-gray-300 rounded-lg"
-//                 value={product.quantity}
-//                 readOnly
-//               />
-//               <button
-//                 onClick={() => dispatch(increment({ id: product.id }))}
-//                 className="px-3 py-1 bg-gray-300 rounded-lg hover:bg-gray-400"
-//               >
-//                 +
-//               </button>
-//             </div>
-//             <h6 className="text-center mt-2 text-sm text-gray-500">Просмотры: {viewsCount}</h6>
-//           </div>
-//         );
-//       })}
-//             {selectedProduct && <Siddebar product={selectedProduct} onClose={() => setSelectedProduct(null)} />}
-//     </div>
-//   );
-// }
-import React from 'react'
+  const handleRemove = (id) => {
+    dispatch(removeFromCart({ id }));
+  };
 
-export default function Basket() {
+  if (!cartItem || cartItem.length === 0) {
+    return <p className='w-[1400px] m-auto ml-[640px] text-3xl py-[180px] font-mono'>Корзина пуста</p>; 
+  }
+
   return (
-    <div>
-      
+    <div className="max-w-[1400px] mx-auto px-4">
+      <h1 className="flex justify-center py-10 text-2xl sm:text-3xl md:text-4xl font-mono"> Ваша корзина</h1>
+      {cartItem.map((item) => (
+        <div key={item.id} className="flex my-10 justify-between items-center border-b py-4">
+          <div className="flex">
+            <img src={item.image} alt={item.title} className="w-[100px] h-[100px] object-cover" />
+            <div className="ml-6 mt-8 font-mono">
+              <h2>{item.name}</h2>
+              <p>{item.price} ₽</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <button onClick={() => handleDecrement(item.id)}>-</button>
+            <span>{item.quantity}</span>
+            <button onClick={() => handleIncrement(item.id)}>+</button>
+          </div>
+          <button onClick={() => handleRemove(item.id)} className="text-red-500">Remove</button>
+        </div>
+      ))}
+      <div className="flex justify-end">
+        <h2 className="text-2xl font-medium my-15">
+          Total: {cartItem.reduce((total, item) => total + item.price * item.quantity, 0)} ₽
+        </h2>
+      </div>
     </div>
-  )
-}
+  );
+};
+
+export default Basket;
+

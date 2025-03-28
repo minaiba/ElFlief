@@ -15,6 +15,7 @@ import Person from "./components/person/Person";
 import Basket from "./components/basket/Basket";
 import ContestApp from "./components/Stocks/ContestApp";
 import StokssA from "./components/Stocks/StokssA";
+import Acaunt from "./components/person/Acaunt";
 
 
 
@@ -82,6 +83,10 @@ export const myRouter = createBrowserRouter ([
             {
                 path: '/stocks2',
                 element: <StokssA/>
+            },
+            {
+                path: '/Acaunt',
+                element: <Acaunt/>
             },
         ]
     }

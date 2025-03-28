@@ -7,13 +7,12 @@ import { news } from './data'
 import { useDispatch } from 'react-redux'
 
 
-
-export default function Our() {
-    // const dispatch = useDispatch()
+export default function Our({product}) {
     const [selectedProduct, setSelectedProduct] = useState(null);
-
+    const dispatch = useDispatch();
+    
     return (
-        <div className="w-[1400px] m-auto flex flex-wrap gap-10">
+        <div className="max-w-[1400px] m-auto flex flex-wrap gap-10">
             {news.map((product) => (
                 <div
                     key={product.id}

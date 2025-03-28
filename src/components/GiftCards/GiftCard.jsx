@@ -60,7 +60,7 @@ export default function GiftCard() {
         backgroundPosition: 'center',
         height: '600px',
       }}>
-        <div className='w-[1400px] m-auto flex'>
+        <div className='w-[1400px] mt-5 m-auto flex'>
           <div>
             <h1 className="w-[100px] absolute ml-[470px] mt-[50px] hover:text-7xl transition-all font-extrabold text-5xl duration-300" style={{ direction: 'rtl', textAlign: 'right' }}>
               Электронная карта

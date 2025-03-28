@@ -1,95 +1,175 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 export default function Person({ onClose }) {
-  const [phone, setPhone] = useState("+996");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState(""); 
+  const [code, setCode] = useState("");
   const [step, setStep] = useState(1);
   const [message, setMessage] = useState("");
+  const [generatedCode, setGeneratedCode] = useState(null);
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
-
-
-  const sendCode = async () => {
-    if (!phone.startsWith("+996") || phone.length < 10) {
-      setMessage("Введите корректный номер Кыргызстана");
+  const sendCode = () => {
+    if (!email.includes("@")) {
+      setMessage("Введите корректный email");
       return;
     }
-    setMessage("Отправка кода...");
-    try {
-      const response = await fetch("http://localhost:5000/send_code", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone_number: phone }),
-      });
-      const data = await response.json();
-      if (response.ok) {
-        localStorage.setItem("token", data.token); // Сохраняем токен
-        setStep(2);
-        setMessage("Код отправлен, проверьте SMS!");
-      } else {
-        setMessage(data.error || "Ошибка отправки кода");
-      }
-    } catch (error) {
-      setMessage("Ошибка сети, попробуйте снова");
+    const randomCode = Math.floor(100000 + Math.random() * 900000).toString();
+    setGeneratedCode(randomCode);
+    localStorage.setItem("verificationCode", randomCode);
+    setMessage(`Код отправлен на email: ${randomCode}`);
+    setStep(2);
+  };
+
+  const verifyCode = () => {
+    const storedCode = localStorage.getItem("verificationCode");
+    if (code === storedCode) {
+      setMessage("Код подтвержден!");
+      setStep(3); 
+    } else {
+      setMessage("Неверный код");
     }
   };
-  
+
+  const handleRegister = () => {
+    if (password !== confirmPassword) {
+      setMessage("Пароли не совпадают");
+      return;
+    }
+    setMessage("Регистрация успешна!");
+    onClose(); 
+  };
 
   return (
     <AnimatePresence>
-      <motion.div
-        initial={{ x: "100%" }}
-        animate={{ x: 0 }}
-        exit={{ x: "100%" }}
-        transition={{ duration: 0.6 }}
-        className="fixed top-0 right-0 h-full w-150 bg-white shadow-lg p-6 z-50"
-      >
-              <button className="absolute top-4 right-4 text-4xl" onClick={onClose}>
-                <IoClose />
-              </button>
-        <h2 className="text-2xl font-bold mb-2">Войти или зарегистрироваться</h2>
-        <p className="text-gray-600 mb-4">
-          Позвоним или пришлём SMS. Введите последние 4 цифры номера телефона или код из SMS.
-        </p>
+      {step === 1 && (
+        <motion.div
+          key="step1"
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "100%" }}
+          transition={{ duration: 0.1 }}
+          className="fixed top-0 right-0 h-full w-150 bg-white shadow-lg p-6 z-50"
+        >
+          <button className="absolute top-4 right-4 text-4xl" onClick={onClose}>
+            <IoClose />
+          </button>
+          <h2 className="text-2xl font-bold mb-2">Войти или зарегистрироваться</h2>
+          <p className="text-gray-600 mb-4">
+            Введите имя и email, чтобы получить код подтверждения.
+          </p>
+          
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full p-3 border rounded mb-4"
+            placeholder="Введите имя"
+          />
+          
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full p-3 border rounded mb-4"
+            placeholder="Введите Email"
+          />
 
-        {/* Выбор страны */}
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm mb-1">Страна</label>
-          <select className="w-full p-2 border rounded" defaultValue="Кыргызстан">
-            <option>Кыргызстан</option>
-            {/* <option>Казахстан</option>
-            <option>Россия</option> */}
-          </select>
-        </div>
+          <button
+            onClick={sendCode}
+            className="w-full bg-black text-white p-3 rounded-md"
+          >
+            Получить код
+          </button>
+        </motion.div>
+      )}
 
-        {/* Ввод номера */}
-        {step === 1 && (
-          <>
-            <input
-              type="tel"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="w-full p-3 border rounded mb-4"
-              placeholder="+996XXXXXXXXX"
-            />
-            <button
-              onClick={sendCode}
-              className="w-full bg-black text-white p-3 rounded-md"
-            >
-              Получить код
-            </button>
-          </>
-        )}
+      {step === 2 && (
+        <motion.div
+          key="step2"
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "100%" }}
+          transition={{ duration: 0.1 }}
+          className="fixed top-0 right-0 h-full w-150 bg-white shadow-lg p-6 z-50"
+        >
+          <button className="absolute top-4 right-4 text-4xl" onClick={onClose}>
+            <IoClose />
+          </button>
+          <h2 className="text-2xl font-bold mb-2">Подтверждение кода</h2>
+          <p className="text-gray-600 mb-4">
+            Введите код, отправленный на ваш email.
+          </p>
+          <input
+            type="text"
+            value={code}
+            onChange={(e) => setCode(e.target.value)}
+            className="w-full p-3 border rounded mb-4"
+            placeholder="Введите код"
+          />
+          <button
+            onClick={verifyCode}
+            className="w-full bg-black text-white p-3 rounded-md"
+          >
+            Подтвердить
+          </button>
+        </motion.div>
+      )}
 
-        {/* Вывод сообщений */}
-        {message && <p className="mt-4 text-center text-gray-700">{message}</p>}
-      </motion.div>
+      {step === 3 && (
+        <motion.div
+          key="step3"
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "100%" }}
+          transition={{ duration: 0.1 }}
+          className="fixed top-0 right-0 h-full w-150 bg-white shadow-lg p-6 z-50"
+        >
+          <button className="absolute top-4 right-4 text-4xl" onClick={onClose}>
+            <IoClose />
+          </button>
+          <h2 className="text-2xl font-bold mb-2">Регистрация</h2>
+          <p className="text-gray-600 mb-4">Создайте пароль для вашей учетной записи.</p>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full p-3 border rounded mb-4"
+            placeholder="Введите пароль"
+          />
+          <input
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            className="w-full p-3 border rounded mb-4"
+            placeholder="Подтвердите пароль"
+          />
+         <Link to='/Acaunt'><button
+            onClick={handleRegister}
+            className="w-full bg-black text-white p-3 rounded-md"
+          >
+            Завершить регистрацию
+          </button></Link> 
+        </motion.div>
+      )}
 
-      {/* Фон-затемнение (закрывает модалку при клике) */}
-      <div
-        className="fixed inset-0 bg-black bg-opacity-20 z-40"
-        onClick={onClose}
-      />
+      {message && (
+        <motion.div
+          key="message"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white p-3 rounded-md"
+        >
+          {message}
+        </motion.div>
+      )}
+
     </AnimatePresence>
   );
 }

@@ -25,7 +25,7 @@ const carsData = [
     name: "Пресненская наб., 2",
     text: "ТРЦ АФИМОЛЛ СИТИ",
     price: "Пресненская наб., 2",
-    period: "пн — чт,вс 10:00 — 22:00; пт — сб 10:00 — 23:00",
+    period: `ежидневно 10:00 — 22:00.`,
     image: foto,
     category: "Москва"
   },
@@ -194,73 +194,142 @@ export default function Cars() {
 
  
   return (
-    <div>
-      <div className="bg-">
-        <div className="container flex mx-auto w-[1400px] py-20 text-black">
-          <h1 className="text-5xl mt-[-50px] ml-[160px] font-bold"> Магазины </h1>
-          <div className="flex relative right-[220px] top-[70px] max-w-full">
-            <div className="mr-20">
-              <ul className="sticky top-0 space-y-2">
-                {categories.map(category => (
-                  <li
-                    key={category}
-                    className={`cursor-pointer hover:text-[black] hover:border-[green] p-4 text-center border border-[3px] ${selectedCategory === category ? 'text-[black] border-[green] ' : 'text-[green] border-[chartreuse]'}`}
-                    onClick={() => setSelectedCategory(category)}>
-                    {category}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex flex-col space-y-6">
-              {filteredCars.map(car => (
-                <div key={car.id} className="rounded-xl flex mb-6">
-                  <img 
-                    src={car.image} 
-                    className="w-[520px] rounded-lg cursor-pointer" 
-                    alt={car.name} 
-                    onClick={() => openModal(car.image)} 
-                  />
-                  <div className="ml-6 flex-col max-w-full">
-                    <h4 className="text-xl mt-[10px]">{car.mos}</h4>
-                    <h4 className="text-2xl mb-2 mt-[5px]">{car.name}</h4>
-                    <p className="text-gray-700 mb-4 mt-[40px]">{car.text}</p>
-                    <div className="flex justify-between items-center w-full">
-                      <div>
-                        <p className="text-xm">{car.price}</p>
-                        <p className="text-gray-400 text-xl">{car.period}</p>  
-                        <p className="mt-[25px] font-bold">Контактный телефон:</p>
-                        <a href="tel:+996220091909" className="flex mt-[5px]">996 220 091 909</a>
-                        <a href="https://t.me/GoldappleSupportBot" className="flex items-center text-black mt-[5px] hover:text-gray-400"> <SiTelegram /> Telegram </a>                    
-                        <a href="https://api.whatsapp.com/send?phone=78007707021" className="flex items-center text-black mt-[5px] hover:text-gray-400"><FaWhatsapp /> WhatsApp </a>                         
-                      </div>         
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+    // <div>
+    //   <div className="bg-">
+    //     <div className="container flex mx-auto w-[1400px] py-20 text-black">
+    //       <h1 className="text-5xl mt-[-50px] ml-[160px] font-bold"> Магазины </h1>
+    //       <div className="flex relative right-[220px] top-[70px] max-w-full">
+    //         <div className="mr-20">
+    //           <ul className="sticky top-0 space-y-2">
+    //             {categories.map(category => (
+    //               <li
+    //                 key={category}
+    //                 className={`cursor-pointer hover:text-[black] hover:border-[green] p-4 text-center border border-[3px] ${selectedCategory === category ? 'text-[black] border-[green] ' : 'text-[green] border-[chartreuse]'}`}
+    //                 onClick={() => setSelectedCategory(category)}>
+    //                 {category}
+    //               </li>
+    //             ))}
+    //           </ul>
+    //         </div>
+    //         <div className="flex flex-col space-y-6">
+    //           {filteredCars.map(car => (
+    //             <div key={car.id} className="rounded-xl flex mb-6">
+    //               <img 
+    //                 src={car.image} 
+    //                 className="w-[520px] rounded-lg cursor-pointer" 
+    //                 alt={car.name} 
+    //                 onClick={() => openModal(car.image)} 
+    //               />
+    //               <div className="ml-6 flex-col max-w-full">
+    //                 <h4 className="text-xl mt-[10px]">{car.mos}</h4>
+    //                 <h4 className="text-2xl mb-2 mt-[5px]">{car.name}</h4>
+    //                 <p className="text-gray-700 mb-4 mt-[40px]">{car.text}</p>
+    //                 <div className="flex justify-between items-center w-full">
+    //                   <div>
+    //                     <p className="text-xm">{car.price}</p>
+    //                     <p className="text-gray-400 text-xl">{car.period}</p>  
+    //                     <p className="mt-[25px] font-bold">Контактный телефон:</p>
+    //                     <a href="tel:+996220091909" className="flex mt-[5px]">996 220 091 909</a>
+    //                     <a href="https://t.me/GoldappleSupportBot" className="flex items-center text-black mt-[5px] hover:text-gray-400"> <SiTelegram /> Telegram </a>                    
+    //                     <a href="https://api.whatsapp.com/send?phone=78007707021" className="flex items-center text-black mt-[5px] hover:text-gray-400"><FaWhatsapp /> WhatsApp </a>                         
+    //                   </div>         
+    //                 </div>
+    //               </div>
+    //             </div>
+    //           ))}
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
 
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
-        onClick={closeModal}>
-          <div className="relative">
-          <button 
-              onClick={closeModal} 
-              className="absolute top-0 right-0 p-2 text-white bg-black rounded-full cursor-pointer"
-            >
-              X
-            </button>
-            <img src={modalImage} className="max-w-[90%] max-h-[90vh] object-contain" alt="modal" />
-          </div>
+    //   {isModalOpen && (
+    //     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+    //     onClick={closeModal}>
+    //       <div className="relative">
+    //       <button 
+    //           onClick={closeModal} 
+    //           className="absolute top-0 right-0 p-2 text-white bg-black rounded-full cursor-pointer"
+    //         >
+    //           X
+    //         </button>
+    //         <img src={modalImage} className="max-w-[90%] max-h-[90vh] object-contain" alt="modal" />
+    //       </div>
+    //     </div>
+    //   )}
+       
+       
+    //   <div style={{ backgroundColor: "rgb(220, 255, 0)" }} className="fixed bottom-0 w-full p-2 cursor-pointer">
+    //    <h5 className="text-center text-black"> <Link to="/discounts">Скидка -10% на первый заказ по промокоду</Link></h5>
+    //   </div>
+    // </div>
+    <div>
+  <div className="bg-">
+    <div className="container max-w-[1400px] mx-auto pl-[100px] px-4 py-20 text-black">
+      <h1 className="text-5xl mt-[-50px] ml-0 font-bold sm:text-4xl"> Магазины </h1>
+      <div className="flex flex-col sm:flex-row sm:space-x-6 sm:space-y-0 space-y-6 sm:mt-0 mt-6 max-w-full">
+        <div className="sm:mr-20 w-full sm:w-auto">
+          <ul className="sticky top-0 space-y-2">
+            {categories.map(category => (
+              <li
+                key={category}
+                className={`cursor-pointer hover:text-black hover:border-green-500 p-4 text-center border-2 ${selectedCategory === category ? 'text-black border-green-500' : 'text-green-500 border-chartreuse'}`}
+                onClick={() => setSelectedCategory(category)}>
+                {category}
+              </li>
+            ))}
+          </ul>
         </div>
-      )}
-       
-       
-      <div style={{ backgroundColor: "rgb(220, 255, 0)" }} className="fixed bottom-0 w-full p-2 cursor-pointer">
-       <h5 className="text-center text-black"> <Link to="/discounts">Скидка -10% на первый заказ по промокоду</Link></h5>
+        <div className="flex flex-col space-y-6 w-full">
+          {filteredCars.map(car => (
+            <div key={car.id} className="rounded-xl flex flex-col sm:flex-row mb-6">
+              <img 
+                src={car.image} 
+                className="w-full sm:w-[520px] rounded-lg cursor-pointer" 
+                alt={car.name} 
+                onClick={() => openModal(car.image)} 
+              />
+              <div className="ml-0 sm:ml-6 flex-col max-w-full sm:w-[calc(100%-520px)]">
+                <h4 className="text-xl mt-2">{car.mos}</h4>
+                <h4 className="text-2xl mb-2 mt-2">{car.name}</h4>
+                <p className="text-gray-700 mb-4 mt-6">{car.text}</p>
+                <div className="flex justify-between items-center w-full">
+                  <div>
+                    <p className="text-xm">{car.price}</p>
+                    <p className="text-gray-400 text-xl">{car.period}</p>  
+                    <p className="mt-6 font-bold">Контактный телефон:</p>
+                    <a href="tel:+996220091909" className="flex mt-1">996 220 091 909</a>
+                    <a href="https://t.me/GoldappleSupportBot" className="flex items-center text-black mt-1 hover:text-gray-400"> <SiTelegram /> Telegram </a>                    
+                    <a href="https://api.whatsapp.com/send?phone=78007707021" className="flex items-center text-black mt-1 hover:text-gray-400"><FaWhatsapp /> WhatsApp </a>                         
+                  </div>         
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
+  </div>
+
+  {isModalOpen && (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50" onClick={closeModal}>
+      <div className="relative">
+        <button 
+            onClick={closeModal} 
+            className="absolute top-0 right-0 p-2 text-white bg-black rounded-full cursor-pointer"
+          >
+            X
+          </button>
+        <img src={modalImage} className="max-w-[90%] max-h-[90vh] object-contain" alt="modal" />
+      </div>
+    </div>
+  )}
+
+  <div style={{ backgroundColor: "rgb(220, 255, 0)" }} className="fixed bottom-0 w-full p-2 cursor-pointer">
+    <h5 className="text-center text-black text-sm sm:text-base"> 
+      <Link to="/discounts">Скидка -10% на первый заказ по промокоду</Link>
+    </h5>
+  </div>
+</div>
+
   );
 } 
