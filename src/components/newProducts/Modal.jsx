@@ -34,10 +34,10 @@ export default function Modal({ dog, onClose }) {
             <img
               src={dog.img}
               alt={dog.title2}
-              className="w-full h-[350px] object-cover rounded-xl shadow-md"
+              className="w-full object-cover rounded-xl shadow-md"
             />
             <h2 className="text-xl font-semibold text-gray-800 mt-4">{dog.title}</h2>
-            <div className="mt-2 text-xs text-gray-600">
+            <div className="text-xs text-gray-600">
           <p>{dog.title2.split('\n').map((line, index) => (
             <span key={index}>{line}<br /></span>
           ))}</p>
