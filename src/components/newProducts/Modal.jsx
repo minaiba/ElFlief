@@ -22,8 +22,8 @@ export default function Modal({ dog, onClose }) {
           onClick={onClose}
           aria-label="Close modal"
         ></div>
-        <div className="fixed top-0 right-0 w-[400px] h-full pt-6 px-6 pb-8 overflow-y-auto bg-white">
-          <div className="h-full flex flex-col relative space-y-6">
+        <div className="fixed top-0 right-0 w-[700px] h-full pt-6 px-6 pb-8 overflow-y-auto bg-white">
+          <div className="h-full flex text-center flex-col relative space-y-6">
             <button
               className="absolute top-4 right-4 text-3xl text-gray-600 hover:text-gray-800 transition"
               onClick={onClose}
@@ -43,9 +43,9 @@ export default function Modal({ dog, onClose }) {
           ))}</p>
         </div>
             <h3 className="text-lg font-semibold text-green-600">Цена: {dog.price} ₽</h3>
-            <div className="flex gap-[60%] pb-8">
+            <div className="flex gap-[400px] pb-8 mt-[20px] ml-[100px]">
               <Link to="favorites">
-                <IoHeartOutline className="w-[30px] ml-8 h-[30px] cursor-pointer hover:text-red-500 transition" />
+                <IoHeartOutline className="w-[30px]  h-[30px] cursor-pointer hover:text-red-500 transition" />
               </Link>
               <Link to="cart">
                 <BsBasket className="w-[30px] h-[30px] cursor-pointer hover:text-green-500 transition" />

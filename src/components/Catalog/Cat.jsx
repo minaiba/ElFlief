@@ -4,8 +4,8 @@ import { BsBasket } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
-export default function Card({ c1, onClose }) {
-  if (!c1) return null; 
+export default function Modal({ log, onClose }) {
+  if (!log) return null; 
 
 
   return (
@@ -16,14 +16,14 @@ export default function Card({ c1, onClose }) {
       transition={{ duration: 0.1 }}
       className="fixed "
     >
-      <div className="relative mt-[50px]">
+      <div className="relative">
         <div
           className="fixed inset-0 bg-black opacity-80"
           onClick={onClose}
           aria-label="Close modal"
         ></div>
         <div className="fixed top-0 right-0 w-[700px] h-full pt-6 px-6 pb-8 overflow-y-auto bg-white">
-          <div className="h-full flex flex-col relative text-center space-y-6">
+          <div className="h-full flex text-center flex-col relative space-y-6">
             <button
               className="absolute top-4 right-4 text-3xl text-gray-600 hover:text-gray-800 transition"
               onClick={onClose}
@@ -31,16 +31,21 @@ export default function Card({ c1, onClose }) {
             >
               <IoClose />
             </button>
-            <img src={c1.img} alt={c1.title2} className="w-full object-cover rounded-xl shadow-md"/>
-            <h2 className="text-xl font-semibold text-gray-800 mt-4">{c1.title}</h2>
+            <img
+              src={log.image}
+              alt={log.title2}
+              className="w-full object-cover rounded-xl shadow-md"
+            />
+            <h2 className="text-xl font-semibold text-gray-800 mt-4">{log.title}</h2>
             <div className="text-xs text-gray-600">
-          <p>{c1.title2.split('\n').map((line, index) => ( <span key={index}>{line}<br /></span>
+          <p>{log.title2.split('\n').map((line, index) => (
+            <span key={index}>{line}<br /></span>
           ))}</p>
         </div>
-            <h3 className="text-lg font-semibold text-green-600">Цена: {c1.price} </h3>
+            <h3 className="text-lg font-semibold text-green-600">Цена: {log.price} ₽</h3>
             <div className="flex gap-[400px] pb-8 mt-[20px] ml-[100px]">
               <Link to="favorites">
-                <IoHeartOutline className="w-[30px] ml-8 h-[30px] cursor-pointer hover:text-red-500 transition" />
+                <IoHeartOutline className="w-[30px]  h-[30px] cursor-pointer hover:text-red-500 transition" />
               </Link>
               <Link to="cart">
                 <BsBasket className="w-[30px] h-[30px] cursor-pointer hover:text-green-500 transition" />
