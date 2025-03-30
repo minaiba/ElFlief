@@ -1,51 +1,8 @@
 import React, { useState } from 'react';
 import img1 from '../../assets/gulasyl/ovinka.png';
-import img2 from '../../assets/gulasyl/прайм.webp';
-import img3 from '../../assets/gulasyl/immg3.webp';
-import img4 from '../../assets/gulasyl/img44.webp';
 import img5 from '../../assets/gulasyl/creme.webp';
-import img6 from '../../assets/gulasyl/imgg6.webp';
 import img7 from '../../assets/gulasyl/bag.webp';
-import img11 from '../../assets/gulasyl/набор.webp';
-import img12 from '../../assets/gulasyl/парфюм.webp';
 import img13 from '../../assets/gulasyl/помад.webp';
-import img14 from '../../assets/gulasyl/vanna.webp';
-import img15 from '../../assets/gulasyl/night.webp';
-import img16 from '../../assets/gulasyl/bros.webp';
-import img17 from '../../assets/gulasyl/sumka.webp';
-import img18 from '../../assets/gulasyl/bee.webp';
-import img19 from '../../assets/gulasyl/termo.webp';
-import img20 from '../../assets/gulasyl/kor.webp';
-import img21 from '../../assets/gulasyl/aip.webp';
-import img22 from '../../assets/gulasyl/piala.webp';
-import img23 from '../../assets/gulasyl/fen.webp';
-import img24 from '../../assets/gulasyl/свеча.webp';
-import img25 from '../../assets/gulasyl/аппарат.webp';
-import img26 from '../../assets/gulasyl/фут.webp';
-import img27 from '../../assets/gulasyl/машинка.webp';
-import img7Alt from '../../assets/gulasyl/румян.webp';
-import img8Alt from '../../assets/gulasyl/toothpas.webp';
-import img9Alt from '../../assets/gulasyl/шампунь.webp';
-import img10Alt from '../../assets/gulasyl/прайм2.webp';
-import img11Alt from '../../assets/gulasyl/набор2.webp';
-import img12Alt from '../../assets/gulasyl/парфюм2.webp';
-import img15Alt from '../../assets/gulasyl/night2.webp';
-import img17Alt from '../../assets/gulasyl/sumka2.webp';
-import img18Alt from '../../assets/gulasyl/bee2.webp';
-import img19Alt from '../../assets/gulasyl/termo2.webp';
-import img20Alt from '../../assets/gulasyl/kor2.webp';
-import img22Alt from '../../assets/gulasyl/piala2.webp';
-import img24Alt from '../../assets/aiba/asia.webp';
-import img23Alt from '../../assets/gulasyl/fen2.webp';
-import img88Alt from '../../assets/aiba/makeup.webp';
-import img26Alt from '../../assets/aiba/parfume.webp';
-import img89Alt from '../../assets/aiba/clothes.webp';
-import img28Alt from '../../assets/aiba/technic.webp';
-import img29Alt from '../../assets/aiba/decoration.webp';
-import img30Alt from '../../assets/aiba/hair.webp';
-import img31Alt from '../../assets/aiba/home.webp';
-import img25Alt from '../../assets/gulasyl/аппарат2.webp';
-import img27Alt from '../../assets/gulasyl/машинка2.webp';
 import { BsBasket } from "react-icons/bs";
 import { IoHeartOutline } from "react-icons/io5";
 import Slider from 'react-slick';
@@ -53,206 +10,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
 import Modal from './Modal';
+import { apparat, categories, cr, cre, cream, futbol, koja, mashin, nab, nabor, naushniki, nigh, night, otkr, phen, piala, prai, praim, praimer, rumi, rumia, shamp, svec, termo } from './CardProduct';
 // import Mmodal from './Mmodal'
-const denzo = [
-  { title: 'набор для ванной', text: 'DENEZO Alys', price: '3 989 ₽', img: img14 },
-  { title: 'Ночной крем для восстановления сияния', text: 'Go Tapa Radiant night', price: '790 ₽', img: img15 },
-  { title: 'брошь', text: 'Stone Philosophy Autumn leaves', price: '4 500 ₽', img: img16 },
-  { title: 'сумка кросс-боди', text: 'DKNY BRYANT AVE TZ DEMI C', price: '21 000 ₽', img: img17 },]
 
-const categories = [
-  {
-    id: 1,
-    name: "Азия",
-    image: img24Alt
-  },
-  {
-    id: 2,
-    name: "Макияж",
-    image: img88Alt
-  },
-  {
-    id: 3,
-    name: "Волосы",
-    image: img30Alt
-  },
-  {
-    id: 4,
-    name: "Парфюмерия",
-    image: img26Alt
-  },
-  {
-    id: 5,
-    name: "Декорации",
-    image: img29Alt
-  },
-  {
-    id: 6,
-    name: "Техника",
-    image: img28Alt
-  },
-  {
-    id: 7,
-    name: "Одежда и аксессуары",
-    image: img89Alt
-  },
-  {
-    id: 8,
-    name: "Для дома",
-    image: img31Alt
-  },
-];
-const praimer = [
-  {
-    id: '1',
-    title: 'DEAR DAHLIA Prime layer skin prep',
-    category: 'Праймер для лица',
-    title2: `Многофункциональный массажер для лица Impulse Hot&Cold – это комплексное решение для ежедневного использования на любом этапе ухода за кожей. В основе действия прибора лежит несколько технологий, которые используются в 4 различных режимах работы.\n
-        Эффект — Снятие отечности, повышение тонуса и эластичности кожи, очищение кожи лица, улучшение впитываемости уходовых средств.\n
-        Тип питания — Аккумулятор.
-        Модель — MRD 579.
-        Время зарядки аккумулятора — 180 мин.
-        Время автономной работы — 240 мин.
-        Количество режимов — 4.
-        Регулировка интенсивности — Да.
-        Длина — 16 см.
-        Ширина — 5 см.
-        Высота — 6 см.
-        гарантийный срок — 1 год.`,
-    price: '1 818 ₽',
-    oldPrice: '4 545 ₽',
-    img: img2,
-    imgAlt: img10Alt,
-    discount: '60%'
-  },
-
-];
-const praim = [
-  {
-    id: '2',
-    title: 'ROSSANO FERRETTI Dolce 05 repair & nourish shampoo',
-    category: 'Шампунь для восстановления и питания волос',
-    price: 'от 960 ₽',
-    img: img3,
-    imgAlt: img9Alt,
-    discount: 'new!'
-  }
-];
-const prai = [
-  {
-    id: '3',
-    title: 'oss to oss Ultra-gentle',
-    title2: `тип продукта
-зубная паста
-для кого
-унисекс
-назначение
-антибактериальное, от кариеса, свежее дыхание, очищение
-вес
-100 г В составе:
-- витамин Е для ухода за полостью рта и антибактериальной защиты;
-- пищевая сера и минералы, обеспечивающие комплексный уход;
-- зеленый чай, который реминерализует, оказывает антиоксидантную, антибактериальную защиту и противовоспалительное действие;
-- ромашка, чтобы успокаивать раздражение.`,
-    category: 'Зубная паста укрепляющая для чувствительных зубов',
-    price: 'от 810 ₽',
-    img: img4,
-    imgAlt: img8Alt
-  }
-];
-const cream = [
-  {
-    id: '4',
-    title: 'Ligne St. Barth Banana hand and foot cream',
-    category: 'Крем для рук и ног',
-    price: '9 300 ₽',
-    img: img5,
-    discount: '+gift!'
-  }
-];
-const cre = [
-  {
-    id: '5',
-    title: 'Anastasia Beverly Hills Blurring serum blush',
-    category: 'Жидкие румяна для лица',
-    price: '4 219 ₽',
-    img: img6,
-    imgAlt: img7Alt,
-    discount: 'new!'
-  }
-];
-const cr = [
-  {
-    id: '6',
-    title: 'Coccinelle TEBE',
-    category: ' Сумка кросс-боди',
-    price: 'от 960 ₽',
-    img: img7,
-    discount: 'new!'
-  }
-];
-const rumia = [
-  {
-    id: '7',
-    title: 'Oreal Paris LUMI',
-    category: 'Жидкие румяна для лица',
-    price: '1 056 ₽',
-    oldPrice: ' 1 818 ₽',
-    img: img13,
-    discount: 'new!'
-  }
-];
-const rumi = [
-  {
-    id: '8',
-    title: 'RABANNE Fame',
-    category: ' Парфюмерная вода',
-    price: '11 360 ₽',
-    img: img12,
-    imgAlt: img12Alt,
-    discount: 'gift!'
-  }
-];
-const nabor = [
-  {
-    id: '9',
-    title: 'BABOR Promo Easter Egg 2025',
-    category: 'Ампульный набор для лица',
-    price: '8 200 ₽',
-    img: img11,
-    imgAlt: img11Alt,
-    discount: 'new!',
-    button: 'новое | -20%'
-  }
-];
-const nab = [
-  { id: '10', title: 'BABOR Promo Easter Egg 2025', category: ' Набор для ванной', price: '3 989 ₽', img: img14, discount: 'new!', }];
-const night = [
-  { id: '10', title: 'Go Tapa Radiant night cream', category: ' Ночной крем для восстановления сияния', price: '790 ₽', img: img15, imgAlt: img15Alt, discount: 'new!', }];
-const nigh = [
-  { id: '11', title: 'DKNY BRYANT AVE TZ DEMI C', category: 'Сумка кросс-боди', price: '21 000 ₽', img: img17, imgAlt: img17Alt, discount: 'new!', }];
-const koja = [
-  { id: '12', title: 'True Island Honey bee total care set', category: ' Подарочный набор для ухода за кожей', price: '4 490 ₽', img: img18, imgAlt: img18Alt, discount: 'new!', button: 'новое | -20%' }];
-const termo = [
-  { id: '13', title: 'Pioneer tp718', category: 'Термопот', price: '5 192 ₽', img: img19, imgAlt: img19Alt, discount: 'new!' }];
-const otkr = [
-  { id: '14', title: 'aespa Armageddon: The Mystery Circle POSTCARD SET GISELLE Ver.', category: 'Набор открыток', price: '2 130 ₽', img: img20, imgAlt: img20Alt }];
-const svec = [
-  { id: '15', title: 'MAEMI ROUGE', category: 'Ароматическая свеча', price: '3 100 ₽', img: img24, discount: 'new!' }];
-const apparat = [
-  { id: '16', title: 'GESS The One', category: 'Косметологический аппарат', price: '36 966 ₽', img: img25, imgAlt: img25Alt, discount: '25%' }];
-const shamp = [
-  { id: '17', title: 'ROSSANO FERRETTI Dolce 05 repair & nourish shampoo', category: 'Шампунь для восстановления и питания волос', price: 'от 960 ₽', img: img3, imgAlt: img9Alt, discount: 'new!' }];
-const futbol = [
-  { id: '18', title: 'MY KIDCORE', category: 'Футболка', price: 'от 3 825 ₽', img: img26, discount: 'only GA' }];
-const mashin = [
-  { id: '19', title: 'Panasonic ER-GB60-K520', category: 'Машинка для стрижки', price: '7 204 ₽', img: img27, imgAlt: img27Alt, discount: 'new!' }];
-const naushniki = [
-  { id: '20', title: 'Apple AirPods 3 with MagSafe Charging Case', category: 'Наушники', price: '19 410 ₽', img: img21 }];
-const phen = [
-  { id: '21', title: ' REMEZ Model S RMB-707Bx', category: ' Фен-стайлер', price: '29 890 ₽', imgAlt: img23Alt, img: img23, discount: 'new!' }];
-const piala = [
-  { id: '22', title: 'Odaryadarya Король, алкоголь и самоконтроль', category: 'Пиала', price: '2 650 ₽', imgAlt: img22Alt, img: img22, discount: 'new!' }];
 export default function Products() {
   const [imageHovered, setImageHovered] = useState(null);
   const handleMouseEnter = (img) => setImageHovered(img);
@@ -300,9 +60,8 @@ export default function Products() {
               {praimer.map((dog) => (
                 <div
                   key={dog.id}
-                  className="relative w-[320px] bg-white p-4 rounded-lg cursor-pointer"
-                  onClick={() => setSelectedProduct(dog)}
-                >
+                  className="relative w-[300px] h-[320px] bg-white rounded-lg cursor-pointer"
+                  onClick={() => setSelectedProduct(dog)}>
                   <div className=''>
                     <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
                     <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
@@ -319,7 +78,7 @@ export default function Products() {
               ))}
 
               {praim.map((og) => (
-                <div key={og.id} className='ml-[60px] w-[300px]'>
+                <div key={og.id} className='ml-[60px] w-[300px]' onClick={()=> setSelectedProduct(og)}>
                   <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
                   <button className='bg-[#10ee48] w-[40px] h-[40px] text-[white] font-bold absolute'>{og.discount}</button>
@@ -342,7 +101,7 @@ export default function Products() {
             </div>
             <div className='flex'>
               {cream.map((c) => (
-                <div key={c.id} className='mt-[-130px] w-[1400px]' >
+                <div key={c.id} className='mt-[-130px] w-[1400px]' onClick={() => setSelectedProduct(c)} >
                   <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[605px] mt-[20px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] ml-[605px] mt-[560px]' /></Link>
                   <button className='bg-[#dadd0e] text-[black] font-bold w-[45px] h-[40px] absolute'>{c.discount}</button>
@@ -353,18 +112,18 @@ export default function Products() {
                 </div>
               ))}
               {cre.map((cr) => (
-                <div key={cr.id} className='ml-[90px] mt-[90px]' onMouseEnter={() => handleMouseEnter('blush')} onMouseLeave={handleMouseLeave}>
+                <div key={cr.id} className='ml-[90px] mt-[90px]' onMouseEnter={() => handleMouseEnter('blush')} onMouseLeave={handleMouseLeave} onClick={() => setSelectedProduct(cr)}>
                   <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
                   <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>{cr.discount}</button>
                   <img src={imageHovered === cr.id ? cr.imgAlt : cr.img} onMouseEnter={() => handleMouseEnter(cr.id)} onMouseLeave={handleMouseLeave} className='w-[300px] h-[300px]' />
-                  <h3 className='hover:text-[#9ca887] font-mono mt-[16px]' style={{ direction: 'ltr', textAlign: 'left' }}> {cr.title}</h3>
+                  <h3 className='hover:text-[#9ca887] font-mono mt-[16px]' style={{ direction: 'ltr', textAlign: 'left' }}> {cr.category}</h3>
                   <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}> {cr.title}</h1>
                   <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>{cr.price}</h1>
                 </div>
               ))}
               {cr.map((cre) => (
-                <div key={cre.id} className='ml-[60px] mt-[90px]'>
+                <div key={cre.id} className='ml-[60px] mt-[90px]' onClick={()=>setSelectedProduct(cre)}>
                   <Link to="/favorites"><IoHeartOutline className='absolute  ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
                   <button className='absolute  bg-[#10ee48] w-[40px] h-[40px] text-[white] font-bold'>{cre.discount}</button>
@@ -382,7 +141,7 @@ export default function Products() {
             </div>
             <div className='flex mt-[100px]'>
               {rumia.map((rum) => (
-                <div key={rum.id} className=''>
+                <div key={rum.id} className='' onClick={()=>setSelectedProduct(rum)}>
                   <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
                   <button className='bg-[#0ee44e] text-[black] font-bold w-[40px] absolute h-[40px]'>{rum.discount}</button>
@@ -396,7 +155,7 @@ export default function Products() {
                 </div>
               ))}
               {rumi.map((ru) => (
-                <div key={ru.id} className='ml-[60px] w-[300px]'>
+                <div key={ru.id} className='ml-[60px] w-[300px]' onClick={()=> setSelectedProduct(ru)}>
                   <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
                   <button className='bg-[#cee313] text-[black] w-[40px] h-[40px]  font-bold absolute'>{ru.discount}</button>
@@ -407,7 +166,7 @@ export default function Products() {
                 </div>
               ))}
               {nabor.map((nab) => (
-                <div className='ml-[90px]'>
+                <div className='ml-[90px]' onClick={()=>setSelectedProduct(nab)}>
                   <button className='bg-[#0ee44e] text-[black] font-bold w-[40px] absolute h-[40px]'>{nab.discount}</button>
                   <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[605px] mt-[20px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] ml-[605px] mt-[560px]' /></Link>
@@ -421,7 +180,7 @@ export default function Products() {
             </div>
             <div className='flex mt-[100px] w-[1400px]'>
               {nab.map((na) => (
-                <div key={na.id} className=''>
+                <div key={na.id} className='' onClick={()=>setSelectedProduct(na)}>
                   <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
                   <button className='bg-[#0ee44e] text-[black] font-bold w-[40px] absolute h-[40px]'>{na.discount}</button>
@@ -432,7 +191,7 @@ export default function Products() {
                 </div>
               ))}
               {night.map((nig) => (
-                <div key={nig.id} className='ml-[60px] w-[300px]'>
+                <div key={nig.id} className='ml-[60px] w-[300px]' onClick={()=>setSelectedProduct(nig)}>
                   <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
                   <button className='bg-[#5deb0a] text-[black] font-bold w-[40px] absolute h-[40px]'>{nig.discount}</button>
@@ -443,7 +202,7 @@ export default function Products() {
                 </div>
               ))}
               {nigh.map((nigh) => (
-                <div key={nigh} className='w-[300px] ml-[60px]' onMouseEnter={() => handleMouseEnter('sumka')} onMouseLeave={handleMouseLeave}>
+                <div key={nigh} className='w-[300px] ml-[60px]' onClick={()=>setSelectedProduct(nigh)} onMouseEnter={() => handleMouseEnter('sumka')} onMouseLeave={handleMouseLeave}>
                   <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
                   <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>{nigh.discount}</button>
@@ -454,7 +213,7 @@ export default function Products() {
                 </div>
               ))}
               {shamp.map((sham) => (
-                <div key={sham.id} className='ml-[60px] w-[300px]'>
+                <div key={sham.id} className='ml-[60px] w-[300px]' onClick={()=>setSelectedProduct(sham)}>
                   <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
                   <button className='bg-[#10ee48] w-[40px] h-[40px] text-[white] font-bold absolute'>{sham.discount}</button>
@@ -467,7 +226,7 @@ export default function Products() {
             </div>
             <div className='flex mt-[100px] '>
               {koja.map((koj) => (
-                <div key={koj} className='w-[300px]'>
+                <div key={koj} className='w-[300px]' onClick={()=>setSelectedProduct(koj)}>
                   <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
                   <button className='bg-[#49f20b] text-[black] font-bold w-[40px] absolute h-[40px]'>{koj.discount}</button>
@@ -479,7 +238,7 @@ export default function Products() {
                 </div>
               ))}
               {termo.map((ter) => (
-                <div key={ter.id} className='w-[300px] ml-[60px]'>
+                <div key={ter.id} onClick={()=>setSelectedProduct(ter)} className='w-[300px] ml-[60px]'>
                   <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
                   <button className='bg-[#b60ca7] text-[white] font-bold w-[40px] absolute h-[40px]'>{ter.discount}</button>
@@ -491,7 +250,7 @@ export default function Products() {
                 </div>
               ))}
               {otkr.map((otk) => (
-                <div key={otk.id} className='ml-[90px] '>
+                <div key={otk.id} onClick={()=>setSelectedProduct(otk)} className='ml-[90px] '>
                   <p className='hover:text-[#9ca887] absolute font-mono mt-[40px] ml-[400px]'>{otk.category}</p>
                   <h1 className='hover:text-[#9ca887] absolute text-4xl mt-[70px]  w-[250px] font-medium ml-[400px]' >{otk.title}</h1>
                   <h1 className='font-bold hover:text-[#9ca887] text-2xl absolute mt-[330px] ml-[400px]'>{otk.price}</h1>
@@ -504,7 +263,7 @@ export default function Products() {
             </div>
             <div className='flex mt-[100px]'>
               {svec.map((sve) => (
-                <div key={sve.id} className=''>
+                <div key={sve.id} className='' onClick={()=>setSelectedProduct(sve)}>
                   <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
                   <button className='bg-[#0ee44e] text-[#bbbbbb] font-bold w-[40px] absolute h-[40px]'>{sve.discount}</button>
@@ -515,7 +274,7 @@ export default function Products() {
                 </div>
               ))}
               {apparat.map((app) => (
-                <div key={app.id} className='ml-[60px] w-[300px]'>
+                <div key={app.id} className='ml-[60px] w-[300px]' onClick={()=>setSelectedProduct(app)}>
                   <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
                   <button className='bg-[#a503a3] text-[#bababa] font-bold w-[40px] absolute h-[40px]'>{app.discount}</button>
@@ -526,7 +285,7 @@ export default function Products() {
                 </div>
               ))}
               {futbol.map((fut) => (
-                <div key={fut.id} className='ml-[90px] w-[300px]'>
+                <div key={fut.id} className='ml-[90px] w-[300px]' onClick={()=>setSelectedProduct(fut)}>
                   <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
                   <button className='bg-[#7f0aa9] text-[#e3e1e1] font-bold w-[40px] absolute h-[40px]'>{fut.discount}</button>
@@ -537,7 +296,7 @@ export default function Products() {
                 </div>
               ))}
               {mashin.map((mash) => (
-                <div key={mash.id} className='w-[300px] ml-[60px]' onMouseEnter={() => handleMouseEnter('d')} onMouseLeave={handleMouseLeave}>
+                <div key={mash.id} onClick={()=>setSelectedProduct(mash)} className='w-[300px] ml-[60px]' onMouseEnter={() => handleMouseEnter('d')} onMouseLeave={handleMouseLeave}>
                   <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
                   <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
                   <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>{mash.discount}</button>
@@ -550,7 +309,7 @@ export default function Products() {
             </div>
             <div className='flex mt-[100px] '>
               {naushniki.map((nau) => (
-                <div key={nau.id} className=''>
+                <div key={nau.id} className='' onClick={()=>setSelectedProduct(nau)}>
                   <p className='hover:text-[#9ca887] absolute font-mono mt-[80px] ml-[100px]'>{nau.category}</p>
                   <h1 className='hover:text-[#9ca887] absolute text-4xl w-[250px] mt-[130px]  font-medium ' >{nau.title}</h1>
                   <h1 className='font-bold hover:text-[#9ca887] absolute text-2xl mt-[310px] '>{nau.price}</h1>
@@ -560,7 +319,7 @@ export default function Products() {
                 </div>
               ))}
               {phen.map((fen) => (
-                <div key={fen.id} className='w-[300px] ml-[90px]' onMouseEnter={() => handleMouseEnter('fen')} onMouseLeave={handleMouseLeave}>
+                <div key={fen.id} onClick={()=>setSelectedProduct(fen)} className='w-[300px] ml-[90px]' onMouseEnter={() => handleMouseEnter('fen')} onMouseLeave={handleMouseLeave}>
                   <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] mt-[10px]  ml-[265px] ' /></Link>
                   <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
                   <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>{fen.discount}</button>
@@ -571,7 +330,7 @@ export default function Products() {
                 </div>
               ))}
               {piala.map((pia) => (
-                <div key={pia.id} className='w-[300px] ml-[60px]' onMouseEnter={() => handleMouseEnter('piala')} onMouseLeave={handleMouseLeave}>
+                <div key={pia.id} onClick={()=>setSelectedProduct(pia)} className='w-[300px] ml-[60px]' onMouseEnter={() => handleMouseEnter('piala')} onMouseLeave={handleMouseLeave}>
                   <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] mt-[10px]  ml-[265px] ' /></Link>
                   <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
                   <button className='bg-[#10ee48] text-[white] font-bold w-[40px] absolute h-[40px]'>{pia.discount}</button>
@@ -586,5 +345,26 @@ export default function Products() {
         </div>
         {selectedProduct && <Modal dog={selectedProduct} onClose={() => setSelectedProduct(null)} />}
         {selectedProduct && <Modal g={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal c={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal og={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal cr={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal cre={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal rum={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal ru={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal nab={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal na={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal nig={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal nigh={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal sham={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal koj={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal ter={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal otk={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal sve={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal app={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal fut={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal mash={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal nau={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal fen={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal pia={selectedProduct} onClose={() => setSelectedProduct(null)} />}          
       </div>    
 )}

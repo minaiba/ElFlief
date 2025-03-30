@@ -35,22 +35,163 @@ import ka15 from '../../assets/gulasyl/yel.webp'
 import ka16 from '../../assets/gulasyl/yel2.webp'
 import ka17 from '../../assets/gulasyl/wor.webp'
 import ka18 from '../../assets/gulasyl/wor2.webp'
-// import { useState } from "react";
-export default function GiftCard() {
+import Card from './Card'
+const cart1 = [
+  {
+    id: '1',
+    title: 'GOLD APPLE gift card',
+    category: ' пластиковая подарочная карта',
+    title2: `артикул: 19000306456
 
+Теперь пластиковую подарочную карту можно заказать в интернет-магазине с удобной доставкой! Просто добавьте её в корзину вместе с другими продуктами, а мы отправим карту в конверте, чтобы вы красиво преподнесли подарок.
+
+у такого сюрприза много плюсов:
+— Для оплаты можно списать любую сумму, доступную на карте. Оставшаяся сумма не сгорает, карту можно использовать несколько раз.
+— Действует в интернет-магазине и офлайн.
+— Проверить баланс и узнать условия использования можно по qr-коду на обратной стороне карты.`,
+    price: '10 000 ₽',
+    img: ca4,
+    imgAlt: ka10
+  },
+];
+const cart2 = [
+  {
+    id: '2',
+    title: 'GOLD APPLE gift card',
+    category: ' пластиковая подарочная карта',
+    title2: `артикул: 19000306456
+
+Теперь пластиковую подарочную карту можно заказать в интернет-магазине с удобной доставкой! Просто добавьте её в корзину вместе с другими продуктами, а мы отправим карту в конверте, чтобы вы красиво преподнесли подарок.
+
+у такого сюрприза много плюсов:
+— Для оплаты можно списать любую сумму, доступную на карте. Оставшаяся сумма не сгорает, карту можно использовать несколько раз.
+— Действует в интернет-магазине и офлайн.
+— Проверить баланс и узнать условия использования можно по qr-коду на обратной стороне карты.`,
+    price: '3 000 ₽',
+    img: ka1,
+    imgAlt: ka2
+  },
+];
+const cart3 = [
+  {
+    id: '3',
+    title: 'GOLD APPLE gift card',
+    category: ' пластиковая подарочная карта',
+    title2: `артикул: 19000306456
+
+Теперь пластиковую подарочную карту можно заказать в интернет-магазине с удобной доставкой! Просто добавьте её в корзину вместе с другими продуктами, а мы отправим карту в конверте, чтобы вы красиво преподнесли подарок.
+
+у такого сюрприза много плюсов:
+— Для оплаты можно списать любую сумму, доступную на карте. Оставшаяся сумма не сгорает, карту можно использовать несколько раз.
+— Действует в интернет-магазине и офлайн.
+— Проверить баланс и узнать условия использования можно по qr-коду на обратной стороне карты.`,
+    price: '5 000 ₽',
+    img: ca6,
+    imgAlt: ca5
+  },
+];
+const cart4 = [
+  {
+    id: '4',
+    title: 'GOLD APPLE gift card',
+    category: ' пластиковая подарочная карта',
+    title2: `артикул: 19000306456
+
+Теперь пластиковую подарочную карту можно заказать в интернет-магазине с удобной доставкой! Просто добавьте её в корзину вместе с другими продуктами, а мы отправим карту в конверте, чтобы вы красиво преподнесли подарок.
+
+у такого сюрприза много плюсов:
+— Для оплаты можно списать любую сумму, доступную на карте. Оставшаяся сумма не сгорает, карту можно использовать несколько раз.
+— Действует в интернет-магазине и офлайн.
+— Проверить баланс и узнать условия использования можно по qr-коду на обратной стороне карты.`,
+    price: '4 000 ₽',
+    img: ca7,
+    imgAlt: ka9
+  },
+];
+const cart5 = [
+  {
+    id: '5',
+    title: 'GOLD APPLE gift card',
+    category: ' пластиковая подарочная карта',
+    title2: `артикул: 19000306456
+
+Теперь пластиковую подарочную карту можно заказать в интернет-магазине с удобной доставкой! Просто добавьте её в корзину вместе с другими продуктами, а мы отправим карту в конверте, чтобы вы красиво преподнесли подарок.
+
+у такого сюрприза много плюсов:
+— Для оплаты можно списать любую сумму, доступную на карте. Оставшаяся сумма не сгорает, карту можно использовать несколько раз.
+— Действует в интернет-магазине и офлайн.
+— Проверить баланс и узнать условия использования можно по qr-коду на обратной стороне карты.`,
+    price: '7 000 ₽',
+    img: ka11,
+    imgAlt: ka12
+  },
+];
+const cart6 = [
+  {
+    id: '6',
+    title: 'GOLD APPLE gift card',
+    category: ' пластиковая подарочная карта',
+    title2: `артикул: 19000306456
+
+Теперь пластиковую подарочную карту можно заказать в интернет-магазине с удобной доставкой! Просто добавьте её в корзину вместе с другими продуктами, а мы отправим карту в конверте, чтобы вы красиво преподнесли подарок.
+
+у такого сюрприза много плюсов:
+— Для оплаты можно списать любую сумму, доступную на карте. Оставшаяся сумма не сгорает, карту можно использовать несколько раз.
+— Действует в интернет-магазине и офлайн.
+— Проверить баланс и узнать условия использования можно по qr-коду на обратной стороне карты.`,
+    price: '10 000 ₽',
+    img: ka13,
+    imgAlt: ka14
+  },
+];
+const cart7 = [
+  {
+    id: '7',
+    title: 'GOLD APPLE gift card',
+    category: ' пластиковая подарочная карта',
+    title2: `артикул: 19000306456
+
+Теперь пластиковую подарочную карту можно заказать в интернет-магазине с удобной доставкой! Просто добавьте её в корзину вместе с другими продуктами, а мы отправим карту в конверте, чтобы вы красиво преподнесли подарок.
+
+у такого сюрприза много плюсов:
+— Для оплаты можно списать любую сумму, доступную на карте. Оставшаяся сумма не сгорает, карту можно использовать несколько раз.
+— Действует в интернет-магазине и офлайн.
+— Проверить баланс и узнать условия использования можно по qr-коду на обратной стороне карты.`,
+    price: '5 000 ₽',
+    img: ka16,
+    imgAlt: ka15
+  },
+];
+const cart8 = [
+  {
+    id: '8',
+    title: 'GOLD APPLE gift card',
+    category: ' пластиковая подарочная карта',
+    title2: `артикул: 19000306456
+
+Теперь пластиковую подарочную карту можно заказать в интернет-магазине с удобной доставкой! Просто добавьте её в корзину вместе с другими продуктами, а мы отправим карту в конверте, чтобы вы красиво преподнесли подарок.
+
+у такого сюрприза много плюсов:
+— Для оплаты можно списать любую сумму, доступную на карте. Оставшаяся сумма не сгорает, карту можно использовать несколько раз.
+— Действует в интернет-магазине и офлайн.
+— Проверить баланс и узнать условия использования можно по qr-коду на обратной стороне карты.`,
+    price: '1 000 ₽',
+    img: ka18,
+    imgAlt: ka17
+  },
+];
+export default function GiftCard() {
   const [imageHovered, setImageHovered] = useState(null);
   const handleMouseEnter = (img) => setImageHovered(img);
   const handleMouseLeave = () => setImageHovered(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [isModalOpen, setModalOpen] = useState(false);
   const [formData, setFormData] = useState({ phone: '', message: '', time: '', payment: '', address: '', language: 'ru' });
-
   const images = [с1, с2, с3, с4, с5, с6, с7, с8, с9, с11, с12];
   const text = "Выберите стиль своей карты • ";
-
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
   return (
     <div className=''>
 
@@ -76,11 +217,10 @@ export default function GiftCard() {
           </div>
         </div>
       </div>
-
       <section>
         <div className=''>
           <h1 className="text-4xl font-bold uppercase mt-[30px] text-gray-800 text-center mb-12">Выбери дизайн карты</h1>
-          <div className="flex w-full h-[1300px] m-auto">
+          <div className="flex w-full h-[1000px] m-auto">
             <div className="flex-1 bg-center bg-cover transition-all duration-500  bg-amber-700 hover:flex-[7]" style={{ backgroundImage: `url(${с1})` }}></div>
             <div className="flex-1 bg-center bg-cover transition-all duration-500 hover:flex-[7] bg-fuchsia-300" style={{ backgroundImage: `url(${с2})` }}></div>
             <div className="flex-1 bg-center bg-cover transition-all duration-500 hover:flex-[7] bg-purple-400" style={{ backgroundImage: `url(${с3})` }}></div>
@@ -94,13 +234,9 @@ export default function GiftCard() {
             <div className="flex-1 bg-center bg-cover transition-all duration-500 hover:flex-[7] bg-pink-400" style={{ backgroundImage: `url(${с11})` }}></div>
             <div className="flex-1 bg-center bg-cover transition-all duration-500 hover:flex-[7] bg-red-400" style={{ backgroundImage: `url(${с12})` }}></div>
           </div>
-          <button className=' bg-gray-700 ml-[700px] text-white px-6 py-2 mt-5 mx-auto block text-lg rounded-lg hover:bg-gray-500' onClick={() => setModalOpen(true)}>Купить</button>
-
-
-
+          <button className='bg-gray-700 text-white px-6 py-2 mt-5 mx-auto flex justify-center text-lg rounded-lg hover:bg-gray-500' onClick={() => setModalOpen(true)}>Купить</button>
         </div>
       </section>
-
       {isModalOpen && (
         <div className="fixed inset-0 flex justify-center items-center backdrop-blur-sm">
           <div className="bg-white p-6 rounded-lg w-[400px] shadow-lg">
@@ -117,133 +253,102 @@ export default function GiftCard() {
           </div>
         </div>
       )}
-
       <section>
         <div className='w-[1400px] m-auto'>
-          <h1 className="text-4xl font-bold uppercase mt-[30px] text-gray-800 text-center mb-12">
-            пластиковые подарочные карты</h1>
-
-
+          <h1 className="text-4xl font-bold uppercase mt-[30px] text-gray-800 text-center mb-12"> пластиковые подарочные карты</h1>
           <div className='flex mt-[100px]'>
-            <div className=''>
+            {cart1.map((c1) => (
+              <div className='' onClick={() => setSelectedProduct(c1)} key={c1.id}>
+                <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+                <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
+                <img src={imageHovered === 'night' ? c1.img : c1.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('night')} onMouseLeave={handleMouseLeave} />
+                <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>{c1.category}</h3>
+                <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>{c1.title}</h1>
+                <h1 className='font-bold hover:text-[#9ca887] mt-[10px] ml-[230px]'>{c1.price}</h1>
+              </div>
+            ))}
+            {cart2.map((c2) => (
+            <div className='ml-[60px] w-[300px]' onClick={() => setSelectedProduct(c2)} key={c2.id}>
               <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
               <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
-              <img src={imageHovered === 'night' ? ca4 : ka10} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('night')}
-                onMouseLeave={handleMouseLeave} />
-              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
-                пластиковая подарочная карта</h3>
-              <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>GOLD APPLE gift card</h1>
-
-              <h1 className='font-bold hover:text-[#9ca887] mt-[10px] ml-[230px]'>10 000 ₽</h1>
-            </div>
-
-
-            <div className='ml-[60px] w-[300px]'>
-              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
-              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
-              <img src={imageHovered === 'nigt' ? ka1 : ka2} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nigt')}
-                onMouseLeave={handleMouseLeave} />
-              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
-                пластиковая подарочная карта</h3>
-              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>GOLD APPLE gift card</h1>
+              <img src={imageHovered === 'nigt' ? c2.img : c2.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nigt')} onMouseLeave={handleMouseLeave} />
+              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>{c2.category}</h3>
+              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>{c2.title}</h1>
               <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[200px]'>3 000 ₽</h1>
             </div>
-
-
-
-            <div className='ml-[90px] w-[300px]'>
+            ))}
+            {cart3.map((c3)=>(
+              <div className='ml-[90px] w-[300px]' onClick={() => setSelectedProduct(c3)} key={c3.id}>
               <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
               <Link to="/cart"><BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
-              <img src={imageHovered === 'nigh' ? ca6 : ca5} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nigh')}
-                onMouseLeave={handleMouseLeave}
-              />
-              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>пластиковая подарочная карта
-              </h3>
-              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-                GOLD APPLE gift card
-              </h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>5 000 ₽</h1>
+              <img src={imageHovered === 'nigh' ? c3.img : c3.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nigh')} onMouseLeave={handleMouseLeave}/>
+              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>{c3.category}</h3>
+              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>{c3.title}</h1>
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>{c3.price}</h1>
             </div>
-
-
-            <div className='w-[300px] ml-[60px]' onMouseEnter={() => handleMouseEnter('sumka')} onMouseLeave={handleMouseLeave}>
+            ))}
+            {cart4.map((c4)=>(
+              <div className='w-[300px] ml-[60px]' key={c4.id} onClick={() => setSelectedProduct(c4)} onMouseEnter={() => handleMouseEnter('sumka')} onMouseLeave={handleMouseLeave}>
               <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
               <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
-              <img
-                src={imageHovered === 'sumka' ? ca7 : ka9}
-                className='w-[300px] h-[300px]'
-              />
-              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>
-
-                пластиковая подарочная карта
-              </h3>
-              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-                GOLD APPLE gift card
-              </h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>2 000 ₽</h1>
+              <img src={imageHovered === 'sumka' ? c4.img : c4.imgAlt} className='w-[300px] h-[300px]'/>
+              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>{c4.category}</h3>
+              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>{c4.title}</h1>
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>{c4.price}</h1>
             </div>
+            ))}
           </div>
           <div className='flex mt-[100px]'>
-            <div className=''>
+            {cart5.map((c5)=>(
+              <div className='' key={c5.id} onClick={() => setSelectedProduct(c5)}>
               <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
               <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
-              <img src={imageHovered === 'nig' ? ka12 : ka11} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nig')}
-                onMouseLeave={handleMouseLeave} />
-              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
-                пластиковая подарочная карта</h3>
-              <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>GOLD APPLE gift card</h1>
-
-              <h1 className='font-bold hover:text-[#9ca887] mt-[10px] ml-[240px]'>4 000 ₽</h1>
+              <img src={imageHovered === 'nig' ? c5.img : c5.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nig')} onMouseLeave={handleMouseLeave} />
+              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>{c5.category}</h3>
+              <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>{c5.title}</h1>
+              <h1 className='font-bold hover:text-[#9ca887] mt-[10px] ml-[240px]'>{c5.price}</h1>
             </div>
-
-
-            <div className='ml-[60px] w-[300px]'>
+            ))}
+            {cart6.map((c6)=>(
+              <div className='ml-[60px] w-[300px]' key={c6.id} onClick={() => setSelectedProduct(c6)}>
               <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
               <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
-              <img src={imageHovered === 'ni' ? ka13 : ka14} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('ni')}
-                onMouseLeave={handleMouseLeave} />
-              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>
-                пластиковая подарочная карта</h3>
-              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>GOLD APPLE gift card</h1>
-              <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[200px]'>10 000 ₽</h1>
+              <img src={imageHovered === 'ni' ? c6.img : c6.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('ni')} onMouseLeave={handleMouseLeave} />
+              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>{c6.category}</h3>
+              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>{c6.title}</h1>
+              <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[200px]'>{c6.price}</h1>
             </div>
-
-
-
-            <div className='ml-[90px] w-[300px]'>
-              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+            ))}
+            {cart7.map((c7)=>(
+              <div className='ml-[90px] w-[300px]' key={c7.id} onClick={() => setSelectedProduct(c7)}>
+              <Link to="/favorites"><IoHeartOutline  className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
               <Link to="/cart"><BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
-              <img src={imageHovered === 'n' ? ka16 : ka15} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('n')}
-                onMouseLeave={handleMouseLeave}
-              />
-              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>пластиковая подарочная карта
-              </h3>
-              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-                GOLD APPLE gift card
-              </h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px]'>5 000 ₽</h1>
+              <img src={imageHovered === 'n' ? c7.img : c7.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('n')} onMouseLeave={handleMouseLeave} />
+              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>{c7.category}</h3>
+              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>{c7.title}</h1>
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px]'>{c7.price}</h1>
             </div>
-
-
-            <div className='w-[300px] ml-[60px]' onMouseEnter={() => handleMouseEnter('suma')} onMouseLeave={handleMouseLeave}>
-              <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
-              <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
-              <img
-                src={imageHovered === 'suma' ? ka18 : ka17}
-                className='w-[300px] h-[300px]'
-              />
-              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>
-
-                пластиковая подарочная карта
-              </h3>
-              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>
-                GOLD APPLE gift card
-              </h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>1 000 ₽</h1>
-            </div>
+            ))}
+            {cart8.map((c8)=>(
+               <div className='w-[300px] ml-[60px]' key={c8.id} onClick={() => setSelectedProduct(c8)} onMouseEnter={() => handleMouseEnter('suma')} onMouseLeave={handleMouseLeave}>
+               <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
+               <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
+               <img src={imageHovered === 'suma' ? c8.img : c8.imgAlt} className='w-[300px] h-[300px]'/>
+               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>{c8.category}</h3>
+               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>{c8.title}</h1>
+               <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>{c8.price}</h1>
+             </div>
+            ))}
           </div>
-
         </div>
+        {selectedProduct && <Card c1={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Card c2={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Card c3={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Card c4={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Card c5={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Card c6={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Card c7={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Card c8={selectedProduct} onClose={() => setSelectedProduct(null)} />}
       </section>
     </div>
   );
