@@ -842,7 +842,6 @@ export default function Products() {
         {selectedProduct && <Modal nau={selectedProduct} onClose={() => setSelectedProduct(null)} />}
         {selectedProduct && <Modal fen={selectedProduct} onClose={() => setSelectedProduct(null)} />}
         {selectedProduct && <Modal pia={selectedProduct} onClose={() => setSelectedProduct(null)} />}
-        {/* {selectedProduct && <Modal mash={selectedProduct} onClose={() => setSelectedProduct(null)} />} */}
       </section >
     </div >
   );
