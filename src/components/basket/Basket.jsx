@@ -43,7 +43,7 @@ const Basket = () => {
       {cartItem.map((item) => (
         <div key={item.id} className="flex my-10 justify-between items-center border-b py-4">
           <div className="flex">
-            <img src={item.image} alt={item.title} className="w-[100px] h-[100px] object-cover" />
+            <img src={item.img} alt={item.title} className="w-[100px] h-[100px] object-cover" />
             <div className="ml-6 mt-8 font-mono">
               <h2>{item.name}</h2>
               <p>{item.price} ₽</p>

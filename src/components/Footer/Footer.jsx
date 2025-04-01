@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom'
 export default function Footer() {
   return (
     <div className="bg-black text-white px-8">
-  <div className="w-full max-w-[1400px] m-auto">
+  <div className="w-full max-w-[1400px] m-auto mt-[50px] ">
     <div className="flex justify-center items-center py-4">
       <img src={golden} className="w-[240px]" alt="Golden Logo" />
     </div>

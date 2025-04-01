@@ -11,6 +11,10 @@ import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
 import Modal from './Modal';
 import { apparat, categories, cr, cre, cream, futbol, koja, mashin, nab, nabor, naushniki, nigh, night, otkr, phen, piala, prai, praim, praimer, rumi, rumia, shamp, svec, termo } from './CardProduct';
+import { useDispatch } from 'react-redux';
+import { addCart } from '../../ElFlief/FavoritesSlide';
+import { addToCart } from '../../ElFlief/CartSlice';
+// import Mmodal from './Mmodal'
 
 export default function Products() {
   const [imageHovered, setImageHovered] = useState(null);

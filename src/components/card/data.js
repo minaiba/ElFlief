@@ -1,4 +1,3 @@
-import afina from '../../assets/aiba/afina.webp'
 import banana1 from '../../assets/aiba/banana1.webp'
 import banana2 from '../../assets/aiba/bananaT.webp'
 import banana3 from '../../assets/aiba/banana3.webp'
@@ -11,6 +10,12 @@ import pikky3 from '../../assets/aiba/pikky3.webp'
 import pikky4 from '../../assets/aiba/pikky4.webp'
 import pikky5 from '../../assets/aiba/pikky5.webp'
 import pikky6 from '../../assets/aiba/pikky6.webp'
+import dalba1 from '../../assets/aiba/dalba1.webp'
+import dalba2 from '../../assets/aiba/dalba2.webp'
+import dalba3 from '../../assets/aiba/dalba3.webp'
+import dalba4 from '../../assets/aiba/dalba4.webp'
+import dalba5 from '../../assets/aiba/dalba5.webp'
+import dalba6 from '../../assets/aiba/dalba6.webp'
 import image1 from '../../assets/aiba/fullhd.webp'
 import image2 from '../../assets/aiba/fullhd2.webp'
 import image3 from '../../assets/aiba/fullhd3.webp'
@@ -39,18 +44,14 @@ import moon from '../../assets/aiba/moon.webp'
 import cellmen from '../../assets/aiba/cellmen.webp'
 import lock from '../../assets/aiba/lock.webp'
 import image12 from '../../assets/aiba/fullhd12.webp'
+import afina from '../../assets/aiba/afina.webp'
 import shick1 from '../../assets/aiba/shik2.webp'
 import shick2 from '../../assets/aiba/shik3.webp'
 import shick3 from '../../assets/aiba/shik4.webp'
 import shick4 from '../../assets/aiba/shik5.webp'
 import shick5 from '../../assets/aiba/shik6.webp'
 import shick6 from '../../assets/aiba/shik7.webp'
-import dalba1 from '../../assets/aiba/dalba1.webp'
-import dalba2 from '../../assets/aiba/dalba2.webp'
-import dalba3 from '../../assets/aiba/dalba3.webp'
-import dalba4 from '../../assets/aiba/dalba4.webp'
-import dalba5 from '../../assets/aiba/dalba5.webp'
-import dalba6 from '../../assets/aiba/dalba6.webp'
+
 
 export const news = [
     {
@@ -532,57 +533,6 @@ export const news = [
 
     },
 ]
-
-export const pro = [
-        {
-            id: 1,
-            image: shick1,
-            name: "SHIK Total repair balm",
-            description: "SHIK Восстанавливающий бальзам для губ SPF 15",
-            price: "549 P",
-            oldPrice: "888 P",
-        },
-        {
-            id: 2,
-            image: shick3,
-            name: "SHIK Eyebrow & lashes",
-            description: "Сыворотка для бровей и ресниц",
-            price: "565 ₽",
-            oldPrice: "912 ₽",
-        },
-        {
-            id: 3,
-            image: shick2,
-            name: "SHIK Total repair balm",
-            description: "Восстанавливающий бальзам для губ SPF 15",
-            price: "622 ₽",
-            oldPrice: "889 ₽",
-        },
-        {
-            id: 4,
-            image: shick4,
-            name: "SHIK PRO HAND CREAM HYDRATING",
-            description: "Крем для рук увлажняющий",
-            price: "171 P",
-            oldPrice: "212 P",
-        },
-        {
-            id: 5,
-            image: shick6,
-            name: "SHIK Cellular complex repair eye cream",
-            description: "Крем для кожи вокруг глаз",
-            price: "806 ₽",
-            oldPrice: "1 344 ₽",
-        },
-        {
-            id: 6,
-            image: shick5,
-            name: "SHIK Hydrating moisturizing emulsion",
-            description: "Увлажняющая эмульсия",
-            price: "883 ₽",
-            oldPrice: "1 767 ₽",
-        },
-];
     
 export const banan = [
     {
@@ -727,3 +677,54 @@ export const pikky = [
         price: "621 P",
     },
 ]
+
+export const pro = [
+    {
+        id: 1,
+        img: shick1,
+        name: "SHIK Total repair balm",
+        description: "SHIK Восстанавливающий бальзам для губ SPF 15",
+        price: "549 P",
+        oldPrice: "888 P",
+    },
+    {
+        id: 2,
+        img: shick3,
+        name: "SHIK Eyebrow & lashes",
+        description: "Сыворотка для бровей и ресниц",
+        price: "565 ₽",
+        oldPrice: "912 ₽",
+    },
+    {
+        id: 3,
+        img: shick2,
+        name: "SHIK Total repair balm",
+        description: "Восстанавливающий бальзам для губ SPF 15",
+        price: "622 ₽",
+        oldPrice: "889 ₽",
+    },
+    {
+        id: 4,
+        img: shick4,
+        name: "SHIK PRO HAND CREAM HYDRATING",
+        description: "Крем для рук увлажняющий",
+        price: "171 P",
+        oldPrice: "212 P",
+    },
+    {
+        id: 5,
+        img: shick6,
+        name: "SHIK Cellular complex repair eye cream",
+        description: "Крем для кожи вокруг глаз",
+        price: "806 ₽",
+        oldPrice: "1 344 ₽",
+    },
+    {
+        id: 6,
+        img: shick5,
+        name: "SHIK Hydrating moisturizing emulsion",
+        description: "Увлажняющая эмульсия",
+        price: "883 ₽",
+        oldPrice: "1 767 ₽",
+    },
+];

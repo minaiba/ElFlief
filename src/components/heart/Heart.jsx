@@ -16,7 +16,7 @@ export default function Heart() {
       {cartItem.map((item) => (
         <div key={item.id} className="mt-10 w-[1000px] ml-[190px] flex justify-between items-center border border-stone-600">
           <div className="flex">
-            <img src={item.image} alt={item.name} className="w-[120px] h-[100px]" />
+            <img src={item.img} alt={item.name} className="w-[120px] h-[100px]" />
             <div className="ml-4 mt-10 w-[390px] font-medium">
               <h2>{item.name}</h2>
             </div>
