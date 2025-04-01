@@ -49,7 +49,7 @@ const handleAddCart = () => {
 
   return (
     <div className="relative w-[95%] sm:w-[90%] md:w-[320px] bg-white p-3 sm:p-4 rounded-lg cursor-pointer">
-      <img src={product.image} className="w-full h-[180px] sm:h-[200px] rounded-lg object-cover" />
+      <img src={product.img} className="w-full h-[180px] sm:h-[200px] rounded-lg object-cover" />
       <h3 className="hover:text-[#9ca887] font-mono mt-3 sm:mt-4 text-right text-xs sm:text-sm md:text-base">
         {product.title}
       </h3>

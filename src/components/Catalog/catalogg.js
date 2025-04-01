@@ -72,7 +72,7 @@ import sokol12 from '../../assets/aiba/sokol12.webp'
 
 export const log = [
 {
-  image: moira,
+  img: moira,
   name:"MOIRA Matte Liquid Lips",
   title: "Матовая жидкая помада",
   count: 1990,
@@ -80,7 +80,7 @@ export const log = [
   id: 1
 },
 {
-  image: catalog2,
+  img: catalog2,
   name: "ORJENA REJUVENATE SYNERGY",
   title: "Крем для лица для упругости кожи",
   count: 2590,
@@ -88,7 +88,7 @@ export const log = [
   id: 2
 },
 {
-  image: catalog3,
+  img: catalog3,
   name: "Neogen REAL SERUM MINI TRIO LIFT UP",
   title: "Набор антивозрастных сывороток-миниатюр для лица",
   count: 3468,
@@ -96,7 +96,7 @@ export const log = [
   id: 3
 },
 {
-  image: catalog4,
+  img: catalog4,
   name: "Frudia Blueberry & Honey",
   title: "Увлажняющий бальзам для губ",
   count: 655,
@@ -104,7 +104,7 @@ export const log = [
   id: 4
 },
 {
-  image: catalog5,
+  img: catalog5,
   name: "Clio Kill cover skin fixer cushion",
   title: "Тональный фиксирующий кушон SPF 50+ PA+++",
   count: 19,
@@ -112,7 +112,7 @@ export const log = [
   id: 5
 },
 {
-  image: catalog6,
+  img: catalog6,
   name: "thinkco Papain + Enzyme + Vita C Renewing Mask Pack",
   title: "Тканевая маска для лица",
   count: 103,
@@ -120,7 +120,7 @@ export const log = [
   id: 6
 },
 {
-  image: "https://pcdn.goldapple.ru/p/p/19000305691/web/696d67416464335f64346161306536346661306234343733613531313734326665646166383261658dd4c343a874064fullhd.webp",
+  img: "https://pcdn.goldapple.ru/p/p/19000305691/web/696d67416464335f64346161306536346661306234343733613531313734326665646166383261658dd4c343a874064fullhd.webp",
   name: "Go Tapa Calming pore-clearing serum",
   title: "Успокаивающая сыворотка для сужения пор",
   count: 990,
@@ -128,7 +128,7 @@ export const log = [
   id: 7
 },
 {
-  image: catalog7,
+  img: catalog7,
   name: "Divnaya Iva Браш, 220*240",
   title: "Пододеяльник",
   count: 15860,
@@ -136,7 +136,7 @@ export const log = [
   id: 8
 },
 {
-  image: catalog8,
+  img: catalog8,
   name: "Your houser travel portable",
   title: "Расческа",
   count: 1690,
@@ -144,7 +144,7 @@ export const log = [
   id: 9
 },
 {
-  image: catalog9,
+  img: catalog9,
   name: "Divnaya Iva беж, 40*60",
   title: "Наволочка стеганная",
   count: 5380,
@@ -152,7 +152,7 @@ export const log = [
   id: 10
 },
 {
-  image: catalog10,
+  img: catalog10,
   name: "d'Alba Подарочный набор Vital Spray Serum Gift Set",
   title: "Подарочный набор",
   count: 4100,
@@ -160,7 +160,7 @@ export const log = [
   id: 11
 },
 {
-  image: catalog11,
+  img: catalog11,
   name: "ORJENA REJUVENATE SYNERGY",
   title: "Сыворотка для упругости кожи лица",
   count: 2290,
@@ -170,7 +170,7 @@ export const log = [
 ]
 export const cata = [
   {
-    image: cata1,
+    img: cata1,
     name: "RMS Legendary Serum Lipstick",
     title: "Помада-сыворотка для губ",
     count: 6743,
@@ -178,7 +178,7 @@ export const cata = [
     id: 13
   },
   {
-    image: cata2,
+    img: cata2,
     name: "VISEART Tinted brow gel",
     title: "гель для бровей",
     count: 5300,
@@ -186,7 +186,7 @@ export const cata = [
     id: 14
   },
   {
-    image: cata3,
+    img: cata3,
     name: "SHIK Sharpener",
     title: "Точилка косметическая",
     count: 1298,
@@ -194,7 +194,7 @@ export const cata = [
     id: 15
   },
   {
-    image: cata4,
+    img: cata4,
     name: "I Heart Revolution Sweet Swirl Lip Balm",
     title: "Бальзам для губ",
     count: 945,
@@ -202,7 +202,7 @@ export const cata = [
     id: 16
   },
   { 
-    image: cata5,
+    img: cata5,
     name: "RAD Way Too Extra Fake Lashes Glue",
     title: "Клей для накладных ресниц",
     count: 490,
@@ -210,7 +210,7 @@ export const cata = [
     id: 17
   },
 {  
-    image: cata6,
+    img: cata6,
     name: "DARLING* GLISTEN f. x DARLING*",
     title: "Хайлайтер-стик для лица",
     count: 1522,
@@ -218,7 +218,7 @@ export const cata = [
     id: 18
   },
   {
-    image: cata7,
+    img: cata7,
     name: "Adele for you Косметичка-папка Зеленая клетка Виши",
     title: "Косметичка-папка",
     count: 2975,
@@ -226,7 +226,7 @@ export const cata = [
     id: 19
   },
   {
-    image: cata8,
+    img: cata8,
     name: "RAD Start Here Eyeshadow Base",
     title: "База под тени для век",
     count: 975,
@@ -234,7 +234,7 @@ export const cata = [
     id: 20
   },
   {
-    image: cata9,
+    img: cata9,
     name: "SHIK Skin filter loose powder",
     title: "Фиксирующая пудра для лица",
     count: 1878,
@@ -242,7 +242,7 @@ export const cata = [
     id: 21
   },
   {
-    image: cata10,
+    img: cata10,
     name: "FOR ME by gold apple oil blotting sheet case",
     title: "матирующие салфетки",
     count: 446,
@@ -250,7 +250,7 @@ export const cata = [
     id: 22
   },
   {
-    image: cata11,
+    img: cata11,
     name: "Missha Perfect Cover Serum",
     title: "Тональный крем для лица",
     count: 2256,
@@ -258,7 +258,7 @@ export const cata = [
     id: 23
   },
   {
-    image: cata12,
+    img: cata12,
     name: "Essence Flawless skin trio",
     title: "Рассыпчатая пудра для лица",
     count: 983,
@@ -268,7 +268,7 @@ export const cata = [
 ]
 export const cat = [
   {
-    "image": cat1,
+    "img": cat1,
     "name": "Marc Jacobs Daisy Wild",
     "title": "Парфюмерная вода",
     "count": 13837,
@@ -276,7 +276,7 @@ export const cat = [
     "id": "25"
   },
   {
-    "image": cat2,
+    "img": cat2,
     "name": "State Of Mind Secret of Success",
     "title": "Парфюмерная вода",
     "count": 18707,
@@ -284,7 +284,7 @@ export const cat = [
     "id": "26"
   },
   {
-    "image": cat3,
+    "img": cat3,
     "name": "Jean Paul Gaultier Le Male Elixir Absolu",
     "title": "Парфюмерная вода",
     "count": 14000,
@@ -292,7 +292,7 @@ export const cat = [
     "id": "27"
   },
   {
-    "image": cat4,
+    "img": cat4,
     "name": "Neydo Breathe out 01.02",
     "title": "Парфюмерная вода",
     "count": 6680,
@@ -300,7 +300,7 @@ export const cat = [
     "id": "28"
   },
   {
-    "image": cat5,
+    "img": cat5,
     "name": "SOLINOTES Gingembre",
     "title": "Парфюмерная вода",
     "count": 2245,
@@ -308,7 +308,7 @@ export const cat = [
     "id": "29"
   },
   {
-    "image": cat6,
+    "img": cat6,
     "name": "Nicolai Parfumeur-Createur Paris Intense Pavlova",
     "title": "Парфюмерная вода",
     "count": 24015,
@@ -316,7 +316,7 @@ export const cat = [
     "id": "30"
   },
   {
-    "image": cat7,
+    "img": cat7,
     "name": "L'atelier parfum Carnal Bliss",
     "title": "Парфюмерная вода",
     "count": 9402,
@@ -324,7 +324,7 @@ export const cat = [
     "id": "31"
   },
   {
-    "image": cat8,
+    "img": cat8,
     "name": "Chloé Lumineuse",
     "title": "Парфюмерная вода",
     "count": 11414,
@@ -332,7 +332,7 @@ export const cat = [
     "id": "32"
   },
   {
-    "image": cat9,
+    "img": cat9,
     "name": "RABANNE million gold",
     "title": "Парфюмерная вода",
     "count": 19279,
@@ -340,7 +340,7 @@ export const cat = [
     "id": "33"
   },
   {
-    "image": cat10,
+    "img": cat10,
     "name": "ATKINSONS The Gems Of The Empire",
     "title": "Парфюмерный набор",
     "count": 9558,
@@ -348,7 +348,7 @@ export const cat = [
     "id": "34"
   },
   {
-    "image": cat11,
+    "img": cat11,
     "name": "Versace EAU FRAICHE",
     "title": "Подарочный набор",
     "count": 0,
@@ -356,7 +356,7 @@ export const cat = [
     "id": "35"
   },
   {
-    "image": cat12,
+    "img": cat12,
     "name": "Initio Parfums Prives ATOMIC ROSE",
     "title": "Вуаль для волос",
     "count": 16659,
@@ -366,7 +366,7 @@ export const cat = [
 ]
 export const logo = [
   {
-    "image": logo1,
+    "img": logo1,
     "name": "Kitfort KT-4102",
     "title": "Холодильник для косметики",
     "count": 0,
@@ -374,7 +374,7 @@ export const logo = [
     "id": "37"
   },
   {
-    "image": logo2,
+    "img": logo2,
     "name": "GALAXY LINE GL 0359",
     "title": "электрический Чайник",
     "count": 0,
@@ -382,7 +382,7 @@ export const logo = [
     "id": "38"
   },
   {
-    "image": logo3,
+    "img": logo3,
     "name": "FOREO FAQ 201",
     "title": "LED-МАСКА",
     "count": 53990,
@@ -390,7 +390,7 @@ export const logo = [
     "id": "39"
   },
   {
-    "image": logo4,
+    "img": logo4,
     "name": "Dyson HS05 Complete Long Volumise",
     "title": "dyson",
     "count": 99000,
@@ -398,7 +398,7 @@ export const logo = [
     "id": "40"
   },
   {
-    "image": logo5,
+    "img": logo5,
     "name": "Kitfort KT-6392",
     "title": "Очиститель катышков",
     "count": 2400,
@@ -406,7 +406,7 @@ export const logo = [
     "id": "41"
   },
   {
-    "image": logo6,
+    "img": logo6,
     "name": "Remington PG6020",
     "title": "беспроводная Машинка для стрижки волос",
     "count": 990,
@@ -414,7 +414,7 @@ export const logo = [
     "id": "42"
   },
   {
-    "image": logo7,
+    "img": logo7,
     "name": "Apple AirPods 4",
     "title": "Беспроводные наушники",
     "count": 0,
@@ -422,7 +422,7 @@ export const logo = [
     "id": "43"
   },
   {
-    "image": logo8,
+    "img": logo8,
     "name": "Kitfort KT-5277",
     "title": "Вертикальный пылесос",
     "count": 0,
@@ -430,15 +430,14 @@ export const logo = [
     "id": "44"
   },
   {
-    "image": logo9,
-    "name": "YamCase iPhone 16 Pro Max Воздух",
+    "img": "YamCase iPhone 16 Pro Max Воздух",
     "title": "Чехол для телефона",
     "count": 0,
     "price": 1650,
     "id": "45"
   },
   {
-    "image": logo10,
+    "img": logo10,
     "name": "YamCase AirPods Pro Плюшевый Бежевый",
     "title": "чехол для наушников",
     "count": 0,
@@ -446,7 +445,7 @@ export const logo = [
     "id": "46"
   },
   {
-    "image": logo11,
+    "img": logo11,
     "name": "Insta 360 Ace Pro Standalone",
     "title": "Экшен-камера",
     "count": 55233,
@@ -454,7 +453,7 @@ export const logo = [
     "id": "47"
   },
   {
-    "image": logo12,
+    "img": logo12,
     "name": "GALAXY LINE GL 4178, silver",
     "title": "Коврик для компьютерной мыши",
     "count": 4499,
@@ -464,7 +463,7 @@ export const logo = [
 ]
 export const hair = [
   {
-    "image": hair1,
+    "img": hair1,
     "name": "Your houser Мягкие",
     "title": "Бигуди для волос",
     "count": 0,
@@ -472,7 +471,7 @@ export const hair = [
     "id": "49"
   },
   {
-    "image": hair2,
+    "img": hair2,
     "name": "GRIGRI keratin repair",
     "title": "Маска для волос",
     "count": 2200,
@@ -480,7 +479,7 @@ export const hair = [
     "id": "50"
   },
   {
-    "image": hair3,
+    "img": hair3,
     "name": "KamaKamelia Mimi Milky",
     "title": "ободок для волос",
     "count": 12500,
@@ -488,7 +487,7 @@ export const hair = [
     "id": "51"
   },
   {
-    "image": hair4,
+    "img": hair4,
     "name": "Jilty hair styling",
     "title": "стик-Воск для укладки волос",
     "count": 0,
@@ -496,7 +495,7 @@ export const hair = [
     "id": "52"
   },
   {
-    "image": hair5,
+    "img": hair5,
     "name": "Organicals Baby gentle shampo",
     "title": "Детский шампунь для волос",
     "count": 2275,
@@ -504,7 +503,7 @@ export const hair = [
     "id": "53"
   },
   {
-    "image": hair6,
+    "img": hair6,
     "name": "RAD #Hairhacks Clips",
     "title": "Набор заколок-крабиков",
     "count": 0,
@@ -512,7 +511,7 @@ export const hair = [
     "id": "54"
   },
   {
-    "image": hair7,
+    "img": hair7,
     "name": "Davines МОМО",
     "title": "НАБОР уход для волос",
     "count": 0,
@@ -520,7 +519,7 @@ export const hair = [
     "id": "55"
   },
   {
-    "image": hair8,
+    "img": hair8,
     "name": "ICE by NATURA SIBERICA KERATIN INJECTION",
     "title": "Набор",
     "count": 2476,
@@ -528,7 +527,7 @@ export const hair = [
     "id": "56"
   },
   {
-    "image": hair9,
+    "img": hair9,
     "name": "BARBARO Styling powder",
     "title": "Пудра для укладки волос",
     "count": 1485,
@@ -536,7 +535,7 @@ export const hair = [
     "id": "57"
   },
   {
-    "image": hair10,
+    "img": hair10,
     "name": "Oribe Magnificent Volume",
     "title": "Шампунь для придания объема Магия объема",
     "count": 9876,
@@ -544,7 +543,7 @@ export const hair = [
     "id": "58"
   },
   {
-    "image": hair11,
+    "img": hair11,
     "name": "KEVIN.MURPHY VIBING VOLUME",
     "title": "Набор средств для ухода за волосами",
     "count": 14766,
@@ -552,7 +551,7 @@ export const hair = [
     "id": "59"
   },
   {
-    "image": hair12,
+    "img": hair12,
     "name": "Assoro Маленькая фисташка",
     "title": "Краб для волос",
     "count": 4500,
@@ -562,7 +561,7 @@ export const hair = [
 ]
 export const sokolov = [
     {
-        "image": sokol1,
+        "img": sokol1,
         "name": "Sbleskom Краля",
         "title": "Кольцо-печатка серебряное",
         'count': 8200,
@@ -570,7 +569,7 @@ export const sokolov = [
         "id": "61"
       },
       {
-        "image": sokol2,
+        "img": sokol2,
         "name": "SOKOLOV Фианит",
         "title": "Браслет серебряный",
         'count': 4900,
@@ -578,7 +577,7 @@ export const sokolov = [
         "id": "62"
       },
       {
-        "image": sokol3,
+        "img": sokol3,
         "name": "SOKOLOV Эмаль",
         "title": "Браслет серебряный",
         'count': 3200,
@@ -586,7 +585,7 @@ export const sokolov = [
         "id": "63"
       },
       {
-        "image": sokol4,
+        "img": sokol4,
         "name": "PINS&JULS Blade silver",
         "title": "Подвеска",
         "count": 7300,
@@ -594,7 +593,7 @@ export const sokolov = [
         "id": "64"
       },
       {
-        "image": sokol5,
+        "img": sokol5,
         "name": "SOKOLOV Бриллиант",
         "title": "Браслет золотой",
         "count": 38455,
@@ -602,7 +601,7 @@ export const sokolov = [
         "id": "65"
       },
       {
-        "image": sokol6,
+        "img": sokol6,
         "name": "SOKOLOV Фианит",
         "title": "Колье серебряное",
         "count": 6549,
@@ -610,7 +609,7 @@ export const sokolov = [
         "id": "66"
       },
       {
-        "image": sokol7,
+        "img": sokol7,
         "name": "Настроение женщины Дабл",
         "title": "Кольцо на две фаланги",
         "count": 1490,
@@ -618,7 +617,7 @@ export const sokolov = [
         "id": "67"
       },
       {
-        "image": sokol8,
+        "img": sokol8,
         "name": "Diamant без вставки",
         "title": "Кольцо серебряное",
         "count": 5600,
@@ -626,7 +625,7 @@ export const sokolov = [
         "id": "68"
       },
       {
-        "image": sokol9,
+        "img": sokol9,
         "name": "SOKOLOV без вставки",
         "title": "Браслет серебряный",
         "count": 9000,
@@ -634,7 +633,7 @@ export const sokolov = [
         "id": "69"
       },
       {
-        "image": sokol10,
+        "img": sokol10,
         "name": "SOKOLOV Серьги золотые Бриллиант",
         "title": "Серьги золотые",
         "count": 73000,
@@ -642,7 +641,7 @@ export const sokolov = [
         "id": "70"
       },
       {
-        "image": sokol11,
+        "img": sokol11,
         "name": "SOKOLOV Бриллиант",
         "title": "Кольцо золотое",
         "count": 32900,
@@ -650,7 +649,7 @@ export const sokolov = [
         "id": "71"
       },
       {
-        "image": sokol12,
+        "img": sokol12,
         "name": "Swarovski Matrix Tennis M",
         "title": "Браслет",
         "count": 30300,

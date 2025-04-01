@@ -36,6 +36,9 @@ import ka16 from '../../assets/gulasyl/yel2.webp'
 import ka17 from '../../assets/gulasyl/wor.webp'
 import ka18 from '../../assets/gulasyl/wor2.webp'
 import Card from './Card'
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../ElFlief/CartSlice';
+import { addCart } from '../../ElFlief/FavoritesSlide';
 const cart1 = [
   {
     id: '1',
@@ -180,7 +183,7 @@ const cart8 = [
     imgAlt: ka17
   },
 ];
-export default function GiftCard() {
+export default function GiftCard({product}) {
   const [imageHovered, setImageHovered] = useState(null);
   const handleMouseEnter = (img) => setImageHovered(img);
   const handleMouseLeave = () => setImageHovered(null);
@@ -192,6 +195,16 @@ export default function GiftCard() {
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+      dispatch(addToCart(product));
+  };
+  const handleAddCart = () => {
+      dispatch(addCart(product));
+  };
+
+
   return (
     <div className=''>
 
@@ -259,8 +272,8 @@ export default function GiftCard() {
           <div className='flex mt-[100px]'>
             {cart1.map((c1) => (
               <div className='' onClick={() => setSelectedProduct(c1)} key={c1.id}>
-                <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
-                <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
+                <Link to="/favorites" onClick={handleAddCart}><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+                <Link to="/cart" onClick={handleAddToCart}><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
                 <img src={imageHovered === 'night' ? c1.img : c1.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('night')} onMouseLeave={handleMouseLeave} />
                 <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>{c1.category}</h3>
                 <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>{c1.title}</h1>
@@ -268,76 +281,76 @@ export default function GiftCard() {
               </div>
             ))}
             {cart2.map((c2) => (
-            <div className='ml-[60px] w-[300px]' onClick={() => setSelectedProduct(c2)} key={c2.id}>
-              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
-              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
-              <img src={imageHovered === 'nigt' ? c2.img : c2.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nigt')} onMouseLeave={handleMouseLeave} />
-              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>{c2.category}</h3>
-              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>{c2.title}</h1>
-              <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[200px]'>3 000 ₽</h1>
-            </div>
+              <div className='ml-[60px] w-[300px]' onClick={() => setSelectedProduct(c2)} key={c2.id}>
+                <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+                <Link to="/cart" onClick={handleAddToCart}><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
+                <img src={imageHovered === 'nigt' ? c2.img : c2.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nigt')} onMouseLeave={handleMouseLeave} />
+                <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>{c2.category}</h3>
+                <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>{c2.title}</h1>
+                <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[200px]'>3 000 ₽</h1>
+              </div>
             ))}
-            {cart3.map((c3)=>(
+            {cart3.map((c3) => (
               <div className='ml-[90px] w-[300px]' onClick={() => setSelectedProduct(c3)} key={c3.id}>
-              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
-              <Link to="/cart"><BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
-              <img src={imageHovered === 'nigh' ? c3.img : c3.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nigh')} onMouseLeave={handleMouseLeave}/>
-              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>{c3.category}</h3>
-              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>{c3.title}</h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>{c3.price}</h1>
-            </div>
+                <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+                <Link to="/cart" onClick={handleAddToCart}><BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
+                <img src={imageHovered === 'nigh' ? c3.img : c3.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nigh')} onMouseLeave={handleMouseLeave} />
+                <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>{c3.category}</h3>
+                <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>{c3.title}</h1>
+                <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>{c3.price}</h1>
+              </div>
             ))}
-            {cart4.map((c4)=>(
-              <div className='w-[300px] ml-[60px]' key={c4.id} onClick={() => setSelectedProduct(c4)} onMouseEnter={() => handleMouseEnter('sumka')} onMouseLeave={handleMouseLeave}>
-              <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
-              <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
-              <img src={imageHovered === 'sumka' ? c4.img : c4.imgAlt} className='w-[300px] h-[300px]'/>
-              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>{c4.category}</h3>
-              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>{c4.title}</h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>{c4.price}</h1>
-            </div>
+            {cart4.map((product) => (
+              <div className='w-[300px] ml-[60px]' key={product.id} onClick={() => setSelectedProduct(c4)} onMouseEnter={() => handleMouseEnter('sumka')} onMouseLeave={handleMouseLeave}>
+                <Link to="/favorites" onClick={handleAddCart}><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
+                <Link to="/cart" onClick={handleAddToCart}><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
+                <img src={imageHovered === 'sumka' ? product.img : product.imgAlt} className='w-[300px] h-[300px]' />
+                <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>{product.category}</h3>
+                <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>{product.title}</h1>
+                <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>{product.price}</h1>
+              </div>
             ))}
           </div>
           <div className='flex mt-[100px]'>
-            {cart5.map((c5)=>(
+            {cart5.map((c5) => (
               <div className='' key={c5.id} onClick={() => setSelectedProduct(c5)}>
-              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
-              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
-              <img src={imageHovered === 'nig' ? c5.img : c5.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nig')} onMouseLeave={handleMouseLeave} />
-              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>{c5.category}</h3>
-              <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>{c5.title}</h1>
-              <h1 className='font-bold hover:text-[#9ca887] mt-[10px] ml-[240px]'>{c5.price}</h1>
-            </div>
+                <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+                <Link to="/cart" onClick={handleAddToCart}><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
+                <img src={imageHovered === 'nig' ? c5.img : c5.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('nig')} onMouseLeave={handleMouseLeave} />
+                <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>{c5.category}</h3>
+                <h1 className='hover:text-[#9ca887] w-[300px] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>{c5.title}</h1>
+                <h1 className='font-bold hover:text-[#9ca887] mt-[10px] ml-[240px]'>{c5.price}</h1>
+              </div>
             ))}
-            {cart6.map((c6)=>(
+            {cart6.map((c6) => (
               <div className='ml-[60px] w-[300px]' key={c6.id} onClick={() => setSelectedProduct(c6)}>
-              <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
-              <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
-              <img src={imageHovered === 'ni' ? c6.img : c6.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('ni')} onMouseLeave={handleMouseLeave} />
-              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>{c6.category}</h3>
-              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>{c6.title}</h1>
-              <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[200px]'>{c6.price}</h1>
-            </div>
+                <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+                <Link to="/cart" onClick={handleAddToCart}><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
+                <img src={imageHovered === 'ni' ? c6.img : c6.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('ni')} onMouseLeave={handleMouseLeave} />
+                <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'rtl', textAlign: 'right' }}>{c6.category}</h3>
+                <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'rtl', textAlign: 'right' }}>{c6.title}</h1>
+                <h1 className='font-bold hover:text-[#9ca887] mt-[10px] text-2xl ml-[200px]'>{c6.price}</h1>
+              </div>
             ))}
-            {cart7.map((c7)=>(
+            {cart7.map((c7) => (
               <div className='ml-[90px] w-[300px]' key={c7.id} onClick={() => setSelectedProduct(c7)}>
-              <Link to="/favorites"><IoHeartOutline  className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
-              <Link to="/cart"><BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
-              <img src={imageHovered === 'n' ? c7.img : c7.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('n')} onMouseLeave={handleMouseLeave} />
-              <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>{c7.category}</h3>
-              <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>{c7.title}</h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px]'>{c7.price}</h1>
-            </div>
+                <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+                <Link to="/cart" onClick={handleAddToCart}><BsBasket className='absolute  ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
+                <img src={imageHovered === 'n' ? c7.img : c7.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('n')} onMouseLeave={handleMouseLeave} />
+                <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>{c7.category}</h3>
+                <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>{c7.title}</h1>
+                <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px]'>{c7.price}</h1>
+              </div>
             ))}
-            {cart8.map((c8)=>(
-               <div className='w-[300px] ml-[60px]' key={c8.id} onClick={() => setSelectedProduct(c8)} onMouseEnter={() => handleMouseEnter('suma')} onMouseLeave={handleMouseLeave}>
-               <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
-               <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
-               <img src={imageHovered === 'suma' ? c8.img : c8.imgAlt} className='w-[300px] h-[300px]'/>
-               <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>{c8.category}</h3>
-               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>{c8.title}</h1>
-               <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>{c8.price}</h1>
-             </div>
+            {cart8.map((c8) => (
+              <div className='w-[300px] ml-[60px]' key={c8.id} onClick={() => setSelectedProduct(c8)} onMouseEnter={() => handleMouseEnter('suma')} onMouseLeave={handleMouseLeave}>
+                <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[265px] mt-[10px]' /></Link>
+                <Link to="/cart" onClick={handleAddToCart}><BsBasket className='absolute w-[20px] h-[20px] mt-[265px] ml-[265px]' /></Link>
+                <img src={imageHovered === 'suma' ? c8.img : c8.imgAlt} className='w-[300px] h-[300px]' />
+                <h3 className='hover:text-[#9ca887] font-mono mt-[20px]' style={{ direction: 'ltr', textAlign: 'left' }}>{c8.category}</h3>
+                <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>{c8.title}</h1>
+                <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[10px] '>{c8.price}</h1>
+              </div>
             ))}
           </div>
         </div>

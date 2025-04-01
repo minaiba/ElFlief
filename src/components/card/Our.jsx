@@ -3,8 +3,10 @@ import { IoHeartOutline } from 'react-icons/io5'
 import { BsBasket } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import Siddebar from './siddebar'
-import { news } from './data'
 import { useDispatch } from 'react-redux'
+import { addToCart } from '../../ElFlief/CartSlice'
+import { addCart } from '../../ElFlief/FavoritesSlide'
+import { news } from './data'
 
 
 export default function Our({ product }) {
@@ -23,6 +25,7 @@ export default function Our({ product }) {
             {news.map((product) => (
                 <div
                     key={product.id}
+                    news={product}
                     className="relative w-[320px] bg-white p-4 rounded-lg cursor-pointer"
                     onClick={() => setSelectedProduct(product)}
                 >

@@ -3,10 +3,20 @@ import { IoClose, IoHeartOutline } from "react-icons/io5";
 import { BsBasket } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../ElFlief/CartSlice';
+import { addCart } from '../../ElFlief/FavoritesSlide';
 
 export default function Siddebar({ product, onClose }) {
   if (!product) return null; 
+ const dispatch = useDispatch();
 
+ const handleAddToCart = () => {
+     dispatch(addToCart(product));
+ };
+ const handleAddCart = () => {
+     dispatch(addCart(product));
+ };
   return (
     <motion.div
       initial={{ x: "100%" }}
@@ -43,10 +53,10 @@ export default function Siddebar({ product, onClose }) {
         </div>
             <h3 className="text-lg font-semibold text-green-600">Цена: {product.price} ₽</h3>
             <div className="flex gap-[60%] pb-8">
-              <Link to="favorites">
+              <Link to="/favorites" onClick={handleAddCart}>
                 <IoHeartOutline className="w-[30px] ml-8 h-[30px] cursor-pointer hover:text-red-500 transition" />
               </Link>
-              <Link to="cart">
+              <Link to="/cart" onClick={handleAddToCart}>
                 <BsBasket className="w-[30px] h-[30px] cursor-pointer hover:text-green-500 transition" />
               </Link>
             </div>
