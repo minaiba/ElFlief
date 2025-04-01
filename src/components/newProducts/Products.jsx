@@ -11,22 +11,12 @@ import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
 import Modal from './Modal';
 import { apparat, categories, cr, cre, cream, futbol, koja, mashin, nab, nabor, naushniki, nigh, night, otkr, phen, piala, prai, praim, praimer, rumi, rumia, shamp, svec, termo } from './CardProduct';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { addToFavorites } from "../heart/FavoritesSlice";
 
 export default function Products() {
   const [imageHovered, setImageHovered] = useState(null);
   const handleMouseEnter = (img) => setImageHovered(img);
   const handleMouseLeave = () => setImageHovered(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
-
-  // const favorites = useSelector((state) => state.favorites?.favorites || []);
-  // const dispatch = useDispatch();
-
-  // // Добавление в избранное
-  // const handleFavorite = (dog) => {
-  //   dispatch(addToFavorites(dog));  // Добавляем товар в избранное
-  // };
   const settings = {
     dots: false,
     infinite: true,
@@ -46,7 +36,6 @@ export default function Products() {
         <h1 className=" font-bold text-[white] absolute top-[65.9%] left-[60%] transform  text-[200px] ">новинки </h1>
       </div>
       <div className='w-[1400px] m-auto'>
-        {/* catalog */}
         <Link to='/catalog'>
           <div className='my-[60px]'>
             <Slider {...settings}>
