@@ -6,7 +6,7 @@ const MyStore = configureStore ({
     reducer: {
         cart: CosmoReducer,
         idols: FavoriteReducer,
-    }
+        }
 })
 
 export default MyStore

@@ -1,19 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../../ElFlief/FavoritesSlide";
 
-
 export default function Heart({product}) {
   const cartItem = useSelector((state) => state.idols.cartItem || []);
   const dispatch = useDispatch();
-
   const handleRemove = (id) => {
     dispatch(removeFromCart(id));
   };
-
   if (cartItem.length === 0) {
     return <p className="w-[1400px] m-auto ml-[600px] text-3xl py-[180px] font-mono">Нет избранных товаров</p>; 
   }
-
   return (
     <div className="max-w-[1400px] mx-auto py-15 px-4">
       <h1 className="flex justify-center py-10 text-2xl font-mono sm:text-3xl md:text-4xl">Избранные товары</h1>

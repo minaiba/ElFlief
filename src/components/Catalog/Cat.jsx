@@ -4,8 +4,8 @@ import { BsBasket } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
-export default function Modal({ dog, onClose }) {
-  if (!dog) return null; 
+export default function Modal({ log, onClose }) {
+  if (!log) return null; 
 
 
   return (
@@ -32,17 +32,17 @@ export default function Modal({ dog, onClose }) {
               <IoClose />
             </button>
             <img
-              src={dog.img}
-              alt={dog.title2}
+              src={log.image}
+              alt={log.title2}
               className="w-full object-cover rounded-xl shadow-md"
             />
-            <h2 className="text-xl font-semibold text-gray-800 mt-4">{dog.title}</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mt-4">{log.title}</h2>
             <div className="text-xs text-gray-600">
-          <p>{dog.title2.split('\n').map((line, index) => (
+          <p>{log.title2.split('\n').map((line, index) => (
             <span key={index}>{line}<br /></span>
           ))}</p>
         </div>
-            <h3 className="text-lg font-semibold text-green-600">Цена: {dog.price} ₽</h3>
+            <h3 className="text-lg font-semibold text-green-600">Цена: {log.price} ₽</h3>
             <div className="flex gap-[400px] pb-8 mt-[20px] ml-[100px]">
               <Link to="favorites">
                 <IoHeartOutline className="w-[30px]  h-[30px] cursor-pointer hover:text-red-500 transition" />

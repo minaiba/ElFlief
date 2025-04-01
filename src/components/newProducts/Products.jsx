@@ -37,12 +37,9 @@ export default function Products() {
     <div className='mt-[20px]'>
       <div className="relative">
         <img src={img1} className="w-full h-full object-cover "/>
-        <h1 className="text-8xl font-bold text-[white] absolute top-[72.4%] left-[70%] transform -translate-x-1/2 -translate-y-1/2">
-          новинки
-        </h1>
+        <h1 className=" font-bold text-[white] absolute top-[65.9%] left-[60%] transform  text-[200px] ">новинки </h1>
       </div>
       <div className='w-[1400px] m-auto'>
-        {/* catalog */}
         <Link to='/catalog'>
           <div className='my-[60px]'>
             <Slider {...settings}>
@@ -66,7 +63,8 @@ export default function Products() {
                   className="relative w-[300px] h-[320px] bg-white rounded-lg cursor-pointer"
                   onClick={() => setSelectedProduct(dog)}>
                   <div className=''>
-                    <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
+                 
+                  <Link to='/favorites'><IoHeartOutline className={`absolute ml-[265px] mt-[10px] w-[20px] h-[20px] `}/></Link>
                     <Link to="/cart"><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
                     <button className='bg-[#c2387f] text-[white] font-bold w-[40px] absolute h-[40px]'>60%</button>
                     <img src={imageHovered === dog.id ? dog.imgAlt : dog.img} onMouseEnter={() => handleMouseEnter(dog.id)} onMouseLeave={handleMouseLeave} className='w-[300px] h-[300px]' />
@@ -368,6 +366,9 @@ export default function Products() {
         {selectedProduct && <Modal mash={selectedProduct} onClose={() => setSelectedProduct(null)} />}
         {selectedProduct && <Modal nau={selectedProduct} onClose={() => setSelectedProduct(null)} />}
         {selectedProduct && <Modal fen={selectedProduct} onClose={() => setSelectedProduct(null)} />}
-        {selectedProduct && <Modal pia={selectedProduct} onClose={() => setSelectedProduct(null)} />}          
-      </div>    
-)}
+        {selectedProduct && <Modal pia={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+        {selectedProduct && <Modal pia={selectedProduct} onClose={() => setSelectedProduct(null)} />} 
+        </div >
+      );
+    }
+
