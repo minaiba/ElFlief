@@ -1,8 +1,8 @@
 
 import { createSlice } from '@reduxjs/toolkit';
 
-const CosmoSlice = createSlice({
-  name: 'Cosmo',
+const OurSlice = createSlice({
+  name: 'our',
   initialState: {
     cartItems: [],
   },
@@ -21,9 +21,9 @@ const CosmoSlice = createSlice({
       addToCart: (state, action) => {
         const existingProduct = state.cartItems.find(item => item.id === action.payload.id);
         if (existingProduct) {
-          existingProduct.quantity += 1; 
+          existingProduct.quantity += 1; // Если товар уже есть, увеличиваем количество
         } else {
-          state.cartItems.push({ ...action.payload, quantity: 1 }); 
+          state.cartItems.push({ ...action.payload, quantity: 1 }); // Если товара нет в корзине, добавляем
         }
       },
       removeFromCart: (state, action) => {
@@ -32,6 +32,6 @@ const CosmoSlice = createSlice({
   },
 });
 
-export const { setActiveSlide, addToCart, decrement, increment, removeFromCart} = CosmoSlice.actions;
+export const { setActiveSlide, addToCart, decrement, increment, removeFromCart} = OurSlice.actions;
 
-export default CosmoSlice.reducer;
+export default OurSlice.reducer;

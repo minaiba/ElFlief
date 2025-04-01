@@ -582,7 +582,7 @@ export const pro = [
             price: "883 ₽",
             oldPrice: "1 767 ₽",
         },
-    ];
+];
     
 export const banan = [
     {

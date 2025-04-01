@@ -19,13 +19,25 @@ export default function Pikky() {
           {
             breakpoint: 1024,
             settings: {
+              slidesToShow: 3,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
               slidesToShow: 2,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
             },
           },
         ],
     };
       return (
-        <div className="mt-[100px] w-[1400px] h-[700px] mb-[100px]  m-auto relative" >
+        <div className="mt-[100px] max-w-[1400px] h-[700px] mb-[100px]  m-auto relative" >
           <img src={pikky1} className="w-full max-w-[1400px] " alt="background" />
           <div className="mt-6 w-[80%] absolute bottom-[0px] left-[10%]" >
             <Slider {...settings} className='flex gap-12'>

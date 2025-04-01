@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import { FaCrown, FaGift } from "react-icons/fa";
 import { BiTimeFive } from "react-icons/bi";
 import { motion } from "framer-motion";
-
+import priz from '../../assets/aiba/green.jpg'
+import priz1 from '../../assets/aiba/priz.jpg'
+import priz2 from '../../assets/aiba/priz14.webp'
+import priz3 from '../../assets/aiba/priz15.webp'
+import priz4 from '../../assets/aiba/priz16.webp'
+import { GiBowTieRibbon } from "react-icons/gi";
 const ContestApp = () => {
   const [stories, setStories] = useState([]);
   const [name, setName] = useState("");
@@ -37,34 +42,37 @@ const ContestApp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-500 to-green-900 p-8 text-white">
-      <h1 className="text-4xl font-bold text-center mb-6">Конкурс Легенд о Золотом Яблоке</h1>
-      <div className="bg-white text-black p-4 rounded-lg shadow-md flex items-center justify-center max-w-md mx-auto mb-6">
-        <BiTimeFive className="text-orange-500 text-2xl mr-2" />
-        <p className="text-lg font-semibold">До окончания: {formatTime(timeLeft)}</p>
+    <div style={{ backgroundImage: `url(${priz})` }} className="min-h-screen bg-gradient-to-b from-green-500 to-green-900 py-20 mt-5 text-white">
+      <h1 className="text-4xl font-mono text-center mb-6">Конкурс Легенд о Золотом Яблоке</h1>
+      <div className=" bg-white p-9 rounded-lg shadow-lg mb-6">
+        <div className="max-w-lg mx-auto">
+          <div className="bg-white text-black p-4 rounded-lg shadow-md flex items-center justify-center max-w-md mx-auto mb-6">
+            <BiTimeFive className="text-orange-500 text-2xl mr-2" />
+            <p className="text-lg font-semibold">До окончания: {formatTime(timeLeft)}</p>
+          </div>
+          <input
+            type="text"
+            placeholder="Ваше имя"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full text-black p-4 border rounded-lg mb-4"
+          />
+          <textarea
+            placeholder="Ваша история..."
+            value={story}
+            onChange={(e) => setStory(e.target.value)}
+            className="w-full text-black p-2 border rounded-lg mb-4 h-24"
+          ></textarea>
+          <button
+            onClick={handleSubmit}
+            className="bg-yellow-500 text-black px-4 py-2 rounded-lg hover:bg-yellow-600"
+          >
+            Отправить Историю
+          </button>
+        </div>
+
       </div>
-      <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg mb-6">
-        <input
-          type="text"
-          placeholder="Ваше имя"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="w-full text-black p-2 border rounded-lg mb-4"
-        />
-        <textarea
-          placeholder="Ваша история..."
-          value={story}
-          onChange={(e) => setStory(e.target.value)}
-          className="w-full text-black p-2 border rounded-lg mb-4 h-24"
-        ></textarea>
-        <button
-          onClick={handleSubmit}
-          className="bg-yellow-500 text-black px-4 py-2 rounded-lg hover:bg-yellow-600"
-        >
-          Отправить Историю
-        </button>
-      </div>
-      <h2 className="text-3xl ml-[399px] font-bold mb-4">Отправленные Легенды</h2>
+      <h2 className="text-4xl text-white max-w-[1400px] pl-[5%] py-5 m-auto font-mono mb-4">Отправленные истории</h2>
       <div className="space-y-4">
         {stories.map((storyItem, index) => (
           <motion.div
@@ -104,32 +112,37 @@ const ContestApp = () => {
           </p>
         </div>
       )}
-      <div className="bg-white text-black p-6 rounded-lg shadow-md mt-8 text-center py-52 mx-auto flex flex-col items-center">
+      <div className="bg-gray-100 text-black p-2 rounded-lg shadow-md mt-8 text-center py-12 mx-auto flex flex-col items-center">
         <h2 className="text-2xl font-bold flex items-center">
           <FaGift className="text-red-500 mr-2" /> Подарки
         </h2>
-        <p className="text-lg font-semibold mt-2">Победитель получает эксклюзивный набор Tamagotchi!</p>
-        <div className="flex"> 
-          <div> 
-            <img src="" alt="" />
+        <p className="text-lg font-semibold mt-2">Победитель получает эксклюзивный набор!</p>
+        <div className=" flex border rounded-2xl max-w-[1300px] mt-10 p-10">
+          <div className="w-[366px] rounded-2xl py-6 px-6 border relative border-emerald-500">
+            <GiBowTieRibbon className="absolute text-2xl" />
             <h1>Tamagotchi</h1>
-            <p>Тамагочи из новой коллекции</p>
+            <p>3d игрушка тамагочи</p>
+            <img src={priz1} className="w-35 rounded-2xl h-35 ml-[38px] mt-7" />
           </div>
-          <div> 
-            <img src="" alt="" />
-            <h1>Tamagotchi</h1>
-            <p>Тамагочи из новой коллекции</p>
+          <div className="w-[366px] ml-10 rounded-2xl py-6 px-6 border border-emerald-500">
+            <GiBowTieRibbon className="absolute text-2xl" />
+            <h1>PAYOT</h1>
+            <p>для ухода за кожей лица</p>
+            <img src={priz2} className="w-50 rounded-2xl h-50 ml-[14px]" />
           </div>
-          <div> 
-            <img src="" alt="" />
-            <h1>Tamagotchi</h1>
-            <p>Тамагочи из новой коллекции</p>
+          <div className="w-[366px] ml-10 rounded-2xl py-6 px-6 border border-emerald-500">
+            <GiBowTieRibbon className="absolute text-2xl" />
+            <h1>BARBARO</h1>
+            <p>для восстановления волос</p>
+            <img src={priz3} className="w-50 rounded-2xl h-50 ml-[14px]" />
           </div>
-          <div> 
-            <img src="" alt="" />
-            <h1>Tamagotchi</h1>
-            <p>Тамагочи из новой коллекции</p>
-          </div>            
+          <div className="w-[366px] ml-10 rounded-2xl py-6 px-6 border border-emerald-500">
+            <GiBowTieRibbon className="absolute text-2xl" />
+            <h1>EAT MY</h1>
+            <p>бальзам для губ</p>
+            <img src={priz4} className="w-50 rounded-2xl h-50 ml-[14px]" />
+          </div>
+
         </div>
       </div>
     </div>

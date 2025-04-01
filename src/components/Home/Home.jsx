@@ -17,7 +17,7 @@ import Pikky from "../card/Pikky";
 export default function Home() {
   
   return (
-    <div className="mt-[30px] items-center justify-center">
+    <div className="mt-[20px] items-center justify-center">
     <Carousel/>      
     <Stories/>
     <Shik/>
