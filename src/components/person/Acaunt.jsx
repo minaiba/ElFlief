@@ -5,21 +5,25 @@ export default function Account() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
+  const [pasword, setPasword] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
-    const storedName = localStorage.getItem("userName") || "Aiba";
-    const storedEmail = localStorage.getItem("userEmail") || "aiba@gmail.com";
-    const storedAddress = localStorage.getItem("userAddress") || "бишкек, кыргызстан";
+    const storedName = localStorage.getItem("userName") || "";
+    const storedEmail = localStorage.getItem("userEmail") || "";
+    const storedAddress = localStorage.getItem("userAddress") || "";
+    const storedPasword = localStorage.getItem("userPasword") || "";
     setName(storedName);
     setEmail(storedEmail);
     setAddress(storedAddress);
+    setPasword(storedPasword);
   }, []);
 
   const handleSave = () => {
     localStorage.setItem("userName", name);
     localStorage.setItem("userEmail", email);
     localStorage.setItem("userAddress", address);
+    localStorage.setItem("userPasword", pasword);
     setIsEditing(false);
   };
 
@@ -34,6 +38,7 @@ export default function Account() {
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Имя" />
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
             <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Адрес" />
+            <input type="pasword" value={pasword} onChange={(e) => setPasword(e.target.value)} placeholder="Пароль" />
             <button className="w-full bg-blue-500 text-white" onClick={handleSave}>Сохранить</button>
           </div>
         ) : (

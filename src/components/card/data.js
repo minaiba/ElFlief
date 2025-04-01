@@ -585,7 +585,7 @@ export const banan = [
 export const products = [
     {
         id: 1,
-        image: dalba1,
+        img: dalba1,
         name: "D'ALBA white truffle first spray serum face",
         description: "спрей-сыворотка для лица",
         price: "1850 P",
@@ -593,7 +593,7 @@ export const products = [
     },
     {
         id: 2,
-        image: dalba2,
+        img: dalba2,
         name: "D'ALBA white truffle moisturizing serum toner",
         description: "увлажняющий тонер для сияния кожи",
         price: "1850 P",
@@ -601,7 +601,7 @@ export const products = [
     },
     {
         id: 3,
-        image: dalba3,
+        img: dalba3,
         name: "D'ALBA truffle double layer revitalizing serum",
         description: "сыворотка для придания энергии и тонуса",
         price: "3050 P",
@@ -609,7 +609,7 @@ export const products = [
     },
     {
         id: 4,
-        image: dalba4,
+        img: dalba4,
         name: "D'ALBA white truffle oil capsule cream face",
         description: "питательный крем для сияния кожи лица",
         price: "3850 P",
@@ -617,7 +617,7 @@ export const products = [
     },
     {
         id: 5,
-        image: dalba5,
+        img: dalba5,
         name: "D'ALBA truffle return oil cream cleanser 2/1",
         description: "масло-пенка для глубоко очищения 2 в 1",
         price: "2650 P",
@@ -625,7 +625,7 @@ export const products = [
     },
     {
         id: 6,
-        image: dalba6,
+        img: dalba6,
         name: "D'ALBA white eye cream 2/1 extra intensive",
         description: "крем для области вокруг глаз",
         price: "1850 P",
@@ -636,42 +636,42 @@ export const products = [
 export const pikky = [
     {
         id: 1,
-        image: pikky1,
+        img: pikky1,
         name: "Nudibranches JELLY FISH! ice cream flavor jelly soap",
         description: "Мыло-желе",
         price: "720 P",
     },
     {
         id: 2,
-        image: pikky2,
+        img: pikky2,
         name: "Nudibranches Wow cloud! Ice cream flavor",
         description: "Пенка для веселого купания",
         price: "396 P",
     },
     {
         id: 3,
-        image: pikky3,
+        img: pikky3,
         name: "Nudibranches FIERY TAIL ice cream",
         description: "Игровой набор для создания мерцающей соли для ванны",
         price: "990 P",
     },
     {
         id: 4,
-        image: pikky4,
+        img: pikky4,
         name: "Nudibranches Shower super power! ice cream",
         description: "Гель-шампунь для волос и тела",
         price: "899 P",
     },
     {
         id: 5,
-        image: pikky5,
+        img: pikky5,
         name: "Nudibranches Си Банни для детей плюшевая",
         description: "Плюшевая игрушка",
         price: "1990 P",
     },
     {
         id: 6,
-        image: pikky6,
+        img: pikky6,
         name: "Nudibranches Вот ты где!",
         description: "Настольная игра",
         price: "621 P",

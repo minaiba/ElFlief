@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -12,6 +12,13 @@ export default function Person({ onClose }) {
   const [generatedCode, setGeneratedCode] = useState(null);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  useEffect(() => {
+    const storedName = localStorage.getItem("userName") || "";
+    const storedEmail = localStorage.getItem("userEmail") || "";
+    setName(storedName);
+    setEmail(storedEmail);
+  }, []);
 
   const sendCode = () => {
     if (!email.includes("@")) {
@@ -40,6 +47,9 @@ export default function Person({ onClose }) {
       setMessage("Пароли не совпадают");
       return;
     }
+    localStorage.setItem("userName", name);
+    localStorage.setItem("userEmail", email);
+    localStorage.setItem("userPassword", password);
     setMessage("Регистрация успешна!");
     onClose(); 
   };
@@ -173,3 +183,5 @@ export default function Person({ onClose }) {
     </AnimatePresence>
   );
 }
+
+

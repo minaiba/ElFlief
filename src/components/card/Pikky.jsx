@@ -56,7 +56,7 @@ export default function Pikky({product}) {
               {pikky.map((product) => (
                 <div key={product.id} className="px-2">
                   <div className="bg-white p-4 rounded-lg relative">
-                    <img src={product.image} className="w-full h-[250px] object-cover rounded-lg" alt={product.name} />
+                    <img src={product.img} className="w-full h-[250px] object-cover rounded-lg" />
                     <Link to="/favorites" onClick={handleAddCart} className="absolute top-3 left-3">
                       <IoHeartOutline className="text-2xl text-gray-600 hover:text-red-500" />
                     </Link>

@@ -1,9 +1,10 @@
 import React from 'react'
 import elf from '../../assets/aiba/elf.png'
-
+import Acaunt from '../person/Acaunt'
 export default function Tamagochi() {
   return (
 <div className="bg-[#C6E400] pb-[60px] flex items-center mt-[30px] justify-center">
+    <Acaunt/>
     <div className="m-auto w-full max-w-[1400px] px-4">
         <div className="text-center">
             <img src={elf} alt="Эльф" className="m-auto w-[300px] sm:w-[400px]" />
