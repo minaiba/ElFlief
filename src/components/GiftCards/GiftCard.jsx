@@ -207,7 +207,7 @@ export default function GiftCard({product}) {
 
 
   return (
-    <div className=''>
+    <div>
 
       <div className='' style={{
         backgroundImage: `url(${bg})`,
@@ -272,7 +272,7 @@ export default function GiftCard({product}) {
           <h1 className="text-4xl font-bold uppercase mt-[30px] text-gray-800 text-center mb-12"> пластиковые подарочные карты</h1>
           <div className='flex mt-[100px]'>
             {cart1.map((product) => (
-              <div className='' onClick={() => setSelectedProduct(product)} key={product.id}>
+              <div className='' onClick={() => setSelectedProduct(product)} key={product.id} >
                 <Link to="/favorites" onClick={handleAddCart}><IoHeartOutline className='absolute ml-[265px] mt-[10px] w-[20px] h-[20px]' /></Link>
                 <Link to="/cart" onClick={handleAddToCart}><BsBasket className='absolute ml-[265px] mt-[265px] w-[20px] h-[20px]' /></Link>
                 <img src={imageHovered === 'night' ? product.img : product.imgAlt} className='w-[300px] h-[300px]' onMouseEnter={() => handleMouseEnter('night')} onMouseLeave={handleMouseLeave} />
