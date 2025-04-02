@@ -15,12 +15,13 @@ import img18 from '../../assets/gulasyl/bee.webp';
 import img19 from '../../assets/gulasyl/termo.webp';
 import img20 from '../../assets/gulasyl/kor.webp';
 import img21 from '../../assets/gulasyl/aip.webp';
-import img22 from '../../assets/gulasyl/piala.webp';
+import img22 from '../../assets/gulasyl/pi.webp';
 import img23 from '../../assets/gulasyl/fen.webp';
-import img24 from '../../assets/gulasyl/свеча.webp';
+import img24 from '../../assets/gulasyl/maemi.webp';
 import img25 from '../../assets/gulasyl/аппарат.webp';
 import img26 from '../../assets/gulasyl/фут.webp';
 import img27 from '../../assets/gulasyl/машинка.webp';
+import img28 from '../../assets/gulasyl/россано.webp';
 import img7Alt from '../../assets/gulasyl/румян.webp';
 import img8Alt from '../../assets/gulasyl/toothpas.webp';
 import img9Alt from '../../assets/gulasyl/шампунь.webp';
@@ -32,7 +33,7 @@ import img17Alt from '../../assets/gulasyl/sumka2.webp';
 import img18Alt from '../../assets/gulasyl/bee2.webp';
 import img19Alt from '../../assets/gulasyl/termo2.webp';
 import img20Alt from '../../assets/gulasyl/kor2.webp';
-import img22Alt from '../../assets/gulasyl/piala2.webp';
+import img22Alt from '../../assets/gulasyl/pi2.webp';
 import img24Alt from '../../assets/aiba/asia.webp';
 import img23Alt from '../../assets/gulasyl/fen2.webp';
 import img88Alt from '../../assets/aiba/makeup.webp';
@@ -44,6 +45,7 @@ import img30Alt from '../../assets/aiba/hair.webp';
 import img31Alt from '../../assets/aiba/home.webp';
 import img25Alt from '../../assets/gulasyl/аппарат2.webp';
 import img27Alt from '../../assets/gulasyl/машинка2.webp';
+import img50Alt from '../../assets/gulasyl/россано2.webp';
 
 
 export const denzo = [
@@ -137,8 +139,8 @@ export const categories = [
   ОБЪЕМ : 200 мл`,
       category: 'Шампунь для восстановления и питания волос',
       price: 'от 960 ₽',
-      img: img3,
-      imgAlt: img9Alt,
+      img: img28,
+      imgAlt: img50Alt,
       discount: 'new!'
     }
   ];
