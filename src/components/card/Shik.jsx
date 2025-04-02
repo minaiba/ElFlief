@@ -31,7 +31,7 @@ export default function Shik({product}) {
   
   return (
 <div className="mt-[100px] w-full max-w-[1400px] h-auto mb-[25px] mx-auto relative px-4">
-  <img src={shick} className="w-full max-w-full h-auto object-cover rounded-lg" alt="background" />
+  <img src={shick} className="w-full max-w-full h-auto object-cover rounded-2xl" alt="background" />
   <div className="mt-6 w-full absolute bottom-0 left-0 px-4 sm:px-8">
     <Slider
       {...setting}

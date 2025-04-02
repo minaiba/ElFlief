@@ -34,10 +34,10 @@ export default function Products() {
     ],
   };
   return (
-    <div className='mt-[20px]'>
+    <div className='mt-[20px] overflow-x-hidden'>
       <div className="relative">
         <img src={img1} className="w-full h-full object-cover "/>
-        <h1 className=" font-bold text-[white] absolute top-[65.9%] left-[60%] transform  text-[200px] ">новинки </h1>
+        <h1 className=" font-bold text-[white] absolute top-[59%] left-[54%] transform text-9xl">новинки </h1>
       </div>
       <div className='w-[1400px] m-auto'>
         <Link to='/catalog'>

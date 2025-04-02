@@ -28,7 +28,7 @@ export default function Account() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black p-6">
+    <div className="flex flex-col pt-40 items-center justify-center min-h-screen p-6">
       <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-md text-center">
         <IoPersonCircle className="text-gray-500 text-6xl mx-auto mb-4" />
         <h2 className="text-2xl font-bold mb-4">Личный кабинет</h2>

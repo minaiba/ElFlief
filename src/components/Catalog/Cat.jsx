@@ -3,11 +3,19 @@ import { IoClose, IoHeartOutline } from "react-icons/io5";
 import { BsBasket } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
+import { addCart } from '../../ElFlief/FavoritesSlide';
+import { addToCart } from '../../ElFlief/CartSlice';
+import { useDispatch } from 'react-redux';
 
 export default function Modal({ log, onClose }) {
   if (!log) return null; 
-
-
+const dispatch = useDispatch()
+  const handleAddToCart = () => {
+    dispatch(addToCart(log));
+};
+const handleAddCart = () => {
+    dispatch(addCart(log));
+};
   return (
     <motion.div
       initial={{ x: "100%" }}
@@ -32,7 +40,7 @@ export default function Modal({ log, onClose }) {
               <IoClose />
             </button>
             <img
-              src={log.image}
+              src={log.img}
               alt={log.title2}
               className="w-full object-cover rounded-xl shadow-md"
             />
@@ -44,10 +52,10 @@ export default function Modal({ log, onClose }) {
         </div>
             <h3 className="text-lg font-semibold text-green-600">Цена: {log.price} ₽</h3>
             <div className="flex gap-[400px] pb-8 mt-[20px] ml-[100px]">
-              <Link to="favorites">
+              <Link to="/favorites" onClick={handleAddCart}>
                 <IoHeartOutline className="w-[30px]  h-[30px] cursor-pointer hover:text-red-500 transition" />
               </Link>
-              <Link to="cart">
+              <Link to="/cart" onClick={handleAddToCart}>
                 <BsBasket className="w-[30px] h-[30px] cursor-pointer hover:text-green-500 transition" />
               </Link>
             </div>

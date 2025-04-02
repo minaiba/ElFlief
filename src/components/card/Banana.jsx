@@ -6,6 +6,9 @@ import { BsBasket } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick';
 import { banan } from "./data";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../ElFlief/CartSlice";
+import { addCart } from "../../ElFlief/FavoritesSlide";
 
 
 export default function Banana() {
@@ -37,19 +40,26 @@ export default function Banana() {
         },
       ],
   };
+  const dispatch = useDispatch()
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+};
+const handleAddCart = () => {
+    dispatch(addCart(product));
+};
     return (
-      <div className="mt-[100px] max-w-[1400px] h-[700px] mb-[100px]  m-auto relative" >
-        <img src={banana} className="w-full max-w-[1400px] " alt="background" />
+      <div className="mt-[100px] max-w-[1400px] h-[700px] mb-[100px] m-auto relative" >
+        <img src={banana} className="w-full max-w-[1400px] rounded-2xl" alt="background" />
         <div className="mt-6 w-[80%] absolute bottom-[0px] left-[10%]" >
           <Slider {...settings} className='flex gap-12'>
             {banan.map((product) => (
               <div key={product.id} className="px-2">
                 <div className="bg-white p-4 rounded-lg relative">
                   <img src={product.image} className="w-full h-[250px] object-cover rounded-lg" alt={product.name} />
-                  <Link to="/favorites" className="absolute top-3 left-3">
+                  <Link to="/favorites" onClick={handleAddCart} className="absolute top-3 left-3">
                     <IoHeartOutline className="text-2xl text-gray-600 hover:text-red-500" />
                   </Link>
-                  <Link to="/cart" className="absolute bottom-3 right-3">
+                  <Link to="/cart" onClick={handleAddToCart} className="absolute bottom-3 right-3">
                     <BsBasket className="text-2xl text-gray-600 hover:text-green-500" />
                   </Link>
                   <p className="mt-4 text-sm text-gray-600">{product.description}</p>

@@ -16,6 +16,12 @@ import Basket from "./components/basket/Basket";
 import ContestApp from "./components/Stocks/ContestApp";
 import StokssA from "./components/Stocks/StokssA";
 import Acaunt from "./components/person/Acaunt";
+import Footerrs from "./components/Footer/Footerrs";
+import FFoter from "./components/Footer/FFoter";
+import Footerr from "./components/Footer/Footerr";
+import Foooters from "./components/Footer/Foooters";
+import Fotter from "./components/Footer/Fotter";
+import FoTerss from "./components/Footer/FoTerss";
 
 
 
@@ -87,6 +93,30 @@ export const myRouter = createBrowserRouter ([
             {
                 path: '/Acaunt',
                 element: <Acaunt/>
+            },
+            {
+                path: 'footers2',
+                element: <Footerrs/>
+            },
+            {
+                path: 'footers3',
+                element: <FFoter/>
+            },
+            {
+                path: 'footers4',
+                element: <Footerr/>
+            },
+            {
+                path: 'footers5',
+                element: <Foooters/>
+            },
+            {
+                path: 'footers6',
+                element: <Fotter/>
+            },
+            {
+                path: 'footers7',
+                element: <FoTerss/>
             },
         ]
     }

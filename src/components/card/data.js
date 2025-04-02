@@ -536,7 +536,7 @@ export const news = [
     
 export const banan = [
     {
-        id: 1,
+        id: 29,
         image: banana1,
         name: "BANANA REPUBLIC Dark Cherry & Amber",
         description: "парфюмерная вода",
@@ -544,14 +544,14 @@ export const banan = [
         oldPrice: "8628 P",
     },
     {
-        id: 2,
+        id: 30,
         image: banana2,
         name: "BANANA REPUBLIC Metal Rain. Gino Percontino.",
         description: "парфюмерная вода",
         price: "4582 P",
     },
     {
-        id: 3,
+        id: 31,
         image: banana3,
         name: "BANANA REPUBLIC Gardenia & Cardamom",
         description: "парфюмерная вода",
@@ -559,14 +559,14 @@ export const banan = [
         oldPrice: "8305 P",
     },
     {
-        id: 4,
+        id: 32,
         image: banana4,
         name: "BANANA REPUBLIC Tobacco & Tonka Bean",
         description: "парфюмерная вода",
         price: "4582 P",
     },
     {
-        id: 5,
+        id: 33,
         image: banana5,
         name: "BANANA REPUBLIC Peony & Peppercorn",
         description: "парфюмерная вода",
@@ -574,7 +574,7 @@ export const banan = [
         oldPrice: "8305 P",
     },
     {
-        id: 6,
+        id: 34,
         image: banana6,
         name: "BANANA REPUBLIC TUBEROSE OVERDOSE",
         description: "парфюмерная вода",
@@ -582,9 +582,54 @@ export const banan = [
     },
 ];
 
+export const pikky = [
+    {
+        id: 35,
+        img: pikky1,
+        name: "Nudibranches JELLY FISH! ice cream flavor jelly soap",
+        description: "Мыло-желе",
+        price: "720 P",
+    },
+    {
+        id: 36,
+        img: pikky2,
+        name: "Nudibranches Wow cloud! Ice cream flavor",
+        description: "Пенка для веселого купания",
+        price: "396 P",
+    },
+    {
+        id: 37,
+        img: pikky3,
+        name: "Nudibranches FIERY TAIL ice cream",
+        description: "Игровой набор для создания мерцающей соли для ванны",
+        price: "990 P",
+    },
+    {
+        id: 38,
+        img: pikky4,
+        name: "Nudibranches Shower super power! ice cream",
+        description: "Гель-шампунь для волос и тела",
+        price: "899 P",
+    },
+    {
+        id: 39,
+        img: pikky5,
+        name: "Nudibranches Си Банни для детей плюшевая",
+        description: "Плюшевая игрушка",
+        price: "1990 P",
+    },
+    {
+        id: 40,
+        img: pikky6,
+        name: "Nudibranches Вот ты где!",
+        description: "Настольная игра",
+        price: "621 P",
+    },
+]
+
 export const products = [
     {
-        id: 1,
+        id: 41,
         img: dalba1,
         name: "D'ALBA white truffle first spray serum face",
         description: "спрей-сыворотка для лица",
@@ -592,7 +637,7 @@ export const products = [
         oldPrice: "3700 P",
     },
     {
-        id: 2,
+        id: 42,
         img: dalba2,
         name: "D'ALBA white truffle moisturizing serum toner",
         description: "увлажняющий тонер для сияния кожи",
@@ -600,7 +645,7 @@ export const products = [
         oldPrice: "3700 P",
     },
     {
-        id: 3,
+        id: 43,
         img: dalba3,
         name: "D'ALBA truffle double layer revitalizing serum",
         description: "сыворотка для придания энергии и тонуса",
@@ -608,7 +653,7 @@ export const products = [
         oldPrice: "6100 P",
     },
     {
-        id: 4,
+        id: 44,
         img: dalba4,
         name: "D'ALBA white truffle oil capsule cream face",
         description: "питательный крем для сияния кожи лица",
@@ -616,7 +661,7 @@ export const products = [
         oldPrice: "7700 P",
     },
     {
-        id: 5,
+        id: 45,
         img: dalba5,
         name: "D'ALBA truffle return oil cream cleanser 2/1",
         description: "масло-пенка для глубоко очищения 2 в 1",
@@ -624,7 +669,7 @@ export const products = [
         oldPrice: "5300 P",
     },
     {
-        id: 6,
+        id: 46,
         img: dalba6,
         name: "D'ALBA white eye cream 2/1 extra intensive",
         description: "крем для области вокруг глаз",
@@ -633,54 +678,9 @@ export const products = [
     },
 ];
 
-export const pikky = [
-    {
-        id: 1,
-        img: pikky1,
-        name: "Nudibranches JELLY FISH! ice cream flavor jelly soap",
-        description: "Мыло-желе",
-        price: "720 P",
-    },
-    {
-        id: 2,
-        img: pikky2,
-        name: "Nudibranches Wow cloud! Ice cream flavor",
-        description: "Пенка для веселого купания",
-        price: "396 P",
-    },
-    {
-        id: 3,
-        img: pikky3,
-        name: "Nudibranches FIERY TAIL ice cream",
-        description: "Игровой набор для создания мерцающей соли для ванны",
-        price: "990 P",
-    },
-    {
-        id: 4,
-        img: pikky4,
-        name: "Nudibranches Shower super power! ice cream",
-        description: "Гель-шампунь для волос и тела",
-        price: "899 P",
-    },
-    {
-        id: 5,
-        img: pikky5,
-        name: "Nudibranches Си Банни для детей плюшевая",
-        description: "Плюшевая игрушка",
-        price: "1990 P",
-    },
-    {
-        id: 6,
-        img: pikky6,
-        name: "Nudibranches Вот ты где!",
-        description: "Настольная игра",
-        price: "621 P",
-    },
-]
-
 export const pro = [
     {
-        id: 1,
+        id: 47,
         img: shick1,
         name: "SHIK Total repair balm",
         description: "SHIK Восстанавливающий бальзам для губ SPF 15",
@@ -688,7 +688,7 @@ export const pro = [
         oldPrice: "888 P",
     },
     {
-        id: 2,
+        id: 48,
         img: shick3,
         name: "SHIK Eyebrow & lashes",
         description: "Сыворотка для бровей и ресниц",
@@ -696,7 +696,7 @@ export const pro = [
         oldPrice: "912 ₽",
     },
     {
-        id: 3,
+        id: 49,
         img: shick2,
         name: "SHIK Total repair balm",
         description: "Восстанавливающий бальзам для губ SPF 15",
@@ -704,7 +704,7 @@ export const pro = [
         oldPrice: "889 ₽",
     },
     {
-        id: 4,
+        id: 50,
         img: shick4,
         name: "SHIK PRO HAND CREAM HYDRATING",
         description: "Крем для рук увлажняющий",
@@ -712,7 +712,7 @@ export const pro = [
         oldPrice: "212 P",
     },
     {
-        id: 5,
+        id: 51,
         img: shick6,
         name: "SHIK Cellular complex repair eye cream",
         description: "Крем для кожи вокруг глаз",
@@ -720,7 +720,7 @@ export const pro = [
         oldPrice: "1 344 ₽",
     },
     {
-        id: 6,
+        id: 52,
         img: shick5,
         name: "SHIK Hydrating moisturizing emulsion",
         description: "Увлажняющая эмульсия",

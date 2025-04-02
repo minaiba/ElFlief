@@ -63,7 +63,7 @@ export default function Person({ onClose }) {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ duration: 0.1 }}
-          className="fixed top-0 right-0 h-full w-150 bg-white shadow-lg p-6 z-50"
+          className="fixed top-0 right-0 h-full w-150 bg-white pt-[140px] shadow-lg p-6 z-50"
         >
           <button className="absolute top-4 right-4 text-4xl" onClick={onClose}>
             <IoClose />
@@ -105,7 +105,7 @@ export default function Person({ onClose }) {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ duration: 0.1 }}
-          className="fixed top-0 right-0 h-full w-150 bg-white shadow-lg p-6 z-50"
+          className="fixed top-0 right-0 h-full pt-[140px] w-150 bg-white shadow-lg p-6 z-50"
         >
           <button className="absolute top-4 right-4 text-4xl" onClick={onClose}>
             <IoClose />
@@ -137,7 +137,7 @@ export default function Person({ onClose }) {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ duration: 0.1 }}
-          className="fixed top-0 right-0 h-full w-150 bg-white shadow-lg p-6 z-50"
+          className="fixed top-0 right-0 pt-[140px] h-full w-150 bg-white shadow-lg p-6 z-50"
         >
           <button className="absolute top-4 right-4 text-4xl" onClick={onClose}>
             <IoClose />
@@ -179,7 +179,11 @@ export default function Person({ onClose }) {
           {message}
         </motion.div>
       )}
-
+        <div
+          className="fixed inset-0 bg-black opacity-60"
+          onClick={onClose}
+          aria-label="Close modal"
+        ></div>
     </AnimatePresence>
   );
 }

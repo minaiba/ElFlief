@@ -49,8 +49,8 @@ export default function Pikky({product}) {
         dispatch(addCart(product));
     };
       return (
-        <div className="mt-[100px] max-w-[1400px] h-[700px] mb-[100px]  m-auto relative" >
-          <img src={pikky1} className="w-full max-w-[1400px] " alt="background" />
+        <div className="mt-[100px] max-w-[1400px] h-[700px] mb-[100px] m-auto relative" >
+          <img src={pikky1} className="w-full max-w-[1400px] rounded-2xl" alt="background" />
           <div className="mt-6 w-[80%] absolute bottom-[0px] left-[10%]" >
             <Slider {...settings} className='flex gap-12'>
               {pikky.map((product) => (

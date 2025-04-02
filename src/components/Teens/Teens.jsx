@@ -192,7 +192,7 @@ const Teens = () => {
   ];
 
   return (
-    <div >
+    <div className=" overflow-x-hidden">
     <Carusel/>
       <div className={`fixed inset-0 bg-black transition-opacity duration-300 ${
           isMenuOpen ? "opacity-50 z-40" : "opacity-0 -z-10"

@@ -89,7 +89,7 @@ export default function Stories() {
         {stories.map((story, index) => (
             <div
                 key={story.id}
-                className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full border-4 border-pink-500 cursor-pointer overflow-hidden duration-300 
+                className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full border-1 border-pink-100 cursor-pointer overflow-hidden duration-300 
                 ${activeStory === story ? "" : "opacity-50 hover:opacity-100"}`}
                 onClick={() => {
                     setActiveStory(story);
@@ -103,7 +103,7 @@ export default function Stories() {
 
     {activeStory && (
         <div className="fixed z-50 inset-0 flex items-center justify-center bg-black bg-opacity-90 p-4">
-            <div className="relative w-full max-w-[500px] h-auto sm:h-[880px] flex items-center justify-center">
+            <div className="relative w-full max-w-[500px] h-auto sm:h-[720px] flex items-center justify-center">
                 <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-gray-300 rounded-full overflow-hidden">
                     <div
                         className="h-full bg-white transition-all duration-5000"

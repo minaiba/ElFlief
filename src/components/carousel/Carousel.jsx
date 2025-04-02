@@ -13,7 +13,7 @@ const Carousel = () => {
     const currentSlide = slides[activeSlide] || slides[0];
 
     return (
-        <div className=" mt-[20px] mb-[120px] relative">
+        <div className="mt-[20px] mb-[120px] relative">
             <Swiper
                 modules={[Navigation, Autoplay, EffectFade]}
                 navigation

@@ -8,11 +8,11 @@ export default function Heart({product}) {
     dispatch(removeFromCart(id));
   };
   if (cartItem.length === 0) {
-    return <p className="w-[1400px] m-auto ml-[600px] text-3xl py-[180px] font-mono">Нет избранных товаров</p>; 
+    return <p className="w-[1400px] m-auto ml-[600px] text-3xl py-[180px] overflow-x-hidden font-mono">Нет избранных товаров</p>; 
   }
   return (
-    <div className="max-w-[1400px] mx-auto py-15 px-4">
-      <h1 className="flex justify-center py-10 text-2xl font-mono sm:text-3xl md:text-4xl">Избранные товары</h1>
+    <div className="max-w-[1400px] mx-auto py-15 px-4 overflow-x-hidden">
+      <h1 className="flex  overflow-x-hidden justify-center py-10 text-2xl font-mono sm:text-3xl md:text-4xl">Избранные товары</h1>
       {cartItem.map((product) => (
         <div key={product.id} className="mt-10 w-[1000px] ml-[190px] flex justify-between items-center border border-stone-600">
           <div className="flex">
