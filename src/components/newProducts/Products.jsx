@@ -39,7 +39,7 @@ export default function Products() {
     <div className='mt-[20px]'>
       <div className="relative">
         <img src={img1} className="w-full h-full object-cover " />
-        <h1 className=" font-bold text-[white] absolute top-[65.9%] left-[60%] transform  text-[100px] ">новинки </h1>
+        <h1 className=" font-bold text-[white] absolute top-[62.7%] left-[60%] transform  text-[100px] ">новинки </h1>
       </div>
       <div className='w-[1400px] m-auto'>
         <Link to='/catalog'>
