@@ -38,13 +38,8 @@ export default function Products() {
   return (
     <div className='mt-[20px] overflow-x-hidden'>
       <div className="relative">
-<<<<<<< HEAD
-        <img src={img1} className="w-full h-full object-cover "/>
-        <h1 className=" font-bold text-[white] absolute top-[59%] left-[54%] transform text-9xl">новинки </h1>
-=======
         <img src={img1} className="w-full h-full object-cover " />
-        <h1 className=" font-bold text-[white] absolute top-[65.9%] left-[60%] transform  text-[100px] ">новинки </h1>
->>>>>>> 0a81e941baa60041997807c6dd84400cfcb3945e
+        <h1 className=" font-bold text-[white] absolute top-[55.4%] left-[58%] transform text-[120px] ">новинки </h1>
       </div>
       <div className='w-[1400px] m-auto'>
         <Link to='/catalog'>
@@ -98,9 +93,9 @@ export default function Products() {
                 <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[605px] mt-[20px] hover:text-red-500 transition' /></Link>
                 <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] ml-[605px] mt-[460px] hover:text-green-500' /></Link>
                 <img src={imageHovered === g.id ? g.imgAlt : g.img} className='h-[500px] w-[650px] transition' onMouseEnter={() => handleMouseEnter(g.id)} onMouseLeave={handleMouseLeave} />
-                <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px] ml-[150px]'>{g.category}</p>
-                <h1 className='hover:text-[#9ca887] text-4xl font-medium ml-[150px] ' >{g.title}</h1>
-                <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[5px] ml-[150px]'>{g.price}</h1>
+                <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px] ml-[20px]'>{g.category}</p>
+                <h1 className='hover:text-[#9ca887] text-4xl font-medium ml-[10px] ' >{g.title}</h1>
+                <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[5px] ml-[10px]'>{g.price}</h1>
               </div>
             ))}
           </div>
@@ -111,9 +106,9 @@ export default function Products() {
                 <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] hover:text-green-500 ml-[605px] mt-[460px]' /></Link>
                 <button className=' bg-[#ede370] text-[#221d1d]  font-bold w-[45px] h-[40px] absolute'>{c.discount}</button>
                 <img src={img5} className='h-[500px] w-[650px]' />
-                <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px]  ml-[150px]'>{c.category}</p>
-                <h1 className='hover:text-[#9ca887] text-4xl font-medium  ml-[150px]'>{c.title}</h1>
-                <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[150px] mt-[10px]'>{c.price}</h1>
+                <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px]  ml-[20px]'>{c.category}</p>
+                <h1 className='hover:text-[#9ca887] text-4xl font-medium  ml-[10px]'>{c.title}</h1>
+                <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[10px] mt-[10px]'>{c.price}</h1>
               </div>
             ))}
             {cre.map((cr) => (
@@ -176,10 +171,10 @@ export default function Products() {
                 <Link to="/favorites"><IoHeartOutline className='absolute hover:text-red-500 w-[20px] h-[20px] ml-[605px] mt-[20px]' /></Link>
                 <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] hover:text-green-500 ml-[605px] mt-[505px]' /></Link>
                 <img src={imageHovered === 'набор' ? nab.imgAlt : nab.img} className=' h-[550px] w-[650px]' onMouseEnter={() => handleMouseEnter('набор')} onMouseLeave={handleMouseLeave} />
-                <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px] ml-[150px]'> {nab.category}</p>
-                <h1 className='hover:text-[#9ca887] text-4xl font-medium ml-[150px]' >{nab.title}</h1>
-                <button className=' bg-[#e1dc9e] w-[120px] hover:text-[#9ca887]  ml-[150px] mt-[5px]'>{nab.button}</button>
-                <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[5px] ml-[150px]'>{nab.price}</h1>
+                <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px] ml-[20px]'> {nab.category}</p>
+                <h1 className='hover:text-[#9ca887] text-4xl font-medium ml-[10px]' >{nab.title}</h1>
+                <button className=' bg-[#e1dc9e] w-[120px] hover:text-[#9ca887] mb-3 ml-[10px] mt-[12px]'>{nab.button}</button>
+                <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[5px] ml-[10px]'>{nab.price}</h1>
               </div>
             ))}
           </div>
@@ -258,8 +253,8 @@ export default function Products() {
                 <Link to="/favorites"><IoHeartOutline className='absolute w-[20px] h-[20px] ml-[605px] mt-[20px] hover:text-red-500 transition' /></Link>
                 <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] ml-[605px] mt-[460px] hover:text-green-500' /></Link>
                 <img src={imageHovered === 'kor' ? otk.imgAlt : otk.img} className='h-[500px] transition w-[650px]' onMouseEnter={() => handleMouseEnter('kor')} onMouseLeave={handleMouseLeave} />
-                <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px] ml-[150px]'>{otk.category}</p>
-                <h1 className='hover:text-[#9ca887] text-4xl font-medium ml-[150px] w-[500px]  ' >{otk.title}</h1>
+                <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px] ml-[20px]'>{otk.category}</p>
+                <h1 className='hover:text-[#9ca887] text-4xl font-medium ml-[20px] w-[500px]  ' >{otk.title}</h1>
                 <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[5px] ml-[150px]'>{otk.price}</h1>
               </div>
             ))}
@@ -316,9 +311,9 @@ export default function Products() {
                 <Link to="/favorites"><IoHeartOutline className='absolute hover:text-red-500 w-[20px] h-[20px] ml-[605px] mt-[20px]' /></Link>
                 <Link to="/cart"><BsBasket className='absolute w-[20px] h-[20px] hover:text-green-500 ml-[605px] mt-[460px]' /></Link>
                 <img src={nau.img} className='h-[500px] w-[650px]' />
-                <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px]  ml-[150px]'>{nau.category}</p>
-                <h1 className='hover:text-[#9ca887] text-4xl font-medium  ml-[150px]'>{nau.title}</h1>
-                <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[150px] mt-[10px]'>{nau.price}</h1>
+                <p className='hover:text-[#9ca887] absolute font-mono mt-[-20px]  ml-[20px]'>{nau.category}</p>
+                <h1 className='hover:text-[#9ca887] text-4xl font-medium  ml-[10px]'>{nau.title}</h1>
+                <h1 className='font-bold hover:text-[#9ca887] text-2xl ml-[10px] mt-[10px]'>{nau.price}</h1>
               </div>
             ))}
             {phen.map((fen) => (

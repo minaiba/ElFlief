@@ -26,7 +26,7 @@ export default function Header() {
 
 
   return (
-<div className="bg-white fixed w-full pb-[20px] pt-10 z-1000 flex justify-center mt-[-20px]">
+<div className="bg-white fixed w-full pb-[20px] pt-9 z-1000 flex justify-center mt-[-20px]">
   <div className="w-full max-w-[1400px] mx-auto">
   <div className="flex items-center justify-between w-full">
   <div className="flex items-center">
@@ -37,7 +37,7 @@ export default function Header() {
       <option value="Казахстан">Казахстан</option>
     </select>
   </div>
-  <div className="flex justify-center flex-1">
+  <div className="flex justify-center ml-[-50px] flex-1">
     <Link to="/">
       {photo && <img src={photo} className="h-12" alt="Logo" />}
     </Link>
@@ -86,7 +86,7 @@ export default function Header() {
         className="flex items-center ml-16 gap-2 cursor-pointer px-2 rounded-lg transition duration-300 hover:text-green-600"
       >
         <BiLogoWhatsapp size={24} className="text-gray-500 transition duration-300 group-hover:text-green-600" />
-        <h3 className="text-sm font-medium">Wp</h3>
+        <h3 className="text-sm font-medium">WA</h3>
       </a>
       
       <a

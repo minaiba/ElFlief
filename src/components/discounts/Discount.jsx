@@ -42,11 +42,7 @@ import s19Alt from '../../assets/gulasyl/massaj2.webp'
 import s20Alt from '../../assets/gulasyl/pled2.webp'
 import s21Alt from '../../assets/gulasyl/sergi2.webp'
 import Disco from './Disco'
-export default function Discount() {
-  const [imageHovered, setImageHovered] = useState(null);
-  const handleMouseEnter = (id) => setImageHovered(id);
-  const handleMouseLeave = () => setImageHovered(null);
-  const [selectedProduct, setSelectedProduct] = useState(null);
+
   const every = [
     {
       id: '1', title: 'ANY BUDDY Healthy sip', title2: `артикул: 19000341152
@@ -432,12 +428,18 @@ SONNO HOME заботится об окружающей среде, поэтом
   //   { id: '19', title: 'Sbleskom Крутые тигры', category: 'Серебряные серьги', price: '8 743 ₽', img: s21, imgAlt: s21Alt, discount: 'only GA' }
 
   // ]
+
+export default function Discount() {
+  const [imageHovered, setImageHovered] = useState(null);
+  const handleMouseEnter = (id) => setImageHovered(id);
+  const handleMouseLeave = () => setImageHovered(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
   return (
-    <div>
-      <section>
-        <div className='w-[1400px] m-auto'>
-          <h1 className='text-6xl font-bold text-[#474646] absolute mt-[490px] ml-[730px]'>скидки до −50%</h1>
-          <img src={s1} className='w-[1400px]' />
+    <div className=''>
+          <h1 className='text-8xl font-bold text-white absolute mt-[540px] ml-[530px]'>скидки до −50%</h1>
+          <img src={s1} className='w-full h-[680px]'/>            
+        <div className='w-[1400px] m-auto'>          
           <h2 className='justify-center items-center flex my-[40px] text-2xl'><span className='mr-[5px] font-bold'>40 806</span> продукт</h2>
           <div className='mt-[20px]'>
             <div className='flex mt-[20px] '>
@@ -783,7 +785,7 @@ SONNO HOME заботится об окружающей среде, поэтом
               </div>
             ))}
           </div>
-          <div className='flex mt-[100px] '>
+          <div className='flex mt-[100px] pb-20'>
             {massaj.map((mes) => (
               <div key={mes.id} className='' onMouseEnter={() => handleMouseEnter('fen')} onMouseLeave={handleMouseLeave}>
                 <p className='hover:text-[#9ca887] absolute font-mono mt-[80px] ml-[100px]'>{mes.category}</p>
@@ -837,7 +839,6 @@ SONNO HOME заботится об окружающей среде, поэтом
   { selectedProduct && <Disco ser={selectedProduct} onClose={() => setSelectedProduct(null)} /> }
   { selectedProduct && <Disco sam={selectedProduct} onClose={() => setSelectedProduct(null)} /> }
   { selectedProduct && <Disco eve={selectedProduct} onClose={() => setSelectedProduct(null)} /> }
-  </section>
   </div>
   )
 }

@@ -3,7 +3,7 @@ import React from 'react'
 export default function FFoter() {
   return (
     <div>
-             <div className="max-w-[1400px] mx-auto p-6 bg-white ">
+             <div className="max-w-[1400px] mx-auto pt-42 p-6 bg-white ">
       <h1 className="text-3xl font-bold mb-4">политика обработки персональных данных</h1>
       <h2 className="text-2xl font-semibold mb-4">
       1. Общие положения

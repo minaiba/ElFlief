@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footerrs() {
   return (
     <div>
-       <div className="max-w-[1400px] mx-auto p-6 bg-white ">
+       <div className="max-w-[1400px] pt-42 mx-auto p-6 bg-white ">
       <h1 className="text-3xl font-bold mb-4">Документы сайта</h1>
       <h2 className="text-2xl font-semibold mb-4">
         Правила продажи товаров в интернет-магазине «Золотое яблоко»

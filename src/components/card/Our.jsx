@@ -31,10 +31,10 @@ export default function Our({ product }) {
                     onClick={() => setSelectedProduct(product)}
                 >
                     <Link to='favorites' onClick={(e) => { e.stopPropagation(); handleAddCart(product); }}>
-                        <IoHeartOutline className="absolute top-6 ml-[10px] w-[20px] h-[20px] cursor-pointer hover:text-red-500" />
+                        <IoHeartOutline className="absolute top-6 ml-[10px] w-[30px] h-[30px] cursor-pointer hover:text-red-500" />
                     </Link>
                     <Link to='cart' onClick={(e) => { e.stopPropagation(); handleAddToCart(product); }}>
-                        <BsBasket className="absolute left-68 bottom-[170px] w-[20px] h-[20px] cursor-pointer hover:text-green-500" />
+                        <BsBasket className="absolute left-66 top-43 w-[30px] h-[30px] cursor-pointer hover:text-green-500" />
                     </Link>
                     <img src={product.img} alt={product.title} className="w-[320px] h-[200px] rounded-lg" />
                     <h3 className="hover:text-[#9ca887] font-mono mt-4 text-right">{product.title}</h3>

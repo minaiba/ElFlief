@@ -3,7 +3,7 @@ import React from 'react'
 export default function Foooters() {
   return (
     <div>
-             <div className="max-w-[1400px] mx-auto p-6 bg-white ">
+             <div className="max-w-[1400px] mx-auto  pt-42 p-6 bg-white ">
       <h1 className="text-3xl font-bold mb-4"> Отмена и возврат</h1>
      
        <p className="mb-8">Когда можно отменить заказ: до статуса «выполнен».</p>

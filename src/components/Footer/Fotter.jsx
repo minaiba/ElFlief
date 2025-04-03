@@ -3,7 +3,7 @@ import React from 'react'
 export default function Fotter() {
   return (
     <div>
-       <div className="max-w-[1400px] mx-auto p-6 bg-white ">
+       <div className="max-w-[1400px] pt-42 mx-auto p-6 bg-white ">
       <h1 className="text-3xl font-bold mb-4">программа лояльности</h1>
       <h3 className="text-xl font-bold mb-2">1. Бонусы</h3>
        <p className="mb-8">1. Правила начисления бонусов</p>

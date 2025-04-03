@@ -3,7 +3,7 @@ import React from 'react'
 export default function FoTerss() {
   return (
     <div>
-      <div className="max-w-[1400px] mx-auto p-6 bg-white ">
+      <div className="max-w-[1400px] pt-42 mx-auto p-6 bg-white ">
       <h1 className="text-3xl font-bold mb-4 text-center">контакты</h1>
       <p className="mb-5 text-center">для связи с нами Вы можете воспользоваться следующими способами</p>
       <h3 className="text-xl font-bold mb-2 text-center">8 800 770 70 21</h3>

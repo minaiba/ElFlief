@@ -312,7 +312,7 @@ export default function GiftCard({product}) {
               </div>
             ))}
           </div>
-          <div className='flex mt-[100px] '>
+          <div className='flex mt-[100px] pb-20'>
             {cart5.map((product) => (
               <div className='cursor-pointer' key={product.id} onClick={() => setSelectedProduct(product)}>
                 <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] hover:text-red-500 mt-[10px] w-[20px] h-[20px]' /></Link>

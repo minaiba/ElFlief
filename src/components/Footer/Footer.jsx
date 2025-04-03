@@ -40,8 +40,8 @@ export default function Footer() {
         <div className="space-y-4 pt-10">
           <h1 className="text-xl font-semibold">контакты</h1>
           <h3 className="text-sm opacity-75"><Link to="footers7">общие контакты</Link></h3>
-          <h3 className="text-sm opacity-75"><Link to="footers7"></Link>отдел маркетинга и рекламы</h3>
-          <h3 className="text-sm opacity-75">партнерская программа</h3>
+         <Link to="footers7"> <h3 className="text-sm opacity-75 pb-5">отдел маркетинга и рекламы</h3></Link>
+          <a href="https://goldapple.ru/lp/advcake"><h3 className="text-sm opacity-75">партнерская программа</h3></a>
         </div>
       </div>
       <hr className="border-t-1 border-gray-800 my-4" />
