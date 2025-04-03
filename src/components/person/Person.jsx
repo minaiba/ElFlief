@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -12,6 +12,15 @@ export default function Person({ onClose }) {
   const [generatedCode, setGeneratedCode] = useState(null);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  useEffect(() => {
+    const storedName = localStorage.getItem("userName") || "";
+    const storedEmail = localStorage.getItem("userEmail") || "";
+    // const storedPasword = localStorage.getItem("userPasword") || "";
+    setName(storedName);
+    setEmail(storedEmail);
+    // setPassword(storedPasword);
+  }, []);
 
   const sendCode = () => {
     if (!email.includes("@")) {
@@ -35,11 +44,29 @@ export default function Person({ onClose }) {
     }
   };
 
+  {message && (
+    <motion.div
+      key="message"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="bg-black text-white p-3 rounded-md mt-4 text-center"
+    >
+      {message}
+    </motion.div>
+  )}
+  
+
+
   const handleRegister = () => {
     if (password !== confirmPassword) {
       setMessage("Пароли не совпадают");
       return;
     }
+    localStorage.setItem("userName", name);
+    localStorage.setItem("userEmail", email);
+    localStorage.setItem("userPassword", password);
     setMessage("Регистрация успешна!");
     onClose(); 
   };
@@ -53,7 +80,7 @@ export default function Person({ onClose }) {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ duration: 0.1 }}
-          className="fixed top-0 right-0 h-full w-150 bg-white shadow-lg p-6 z-50"
+          className="fixed top-0 right-0 h-full w-150 bg-white pt-[140px] shadow-lg p-6 z-50"
         >
           <button className="absolute top-4 right-4 text-4xl" onClick={onClose}>
             <IoClose />
@@ -95,7 +122,7 @@ export default function Person({ onClose }) {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ duration: 0.1 }}
-          className="fixed top-0 right-0 h-full w-150 bg-white shadow-lg p-6 z-50"
+          className="fixed top-0 right-0 h-full pt-[140px] w-150 bg-white shadow-lg p-6 z-50"
         >
           <button className="absolute top-4 right-4 text-4xl" onClick={onClose}>
             <IoClose />
@@ -127,7 +154,7 @@ export default function Person({ onClose }) {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ duration: 0.1 }}
-          className="fixed top-0 right-0 h-full w-150 bg-white shadow-lg p-6 z-50"
+          className="fixed top-0 right-0 pt-[140px] h-full w-150 bg-white p-6 z-50"
         >
           <button className="absolute top-4 right-4 text-4xl" onClick={onClose}>
             <IoClose />
@@ -169,7 +196,13 @@ export default function Person({ onClose }) {
           {message}
         </motion.div>
       )}
-
+        <div
+          className="fixed inset-0 bg-white opacity-10"
+          onClick={onClose}
+          aria-label="Close modal"
+        ></div>
     </AnimatePresence>
   );
 }
+
+

@@ -42,7 +42,7 @@ const ContestApp = () => {
   };
 
   return (
-    <div style={{ backgroundImage: `url(${priz})` }} className="min-h-screen bg-gradient-to-b from-green-500 to-green-900 py-20 mt-5 text-white">
+    <div className="min-h-screen bg-gradient-to-b bg-[#C6E400] py-20 pt-[164px] text-white">
       <h1 className="text-4xl font-mono text-center mb-6">Конкурс Легенд о Золотом Яблоке</h1>
       <div className=" bg-white p-9 rounded-lg shadow-lg mb-6">
         <div className="max-w-lg mx-auto">
@@ -65,20 +65,19 @@ const ContestApp = () => {
           ></textarea>
           <button
             onClick={handleSubmit}
-            className="bg-yellow-500 text-black px-4 py-2 rounded-lg hover:bg-yellow-600"
+            className="bg-[#C6E400] text-black px-4 py-2 rounded-lg cursor-pointer"
           >
             Отправить Историю
           </button>
         </div>
 
       </div>
-      <h2 className="text-4xl text-white max-w-[1400px] pl-[5%] py-5 m-auto font-mono mb-4">Отправленные истории</h2>
-      <div className="space-y-4">
+      <h2 className="text-4xl text-white max-w-[1400px] pl-[17%] py-5 m-auto font-mono mb-4">Отправленные истории</h2>
+      <div className="space-y-5 w-[900px] ml-[300px]">
         {stories.map((storyItem, index) => (
           <motion.div
             key={index}
             className="bg-white text-black p-4 rounded-lg shadow-md flex justify-between items-center"
-            whileHover={{ scale: 1.05 }}
           >
             <div>
               {index === 0 && <FaCrown className="text-yellow-500 inline mr-2" />}
@@ -88,7 +87,7 @@ const ContestApp = () => {
             </div>
             <button
               onClick={() => handleVote(index)}
-              className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg font-bold"
+              className="bg-[#C6E400] text-white px-6 py-2 rounded-lg font-bold"
             >
               Проголосовать
             </button>
@@ -118,25 +117,25 @@ const ContestApp = () => {
         </h2>
         <p className="text-lg font-semibold mt-2">Победитель получает эксклюзивный набор!</p>
         <div className=" flex border rounded-2xl max-w-[1300px] mt-10 p-10">
-          <div className="w-[366px] rounded-2xl py-6 px-6 border relative border-emerald-500">
+          <div className="w-[366px] rounded-2xl py-6 px-6 border relative border-[#C6E400]">
             <GiBowTieRibbon className="absolute text-2xl" />
             <h1>Tamagotchi</h1>
             <p>3d игрушка тамагочи</p>
             <img src={priz1} className="w-35 rounded-2xl h-35 ml-[38px] mt-7" />
           </div>
-          <div className="w-[366px] ml-10 rounded-2xl py-6 px-6 border border-emerald-500">
+          <div className="w-[366px] ml-10 rounded-2xl py-6 px-6 border border-[#C6E400]">
             <GiBowTieRibbon className="absolute text-2xl" />
             <h1>PAYOT</h1>
             <p>для ухода за кожей лица</p>
             <img src={priz2} className="w-50 rounded-2xl h-50 ml-[14px]" />
           </div>
-          <div className="w-[366px] ml-10 rounded-2xl py-6 px-6 border border-emerald-500">
+          <div className="w-[366px] ml-10 rounded-2xl py-6 px-6 border border-[#C6E400]">
             <GiBowTieRibbon className="absolute text-2xl" />
             <h1>BARBARO</h1>
             <p>для восстановления волос</p>
             <img src={priz3} className="w-50 rounded-2xl h-50 ml-[14px]" />
           </div>
-          <div className="w-[366px] ml-10 rounded-2xl py-6 px-6 border border-emerald-500">
+          <div className="w-[366px] ml-10 rounded-2xl py-6 px-6 border border-[#C6E400]">
             <GiBowTieRibbon className="absolute text-2xl" />
             <h1>EAT MY</h1>
             <p>бальзам для губ</p>

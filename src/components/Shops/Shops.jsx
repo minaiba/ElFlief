@@ -264,9 +264,9 @@ export default function Cars() {
     // </div>
     <div>
   <div className="bg-">
-    <div className="container max-w-[1400px] mx-auto pl-[100px] px-4 py-20 text-black">
+    <div className="container max-w-[1400px] mx-auto pl-[100px] pt-52 px-4 py-20 text-black">
       <h1 className="text-5xl mt-[-50px] ml-0 font-bold sm:text-4xl"> Магазины </h1>
-      <div className="flex flex-col sm:flex-row sm:space-x-6 sm:space-y-0 space-y-6 sm:mt-0 mt-6 max-w-full">
+      <div className="flex flex-col pt-7 sm:flex-row sm:space-x-6 sm:space-y-0 space-y-6 sm:mt-0 mt-6 max-w-full">
         <div className="sm:mr-20 w-full sm:w-auto">
           <ul className="sticky top-0 space-y-2">
             {categories.map(category => (

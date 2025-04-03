@@ -574,7 +574,8 @@ export const logo = [
     "id": "44"
   },
   {
-    "img": "YamCase iPhone 16 Pro Max Воздух",
+    'img': logo9,
+    "name": "YamCase iPhone 16 Pro Max Воздух",
     "title": "Чехол для телефона",
     "count": 0,
     "price": 1650,

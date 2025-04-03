@@ -49,14 +49,14 @@ export default function Pikky({product}) {
         dispatch(addCart(product));
     };
       return (
-        <div className="mt-[100px] max-w-[1400px] h-[700px] mb-[100px]  m-auto relative" >
-          <img src={pikky1} className="w-full max-w-[1400px] " alt="background" />
+        <div className="mt-[100px] max-w-[1400px] h-[700px] mb-[100px] m-auto relative" >
+          <img src={pikky1} className="w-full max-w-[1400px] rounded-2xl" alt="background" />
           <div className="mt-6 w-[80%] absolute bottom-[0px] left-[10%]" >
             <Slider {...settings} className='flex gap-12'>
               {pikky.map((product) => (
                 <div key={product.id} className="px-2">
                   <div className="bg-white p-4 rounded-lg relative">
-                    <img src={product.image} className="w-full h-[250px] object-cover rounded-lg" alt={product.name} />
+                    <img src={product.img} className="w-full h-[250px] object-cover rounded-lg" />
                     <Link to="/favorites" onClick={handleAddCart} className="absolute top-3 left-3">
                       <IoHeartOutline className="text-2xl text-gray-600 hover:text-red-500" />
                     </Link>

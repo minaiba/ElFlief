@@ -184,7 +184,7 @@ const cart8 = [
     imgAlt: ka17
   },
 ];
-export default function GiftCard({product}) {
+export default function GiftCard({ product }) {
   const [imageHovered, setImageHovered] = useState(null);
   const handleMouseEnter = (img) => setImageHovered(img);
   const handleMouseLeave = () => setImageHovered(null);
@@ -199,16 +199,16 @@ export default function GiftCard({product}) {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-      dispatch(addToCart(product));
+    dispatch(addToCart(product));
   };
   const handleAddCart = () => {
-      dispatch(addCart(product));
+    dispatch(addCart(product));
   };
 
 
   return (
     <div >
-
+      {/* 
       <div className='' style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: 'cover',
@@ -216,15 +216,38 @@ export default function GiftCard({product}) {
         height: '600px',
         
       }}>
-        <div className='w-[1400px] mt-5 m-auto flex'>
+        <div className='w-[1400px] pt-24 m-auto flex'>
           <div>
-            <h1 className="w-[100px] absolute ml-[470px] mt-[50px] hover:text-7xl transition-all font-extrabold text-5xl duration-300" style={{ direction: 'rtl', textAlign: 'right' }}>
+            <h1 className="w-[100px] absolute ml-[500px] text-white mt-[50px] hover:text-7xl transition-all font-serif text-6xl duration-300" style={{ direction: 'rtl', textAlign: 'right' }}>
               Электронная карта
             </h1>
             <img src={main} className='w-[400px] h-[250px] rounded-2xl mt-[200px] ml-[200px] bg-pink-200 transition-transform duration-400 hover:translate-y-[-20px]' />
           </div>
           <div className='ml-[250px]'>
-            <h1 className='absolute hover:text-7xl  text-5xl mt-[50px] transition-all font-extrabold duration-300 w-[100px]'>Пластиковая карта</h1>
+            <h1 className='absolute hover:text-7xl text-6xl ml-[-52px] mt-[50px] transition-all font-serif duration-300 w-[100px] text-white'>Пластиковая карта</h1>
+            <div className="flex gap-4 mt-[200px]">
+              <img src={mnogo} className="w-[250px] h-[180px] bg-pink-200 rounded-2xl transform  rotate-[-5deg] mt-[70px] transition-transform duration-300 hover:translate-y-[-10px]" />
+              <img src={mnogo2} className="w-[250px] h-[180px] bg-pink-200 rounded-2xl transform rotate-[35deg] ml-[-80px] mt-[-50px] transition-transform duration-300 hover:translate-y-[-10px]" />
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+      <div className='' style={{
+        backgroundImage: `url(${bg})`, 
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '600px',
+      }}>
+        <div className='w-[1400px] cursor-pointer pt-24 m-auto flex'>
+          <div>
+            <h1 className="w-[100px] absolute ml-[500px] text-black font-extrabold mt-[50px] hover:text-7xl transition-all font-serif text-6xl duration-300" style={{ direction: 'rtl', textAlign: 'right' }}>
+              Электронная карта
+            </h1>
+            <img src={main} className='w-[400px] h-[250px] rounded-2xl mt-[200px] ml-[200px] bg-pink-200 transition-transform duration-400 hover:translate-y-[-20px]' />
+          </div>
+          <div className='ml-[250px]'>
+            <h1 className='absolute hover:text-7xl text-6xl ml-[-52px] mt-[50px] transition-all font-serif duration-300 w-[100px] text-black font-extrabold'>Пластиковая карта</h1>
             <div className="flex gap-4 mt-[200px]">
               <img src={mnogo} className="w-[250px] h-[180px] bg-pink-200 rounded-2xl transform  rotate-[-5deg] mt-[70px] transition-transform duration-300 hover:translate-y-[-10px]" />
               <img src={mnogo2} className="w-[250px] h-[180px] bg-pink-200 rounded-2xl transform rotate-[35deg] ml-[-80px] mt-[-50px] transition-transform duration-300 hover:translate-y-[-10px]" />
@@ -313,7 +336,7 @@ export default function GiftCard({product}) {
               </div>
             ))}
           </div>
-          <div className='flex mt-[100px] '>
+          <div className='flex mt-[100px] pb-20'>
             {cart5.map((product) => (
               <div className='cursor-pointer' key={product.id} onClick={() => setSelectedProduct(product)}>
                 <Link to="/favorites"><IoHeartOutline className='absolute ml-[265px] hover:text-red-500 mt-[10px] w-[20px] h-[20px]' /></Link>
@@ -357,7 +380,7 @@ export default function GiftCard({product}) {
           </div>
         </div>
         {selectedProduct && <Card product={selectedProduct} onClose={() => setSelectedProduct(null)} />}
-       
+
       </section>
     </div>
   );

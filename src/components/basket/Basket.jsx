@@ -38,7 +38,7 @@ const Basket = () => {
   }
 
   return (
-    <div className="max-w-[1400px] mx-auto px-4">
+    <div className="max-w-[1400px] pt-[141px] mx-auto px-4">
       <h1 className="flex justify-center py-10 text-2xl sm:text-3xl md:text-4xl font-mono"> Ваша корзина</h1>
       {cartItem.map((item) => (
         <div key={item.id} className="flex my-10 justify-between items-center border-b py-4">
