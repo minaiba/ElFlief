@@ -7,103 +7,83 @@ import { GiShoppingCart } from "react-icons/gi";
 import { useSelector } from 'react-redux';
 import { RiTelegramLine } from 'react-icons/ri'
 import { BiLogoWhatsapp } from 'react-icons/bi'
-
-
+import { RxHamburgerMenu } from "react-icons/rx"; 
 
 export default function Header() {
-  const cartCount = useSelector((state) => {
-    if (state.cart && state.cart.cartItems) {
-      return state.cart.cartItems.reduce((sum, item) => sum + (item.quantity || 0), 0);
-    }
-    return 0; 
-  });
-  const favCount = useSelector((state) => {
-    if (state.idols && state.idols.cartItem) {
-      return state.idols.cartItem.reduce((sum, item) => sum + (item.quantity || 0), 0);
-    }
-    return 0;
-  });
+  const [menuOpen, setMenuOpen] = useState(false);
 
+  const cartCount = useSelector((state) => state.cart?.cartItems?.reduce((sum, item) => sum + (item.quantity || 0), 0) || 0);
+  const favCount = useSelector((state) => state.idols?.cartItem?.reduce((sum, item) => sum + (item.quantity || 0), 0) || 0);
 
   return (
-<div className="bg-white fixed w-full pb-[20px] pt-9 z-1000 flex justify-center mt-[-20px]">
-  <div className="w-full max-w-[1400px] mx-auto">
-  <div className="flex items-center justify-between w-full">
-  <div className="flex items-center">
-    <select className="rounded px-2 py-1">
-      <option value="Москва">Москва</option>
-      <option value="Санкт-Петербург">Санкт-Петербург</option>
-      <option value="Беларусь">Беларусь</option>
-      <option value="Казахстан">Казахстан</option>
-    </select>
-  </div>
-  <div className="flex justify-center ml-[-50px] flex-1">
-    <Link to="/">
-      {photo && <img src={photo} className="h-12" alt="Logo" />}
-    </Link>
-  </div>
-  <div className="flex items-center gap-6">
-    <div className="relative">
-      <Link to="/favorites" className="text-2xl">
-        <IoHeartOutline />
-      </Link>
-      {(favCount ?? 0) > 0 && (
-        <div className="absolute right-[-7px] w-[17px] h-[17px] bg-red-500 text-white rounded-full text-[12px] flex justify-center items-center">
-          {favCount}
+    <header className="bg-white fixed w-full top-0 pb-7 shadow-md z-50">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-6">
+        <div className="flex items-center justify-between py-4">
+          <button className="md:hidden text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
+            <RxHamburgerMenu />
+          </button>
+          <div className="hidden md:block">
+            <select className="rounded px-2 py-1 text-sm md:text-base">
+              <option value="Москва">Москва</option>
+              <option value="Санкт-Петербург">Санкт-Петербург</option>
+              <option value="Беларусь">Беларусь</option>
+              <option value="Казахстан">Казахстан</option>
+            </select>
+          </div>
+          <div className="flex-1 flex justify-center md:static">
+            <Link to="/">
+              <img src={photo} className="h-10 md:h-12" alt="Logo" />
+            </Link>
+          </div>
+          <div className="flex items-center gap-4 md:gap-6">
+            <div className="relative">
+              <Link to="/favorites" className="text-xl md:text-2xl">
+                <IoHeartOutline />
+              </Link>
+              {favCount > 0 && (
+                <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                  {favCount}
+                </span>
+              )}
+            </div>
+            <Link to="/profile" className="text-xl md:text-2xl">
+              <GoPerson />
+            </Link>
+            <div className="relative">
+              <Link to="/cart" className="text-xl md:text-2xl">
+                <GiShoppingCart />
+              </Link>
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-2 bg-green-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
+            </div>
+          </div>
         </div>
-      )}
-    </div>
-    <Link to="/profile" className="text-2xl">
-      <GoPerson />
-    </Link>
-    <div className="relative">
-      <Link to="/cart" className="text-2xl">
-        <GiShoppingCart />
-      </Link>
-      {(cartCount ?? 0) > 0 && (
-        <div className="absolute top-[-5px] right-[-7px] w-[17px] h-[17px] bg-emerald-300 text-white rounded-full text-[12px] flex justify-center items-center">
-          {cartCount}
-        </div>
-      )}
-    </div>
-  </div>
-</div>
-
-
-    <div className="flex justify-center">
-      <ul className="flex gap-4 pt-5 text-lg flex-wrap justify-center sm:gap-4">
-        <li><Link to="/catalog">Каталог</Link></li>
-        <li><Link to="/newProducts">Новинки</Link></li>
-        <li><Link to="/stocks">Акции</Link></li>
-        <li><Link to="/shops">Магазины</Link></li>
-        <li><Link to="/teens">Teens</Link></li>
-        <li><Link to="/tamagochi">Тамагочи</Link></li>
-        <li><Link to="/giftCards">Подарочные карты</Link></li>
-        <li><Link to="/discounts">Скидки до -50%</Link></li>
-      <div className="flex">
-      <a
-        href="https://api.whatsapp.com/send?phone=78007707021"
-        className="flex items-center ml-16 gap-2 cursor-pointer px-2 rounded-lg transition duration-300 hover:text-green-600"
-      >
-        <BiLogoWhatsapp size={24} className="text-gray-500 transition duration-300 group-hover:text-green-600" />
-        <h3 className="text-sm font-medium">WA</h3>
-      </a>
-      
-      <a
-        href="https://t.me/goldapple_ru"
-        className="flex items-center gap-2 cursor-pointer px-2 rounded-lg transition duration-300 hover:text-blue-600"
-      >
-        <RiTelegramLine size={24} className="text-gray-500 transition duration-300 group-hover:text-blue-600" />
-        <h3 className="text-sm font-medium">Tg</h3>
-      </a>
-    </div>
-      </ul>
-    </div>
-  </div>
-</div>
-
-
+        <nav className={`md:flex justify-center ${menuOpen ? "block" : "hidden"}`}>
+          <ul className="flex flex-col md:flex-row gap-4 md:gap-6 text-sm md:text-lg text-center">
+            <li><Link to="/catalog">Каталог</Link></li>
+            <li><Link to="/newProducts">Новинки</Link></li>
+            <li><Link to="/stocks">Акции</Link></li>
+            <li><Link to="/shops">Магазины</Link></li>
+            <li><Link to="/teens">Teens</Link></li>
+            <li><Link to="/tamagochi">Тамагочи</Link></li>
+            <li><Link to="/giftCards">Подарочные карты</Link></li>
+            <li><Link to="/discounts">Скидки до -50%</Link></li>
+            <div className="flex justify-center gap-4 mt-4 md:mt-0">
+              <a href="https://api.whatsapp.com/send?phone=78007707021" className="flex items-center gap-2 text-sm md:text-base">
+                <BiLogoWhatsapp size={22} className="text-gray-500 hover:text-green-600 transition" />
+                <span>WA</span>
+              </a>
+              <a href="https://t.me/goldapple_ru" className="flex items-center gap-2 text-sm md:text-base">
+                <RiTelegramLine size={22} className="text-gray-500 hover:text-blue-600 transition" />
+                <span>Tg</span>
+              </a>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </header>
   );
-
-
 }

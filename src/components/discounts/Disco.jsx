@@ -14,7 +14,7 @@ export default function CDisco({ eve, onClose }) {
       animate={{ x: 0 }}
       exit={{ x: "100%" }}
       transition={{ duration: 0.1 }}
-      className="fixed "
+      className="fixed  top-0 right-0 h-full w-[50px] p-6 rounded-l-lg shadow-lg z-50"
     >
       <div className="relative mt-[50px]">
         <div

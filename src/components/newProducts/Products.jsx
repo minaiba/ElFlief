@@ -36,7 +36,7 @@ export default function Products() {
   };
 
   return (
-    <div className='mt-[20px] overflow-x-hidden'>
+    <div className='mt-[20px] mb-20 overflow-x-hidden'>
       <div className="relative">
         <img src={img1} className="w-full h-full object-cover " />
         <h1 className=" font-bold text-[white] absolute top-[62.7%] left-[60%] transform  text-[100px] ">новинки </h1>

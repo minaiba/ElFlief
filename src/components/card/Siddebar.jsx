@@ -22,7 +22,7 @@ export default function Siddebar({ product, onClose }) {
       initial={{ x: "100%" }}
       animate={{ x: 0 }}
       exit={{ x: "100%" }}
-      transition={{ duration: 0.1 }}
+      transition={{ duration: 0.2 }}
       className="fixed top-0 right-0 h-full w-[50px] p-6 rounded-l-lg shadow-lg z-50"
     >
       <div className="relative w-full h-full">
