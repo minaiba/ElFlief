@@ -27,7 +27,7 @@ export default function Siddebar({ product, onClose }) {
     >
       <div className="relative w-full h-full">
         <div
-          className="fixed inset-0 bg-black opacity-80"
+          className="fixed inset-0 bg-black opacity-15"
           onClick={onClose}
           aria-label="Close modal"
         ></div>
