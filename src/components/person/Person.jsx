@@ -82,7 +82,7 @@ export default function Person({ onClose }) {
           transition={{ duration: 0.1 }}
           className="fixed top-0 right-0 h-full w-150 bg-white pt-[50px] shadow-lg p-6 z-50"
         >
-          <button className="absolute top-4 right-4 text-4xl" onClick={onClose}>
+          <button className="absolute top-4 right-4 text-4xl"  onClick={onClose}>
             <IoClose />
           </button>
           <h2 className="text-2xl font-bold mb-2">Войти или зарегистрироваться</h2>
