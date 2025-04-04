@@ -1,8 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { decrement, increment, removeFromCart } from '../../ElFlief/CartSlice'; 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Button from './Button';
+// import Button from './Button';
 
 const Basket = () => {
+      const [selectedProduct, setSelectedProduct] = useState(null);
   const cartItem = useSelector((state) => state.cart.cartItems || []);
   const dispatch = useDispatch();
   const saveCartToLocalStorage = (cart) => {
@@ -34,7 +37,7 @@ const Basket = () => {
   };
 
   if (!cartItem || cartItem.length === 0) {
-    return <p className='w-[1400px] m-auto ml-[640px] text-3xl py-[180px] font-mono'>Корзина пуста</p>; 
+    return <p className='w-[1400px] m-auto ml-[60px] flex items-center justify-center text-3xl  py-[280px] font-mono'>Корзина пуста</p>; 
   }
 
   return (
@@ -57,10 +60,13 @@ const Basket = () => {
           <button onClick={() => handleRemove(item.id)} className="text-red-500">Remove</button>
         </div>
       ))}
-      <div className="flex justify-end">
+      <div className="flex justify-end pb-4">
         <h2 className="text-2xl font-medium my-15">
           Total: {cartItem.reduce((total, item) => total + item.price * item.quantity, 0)} ₽
         </h2>
+        <button className=' rounded-2xl py-2 px-2 font-mono text-xl ml-5 text-red-500'  onClick={() => setSelectedProduct(true)}>Оформить заказ</button>  
+        {selectedProduct && <Button product={selectedProduct}
+          onClose={() => setSelectedProduct(null)} />}                
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ const CosmoSlice = createSlice({
         if (existingProduct) {
           existingProduct.quantity += 1; 
         } else {
-          state.cartItems.push({ ...action.payload, quantity: 0 }); 
+          state.cartItems.push({ ...action.payload, quantity: 1 }); 
         }
       },
       removeFromCart: (state, action) => {

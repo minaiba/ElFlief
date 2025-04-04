@@ -436,8 +436,8 @@ export default function Discount() {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
-    <div className='mb-20'>
-      <h1 className='text-9xl font-bold text-white absolute mt-[1000px] ml-[1200px]'>скидки до −50%</h1>
+    <div className='mb-20 overflow-x-hidden'>
+      <h1 className='text-9xl font-bold text-white absolute mt-[520px] ml-[120px]'>скидки до −50%</h1>
       <img src={s1} className='w-full h-[700px]' />
       <div className='w-[1400px] m-auto'>
         <h2 className='justify-center items-center flex my-[40px] text-2xl'><span className='mr-[5px] font-bold'>40 806</span> продукт</h2>

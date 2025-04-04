@@ -58,22 +58,22 @@ function ProductCard({ product, setSelectedProduct }) {
   return (
     <div 
       className="relative w-[95%] sm:w-[90%] md:w-[320px] bg-white p-3 sm:p-4 rounded-lg cursor-pointer"
-      onClick={() => setSelectedProduct(product)}
+      
     >
     <div className="relative w-[95%] sm:w-[90%] md:w-[320px] bg-white p-3 sm:p-4 rounded-lg cursor-pointer">
-      <Link to='/cart' onClick={handleAddToCart}>
-        <BsBasket className="absolute left-[260px] mt-40 w-[30px] h-[30px] cursor-pointer hover:text-green-500" />
-      </Link>       
+      {/* <Link to='/cart'> */}
+        <BsBasket onClick={handleAddToCart} className="absolute left-[260px] mt-40 w-[30px] h-[30px] cursor-pointer hover:text-green-500" />
+      {/* </Link>        */}
       <img src={product.img} className="w-full h-[180px] sm:h-[200px] rounded-lg object-cover" />
       <h3 className="hover:text-[#9ca887] font-mono mt-3 sm:mt-4 text-right text-xs sm:text-sm md:text-base">
         {product.title}
       </h3>
-      <h1 className="hover:text-[#9ca887] font-medium text-base sm:text-lg md:text-2xl text-right">
+      <h1 onClick={() => setSelectedProduct(product)} className="hover:text-[#9ca887] font-medium text-base sm:text-lg md:text-2xl text-right">
         {product.name}
       </h1>
-      <Link to='/favorites' onClick={handleAddCart}>
-        <IoHeartOutline className="absolute top-6 ml-2.5 w-[30px] h-[30px] cursor-pointer hover:text-red-500" />
-      </Link>
+      {/* <Link to='/favorites'> */}
+        <IoHeartOutline onClick={handleAddCart} className="absolute top-6 ml-2.5 w-[30px] h-[30px] cursor-pointer hover:text-red-500" />
+      {/* </Link> */}
       <div className="flex justify-end mt-2 items-center">
         <h1 className="font-bold text-lg sm:text-xl md:text-2xl hover:text-[#9ca887]">
           {product.price} ₽
