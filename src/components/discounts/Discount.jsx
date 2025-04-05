@@ -437,8 +437,9 @@ export default function Discount() {
 
   return (
     <div className='m-auto'>
-      <h1 className='text-9xl font-bold text-white absolute mt-[1000px] ml-[1200px]'>скидки до −50%</h1>
-      <img src={s1} className='w-full h-[1200px]' />
+    <div className='mb-20 overflow-x-hidden'>
+      <h1 className='text-7xl font-bold text-white absolute mt-[580px] ml-[300px]'>скидки до −50%</h1>
+      <img src={s1} className='w-full h-[700px]' />
       <div className='w-[1400px] m-auto'>
         <h2 className='justify-center items-center flex my-[40px] text-2xl'><span className='mr-[5px] font-bold'>40 806</span> продукт</h2>
         <div className='mt-[20px]'>
@@ -783,7 +784,7 @@ export default function Discount() {
             </div>
           ))}
         </div>
-        <div className='flex mt-[100px] pb-20'>
+        <div className='flex mt-[100px]'>
           {massaj.map((mes) => (
             <div key={mes.id} className='' onMouseEnter={() => handleMouseEnter('fen')} onMouseLeave={handleMouseLeave}>
                <Link to="/favorites"><IoHeartOutline className='absolute hover:text-red-500 w-[20px] h-[20px] ml-[605px] mt-[20px]' /></Link>
@@ -813,7 +814,7 @@ export default function Discount() {
               <img src={imageHovered === 'piala' ? ser.imgAlt : ser.img} className='w-[300px] h-[240px]' />
               <h3 className='hover:text-[#9ca887] font-mono mt-[5px]' style={{ direction: 'ltr', textAlign: 'left' }}>{ser.category}</h3>
               <h1 className='hover:text-[#9ca887] font-medium text-2xl' style={{ direction: 'ltr', textAlign: 'left' }}>{ser.title}</h1>
-              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[5px] '>{ser.price}</h1>
+              <h1 className='font-bold hover:text-[#9ca887] text-2xl mt-[5px]'>{ser.price}</h1>
             </div>
           ))}
         </div>
@@ -837,6 +838,7 @@ export default function Discount() {
       {selectedProduct && <Disco ser={selectedProduct} onClose={() => setSelectedProduct(null)} />}
       {selectedProduct && <Disco sam={selectedProduct} onClose={() => setSelectedProduct(null)} />}
       {selectedProduct && <Disco eve={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+    </div>
     </div>
   )
 }

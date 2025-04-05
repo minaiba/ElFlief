@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from "react";
-import { X, ChevronRight} from "lucide-react";
+import { X, ChevronRight } from "lucide-react";
 import { LuShoppingCart } from "react-icons/lu";
 import bannerImage from "../../assets/syrgak/banner_about_brand.webp";
 import kBeautyImage from "../../assets/syrgak/CategoryKB.webp";
@@ -217,88 +217,48 @@ const Teens = () => {
             </p>
           </div>
         </section>
-
-
-        {/* Секция с карточками (обновленный стиль) */}
         <div className="flex flex-wrap justify-center">
           {cardsData.map((card, index) => (
             <Card key={index} {...card} />
           ))}
         </div>
       </div>
-
-      {/* <div className="w-[1400px] mt-[40px] m-auto cursor-pointer hover:text-gray-400">
+      <div className="w-full max-w-[1400px] mt-[40px] mx-auto cursor-pointer hover:text-gray-400">
         <img src={poto} alt="" />
-        <h1 className="font-bold text-5xl relative left-[380px] top-[-20px]">vanilla vibes</h1>
-        <p className="relative left-[380px] top-[-20px]">Она самая популярная девчонка, которая залетает в тренды. Пахнет чем-то цветочным и нежным, <br /> забирает лайки и твоё внимание. Хочешь быть, как она?
+        <h1 className="font-bold text-4xl md:text-5xl relative md:left-[380px] top-[-20px] text-center md:text-left">
+          vanilla vibes
+        </h1>
+        <p className="relative md:left-[380px] top-[-20px] text-center md:text-left">
+          Она самая популярная девчонка, которая залетает в тренды. Пахнет чем-то цветочным и нежным, <br />
+          забирает лайки и твоё внимание. Хочешь быть, как она?
         </p>
       </div>
 
-
-      <div className="w-[1400px] mx-auto grid grid-cols-4 gap-6 p-6 ">
+      <div className="w-full max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
         {products.map((product) => (
-          <div key={product.id} className="relative  p-4 bg-white  text-center">
-            <Link to='/cart'> <LuShoppingCart size={25} className="absolute right-8 top-45 cursor-pointer hover:scale-110 active:scale-95 " /></Link>
-            <Link to='/favorites'><PiHeartStraightLight size={25} className="absolute right-8 top-6 cursor-pointer hover:scale-110 active:scale-95 " /></Link> 
-
-
+          <div key={product.id} className="relative p-4 bg-white text-center">
+            <Link to="cart">
+              <LuShoppingCart size={25} className="absolute right-8 top-45 cursor-pointer hover:scale-110 active:scale-95 " />
+            </Link>
+            <Link to="favorites">
+              <PiHeartStraightLight size={25} className="absolute right-8 top-6 cursor-pointer hover:scale-110 active:scale-95 " />
+            </Link>
 
             {product.discount && (
-              <span className="absolute top-4 left-4 bg-pink-500 text-white text-xs font-bold px-2 py-1"> {product.discount} </span>
+              <span className="absolute top-4 left-4 bg-pink-500 text-white text-xs font-bold px-2 py-1">
+                {product.discount}
+              </span>
             )}
             {product.label && (
-              <span className="absolute top-4 right-67 bg-yellow-400 text-black text-xs font-bold px-2 py-1 "> {product.label} </span>
+              <span className="absolute top-4 right-67 bg-yellow-400 text-black text-xs font-bold px-2 py-1">
+                {product.label}
+              </span>
             )}
-            <img src={product.image} alt={product.title} className=" object-contain mb-4" />
-            <p className="text-gray-500 text-sm">{product.category}</p>
-            <h3 className="text-lg font-semibold mt-1">{product.title}</h3>
-            {product.rating
-
-              && (
-                <p className="text-sm text-gray-600 mt-1">⭐ {product.rating} ({product.reviews}) </p>
-              )}
-            <div className="mt-2">
-              {product.oldPrice && (
-                <span className="text-gray-400 line-through mr-2">{product.oldPrice} ₽</span>
-              )}
-              <span className="text-black font-bold">{product.newPrice} ₽</span>
-            </div>
-            {product.colors && (
-              <div className="flex justify-center gap-2 mt-2">
-                {product.colors.map((color, index) => (
-                  <span key={index} className="w-4 h-4 rounded-full border" style={{ backgroundColor: color }}></span>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-
-
-      <div className="w-[1400px] mt-[40px] m-auto cursor-pointer hover:text-gray-400">
-        <img src={poto1} alt="" />
-        <h1 className="font-bold text-5xl relative left-[380px] top-[-20px]">clean vibes</h1>
-        <p className="relative left-[380px] top-[-20px]">Осторожно, только крутые позиции. Ухаживай красиво, выбирай любимые продукты и открывай новое.</p>
-      </div>
-
-
-      <div className="w-[1400px] mx-auto grid grid-cols-4 gap-6 p-6 ">
-        {productys.map((product) => (
-          <div key={product.id} className="relative  p-4 bg-white  text-center">
-
-            <Link to="/cart"><LuShoppingCart size={25} className="absolute right-8 top-45 cursor-pointer hover:scale-110 active:scale-95 " /></Link>
-            <Link to="/favorites"> <PiHeartStraightLight size={25} className="absolute right-8 top-6 cursor-pointer hover:scale-110 active:scale-95 " /></Link>
-            {product.discount && (
-              <span className="absolute top-4 left-4 bg-pink-500 text-white text-xs font-bold px-2 py-1"> {product.discount} </span>
-            )}
-            {product.label && (
-              <span className="absolute top-4 right-65 bg-green-400 text-black text-xs font-bold px-2 py-1 "> {product.label} </span>
-            )}
-            <img src={product.image} alt={product.title} className=" object-contain mb-4" />
+            <img src={product.image} alt={product.title} className="object-contain mb-4" />
             <p className="text-gray-500 text-sm">{product.category}</p>
             <h3 className="text-lg font-semibold mt-1">{product.title}</h3>
             {product.rating && (
-              <p className="text-sm text-gray-600 mt-1">⭐ {product.rating} ({product.reviews}) </p>
+              <p className="text-sm text-gray-600 mt-1">⭐ {product.rating} ({product.reviews})</p>
             )}
             <div className="mt-2">
               {product.oldPrice && (
@@ -315,117 +275,69 @@ const Teens = () => {
             )}
           </div>
         ))}
-      </div> */}
-
-
-     
-
-<div className="w-full max-w-[1400px] mt-[40px] mx-auto cursor-pointer hover:text-gray-400">
-  <img src={poto} alt="" />
-  <h1 className="font-bold text-4xl md:text-5xl relative md:left-[380px] top-[-20px] text-center md:text-left">
-    vanilla vibes
-  </h1>
-  <p className="relative md:left-[380px] top-[-20px] text-center md:text-left">
-    Она самая популярная девчонка, которая залетает в тренды. Пахнет чем-то цветочным и нежным, <br />
-    забирает лайки и твоё внимание. Хочешь быть, как она?
-  </p>
-</div>
-
-<div className="w-full max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-  {products.map((product) => (
-    <div key={product.id} className="relative p-4 bg-white text-center">
-      <Link to="cart">
-        <LuShoppingCart size={25} className="absolute right-8 top-45 cursor-pointer hover:scale-110 active:scale-95 " />
-      </Link>
-      <Link to="favorites">
-        <PiHeartStraightLight size={25} className="absolute right-8 top-6 cursor-pointer hover:scale-110 active:scale-95 " />
-      </Link>
-
-      {product.discount && (
-        <span className="absolute top-4 left-4 bg-pink-500 text-white text-xs font-bold px-2 py-1">
-          {product.discount}
-        </span>
-      )}
-      {product.label && (
-        <span className="absolute top-4 right-4 bg-yellow-400 text-black text-xs font-bold px-2 py-1">
-          {product.label}
-        </span>
-      )}
-      <img src={product.image} alt={product.title} className="object-contain mb-4" />
-      <p className="text-gray-500 text-sm">{product.category}</p>
-      <h3 className="text-lg font-semibold mt-1">{product.title}</h3>
-      {product.rating && (
-        <p className="text-sm text-gray-600 mt-1">⭐ {product.rating} ({product.reviews})</p>
-      )}
-      <div className="mt-2">
-        {product.oldPrice && (
-          <span className="text-gray-400 line-through mr-2">{product.oldPrice} ₽</span>
-        )}
-        <span className="text-black font-bold">{product.newPrice} ₽</span>
       </div>
-      {product.colors && (
-        <div className="flex justify-center gap-2 mt-2">
-          {product.colors.map((color, index) => (
-            <span key={index} className="w-4 h-4 rounded-full border" style={{ backgroundColor: color }}></span>
-          ))}
-        </div>
-      )}
-    </div>
-  ))}
-</div>
 
-<div className="w-full max-w-[1400px] mt-[40px] mx-auto cursor-pointer hover:text-gray-400">
-  <img src={poto1} alt="" />
-  <h1 className="font-bold text-4xl md:text-5xl relative md:left-[380px] top-[-20px] text-center md:text-left">
-    clean vibes
-  </h1>
-  <p className="relative md:left-[380px] top-[-20px] text-center md:text-left">
-    Осторожно, только крутые позиции. Ухаживай красиво, выбирай любимые продукты и открывай новое.
-  </p>
-</div>
-
-<div className="w-full max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-  {productys.map((product) => (
-    <div key={product.id} className="relative p-4 bg-white text-center">
-      <Link to="cart">
-        <LuShoppingCart size={25} className="absolute right-8 top-45 cursor-pointer hover:scale-110 active:scale-95 " />
-      </Link>
-      <Link to="favorites">
-        <PiHeartStraightLight size={25} className="absolute right-8 top-6 cursor-pointer hover:scale-110 active:scale-95 " />
-      </Link>
-
-      {product.discount && (
-        <span className="relative top-4 left-4 bg-pink-500 text-white text-xs font-bold px-2 py-1">
-        {product.discount}
-      </span>
-      )}
-      {product.label && (
-        <span className="absolute  top-4 right-4 bg-green-400 text-black text-xs font-bold px-2 py-1">
-          {product.label}
-        </span>
-      )}
-      <img src={product.image} alt={product.title} className="object-contain mb-4" />
-      <p className="text-gray-500 text-sm">{product.category}</p>
-      <h3 className="text-lg font-semibold mt-1">{product.title}</h3>
-      {product.rating && (
-        <p className="text-sm text-gray-600 mt-1">⭐ {product.rating} ({product.reviews})</p>
-      )}
-      <div className="mt-2">
-        {product.oldPrice && (
-          <span className="text-gray-400 line-through mr-2">{product.oldPrice} ₽</span>
-        )}
-        <span className="text-black font-bold">{product.newPrice} ₽</span>
+      <div className="w-full max-w-[1400px] mt-[40px] mx-auto cursor-pointer hover:text-gray-400">
+        <img src={poto1} alt="" />
+        <h1 className="font-bold text-4xl md:text-5xl relative md:left-[380px] top-[-20px] text-center md:text-left">
+          clean vibes
+        </h1>
+        <p className="relative md:left-[380px] top-[-20px] text-center md:text-left">
+          Осторожно, только крутые позиции. Ухаживай красиво, выбирай любимые продукты и открывай новое.
+        </p>
       </div>
-      {product.colors && (
-        <div className="flex justify-center gap-2 mt-2">
-          {product.colors.map((color, index) => (
-            <span key={index} className="w-4 h-4 rounded-full border" style={{ backgroundColor: color }}></span>
-          ))}
-        </div>
-      )}
-    </div>
-  ))}
-</div>
+      <div className="w-full max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+        {productys.map((product) => (
+          <div key={product.id} className="relative p-4 bg-white text-center">
+            <Link to="cart">
+              <LuShoppingCart size={25} className="absolute right-8 top-45 cursor-pointer hover:scale-110 active:scale-95 transition-all duration-200 ease-in-out" aria-label="Add to Cart" />
+            </Link>
+            <Link to="favorites">
+              <PiHeartStraightLight size={25} className="absolute right-8 top-6 cursor-pointer hover:scale-110 active:scale-95 transition-all duration-200 ease-in-out" aria-label="Add to Favorites" />
+            </Link>
+            {product.discount && (
+              <span className="absolute top-4 left-4 bg-pink-500 text-white text-xs font-bold px-2 py-1">
+                {product.discount}
+              </span>
+            )}
+            {product.label && (
+              <span className="absolute top-4 right-65 bg-green-400 text-black text-xs font-bold px-2 py-1">
+                {product.label}
+              </span>
+            )}
+            <img
+              src={product.image}
+              alt={product.title}
+              className="object-contain mb-4"
+              loading="lazy"
+            />
+            <p className="text-gray-500 text-sm">{product.category}</p>
+            <h3 className="text-lg font-semibold mt-1">{product.title}</h3>
+
+            {product.rating && (
+              <p className="text-sm text-gray-600 mt-1">⭐ {product.rating} ({product.reviews})</p>
+            )}
+            <div className="mt-2">
+              {product.oldPrice && (
+                <span className="text-gray-400 line-through mr-2">{product.oldPrice} ₽</span>
+              )}
+              <span className="text-black font-bold">{product.newPrice} ₽</span>
+            </div>
+            {product.colors && (
+              <div className="flex justify-center gap-2 mt-2">
+                {product.colors.map((color, index) => (
+                  <span
+                    key={index}
+                    className="w-4 h-4 rounded-full border"
+                    style={{ backgroundColor: color }}
+                  ></span>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
 
 
 

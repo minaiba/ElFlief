@@ -9,10 +9,10 @@ export default function Heart({product}) {
     dispatch(removeFromCart(id));
   };
   if (cartItem.length === 0) {
-    return <p className="w-[1400px] m-auto ml-[600px] text-3xl pt-70 pb-[180px] overflow-x-hidden font-mono">Нет избранных товаров</p>; 
+    return <p className="w-[1400px] m-auto ml-[60px] items-center justify-center flex text-3xl pt-70 pb-[180px] overflow-x-hidden font-mono">Нет избранных товаров</p>; 
   }
   return (
-    <div className="max-w-[1400px] mx-auto py-15 px-4 pt-30">
+    <div className="max-w-[1400px] mx-auto py-15 overflow-x-hidden px-4 pt-30">
     <h1 className="flex justify-center py-10 text-2xl font-mono sm:text-3xl md:text-4xl">Избранные товары</h1>
     <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {cartItem.map((product) => (

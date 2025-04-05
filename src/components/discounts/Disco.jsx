@@ -14,7 +14,7 @@ export default function CDisco({ eve, onClose }) {
       animate={{ x: 0 }}
       exit={{ x: "100%" }}
       transition={{ duration: 0.1 }}
-      className="fixed "
+      className="fixed  top-0 right-0 h-full w-[50px] p-6 rounded-l-lg shadow-lg z-50"
     >
       <div className="relative mt-[50px]">
         <div
@@ -22,7 +22,7 @@ export default function CDisco({ eve, onClose }) {
           onClick={onClose}
           aria-label="Close modal"
         ></div>
-        <div className="fixed mt-[100px] top-0 right-0 w-[700px] h-full pt-6 px-6 pb-8 overflow-y-auto bg-white">
+        <div className="fixed top-0 right-0 w-[700px] h-full pt-6 px-6 pb-8 overflow-y-auto bg-white">
           <div className="h-full flex flex-col relative text-center space-y-6">
             <button
               className="absolute top-4 right-4 text-3xl text-gray-600 hover:text-gray-800 transition"

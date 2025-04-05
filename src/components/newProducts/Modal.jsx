@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
 export default function Modal({ dog, onClose }) {
-  if (!dog) return null; 
+  if (!dog) return null;
 
 
   return (
@@ -14,7 +14,7 @@ export default function Modal({ dog, onClose }) {
       animate={{ x: 0 }}
       exit={{ x: "100%" }}
       transition={{ duration: 0.1 }}
-      className="fixed "
+      className="fixed  top-0 right-0 h-full w-[50px] p-6 rounded-l-lg shadow-lg z-50"
     >
       <div className="relative">
         <div
@@ -22,7 +22,7 @@ export default function Modal({ dog, onClose }) {
           onClick={onClose}
           aria-label="Close modal"
         ></div>
-        <div className="fixed top-0 right-0 w-[700px] h-full pt-6 px-6 pb-8 overflow-y-auto bg-white">
+        <div className="bg-white fixed right-0 pt-6 top-0 w-[700px] h-full px-6 pb-8 overflow-y-auto">
           <div className="h-full flex text-center flex-col relative space-y-6">
             <button
               className="absolute top-4 right-4 text-3xl text-gray-600 hover:text-gray-800 transition"
@@ -31,17 +31,20 @@ export default function Modal({ dog, onClose }) {
             >
               <IoClose />
             </button>
-            <img
-              src={dog.img}
-              alt={dog.title2}
-              className="w-full object-cover rounded-xl shadow-md"
-            />
+            <div className='mt-[20px]'>
+              <img
+                src={dog.img}
+                alt={dog.title2}
+                className="w-[640px] h-[400px] object-cover shadow-md"
+              />
+            </div>
+
             <h2 className="text-xl font-semibold text-gray-800 mt-4">{dog.title}</h2>
             <div className="text-xs text-gray-600">
-          <p>{dog.title2.split('\n').map((line, index) => (
-            <span key={index}>{line}<br /></span>
-          ))}</p>
-        </div>
+              <p>{dog.title2.split('\n').map((line, index) => (
+                <span key={index}>{line}<br /></span>
+              ))}</p>
+            </div>
             <h3 className="text-lg font-semibold text-green-600">Цена: {dog.price} ₽</h3>
             <div className="flex gap-[400px] pb-8 mt-[20px] ml-[100px]">
               <Link to="favorites">
@@ -52,7 +55,7 @@ export default function Modal({ dog, onClose }) {
               </Link>
             </div>
           </div>
-         
+
         </div>
       </div>
     </motion.div>

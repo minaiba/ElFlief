@@ -22,6 +22,7 @@ import Footerr from "./components/Footer/Footerr";
 import Foooters from "./components/Footer/Foooters";
 import Fotter from "./components/Footer/Fotter";
 import FoTerss from "./components/Footer/FoTerss";
+import ScrollToTop from "./ScrollToTop";
 
 
 
@@ -117,6 +118,10 @@ export const myRouter = createBrowserRouter ([
             {
                 path: 'footers7',
                 element: <FoTerss/>
+            },
+            {
+                path: 'ScrollToTop',
+                element: <ScrollToTop/>
             },
         ]
     }
