@@ -56,5 +56,6 @@ export default function Modal({ dog, onClose }) {
         </div>
       </div>
     </motion.div>
+
   );
 }

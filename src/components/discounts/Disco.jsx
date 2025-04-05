@@ -22,13 +22,12 @@ export default function CDisco({ eve, onClose }) {
           onClick={onClose}
           aria-label="Close modal"
         ></div>
-        <div className="fixed top-0 right-0 w-[700px] h-full pt-6 px-6 pb-8 overflow-y-auto bg-white">
+        <div className="fixed mt-[100px] top-0 right-0 w-[700px] h-full pt-6 px-6 pb-8 overflow-y-auto bg-white">
           <div className="h-full flex flex-col relative text-center space-y-6">
             <button
               className="absolute top-4 right-4 text-3xl text-gray-600 hover:text-gray-800 transition"
               onClick={onClose}
-              aria-label="Close modal"
-            >
+              aria-label="Close modal">
               <IoClose />
             </button>
             <img src={eve.img} alt={eve.title2} className="w-full object-cover rounded-xl shadow-md"/>

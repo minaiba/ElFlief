@@ -436,7 +436,7 @@ export default function Discount() {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
-    <div className=''>
+    <div className='m-auto'>
       <h1 className='text-9xl font-bold text-white absolute mt-[1000px] ml-[1200px]'>скидки до −50%</h1>
       <img src={s1} className='w-full h-[1200px]' />
       <div className='w-[1400px] m-auto'>
